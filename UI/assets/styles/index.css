@@ -2,6 +2,9 @@ body {
   background-color: #266189;
   color: #eeffff;
 }
+hr {
+  width: 544px; 
+}
 div.main-content {
   background-image: url(../images/diary-edit.jpg);
   background-size: 100vw;
@@ -11,3 +14,30 @@ div#content {
   background-color: rgba(0, 0, 0, 0.8);
   padding: 15px;
 }
+img.footer-img {
+  width: 30px;
+}
+footer div img.footer-img:hover {
+  transition: .5s;
+  transform: scale(1.2) rotate(360deg);
+}
+div.row>div.section {
+  border: 2px solid #eeffff;
+  margin: 15px;
+  padding: 10px;
+  border-radius: 9px;
+}
+p>a {
+  text-decoration: none;
+  color: beige;
+}
+p>a:hover {
+  color: #1d4a47;
+}
+footer {
+  margin-top: 25px;
+}
+footer>div {
+  margin: 11px;
+  padding: 10px;
+} 
