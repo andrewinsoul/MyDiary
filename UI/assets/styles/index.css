@@ -1,0 +1,13 @@
+body {
+  background-color: #266189;
+  color: #eeffff;
+}
+div.main-content {
+  background-image: url(../images/diary-edit.jpg);
+  background-size: 100vw;
+  background-repeat: no-repeat;
+}
+div#content {
+  background-color: rgba(0, 0, 0, 0.8);
+  padding: 15px;
+}
