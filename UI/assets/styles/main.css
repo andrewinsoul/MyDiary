@@ -1,0 +1,64 @@
+.container {
+  display: block;
+  width: 100%;
+  margin-right: auto;
+  margin-left: auto;
+}
+body {
+  background-color: rgba(255, 255, 255, 0.6);
+  margin: 0;
+  font-family: -apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,"Helvetica Neue",Arial,sans-serif,"Apple Color Emoji","Segoe UI Emoji","Segoe UI Symbol";
+  font-size: 18px;
+}
+.row {
+  display: flex;
+  flex-wrap: wrap;
+  margin-right: -15px;
+  margin-left: -15px;
+}
+.col, .col-1, .col-2, .col-3, .col-4, .col-5, .col-6 {
+  position: relative;
+  width: 100%;
+  padding-right: 18px;
+  padding-left: 18px; 
+}
+.col {
+  flex-basis: 0; 
+  flex-grow: 1;
+  max-width: 100%;
+}
+.col-1 {
+  flex: 0 0 16.66666666%;
+  max-width: 16.66666666%;
+}
+.col-2 {
+  flex: 0 0 33.33333332%;
+  max-width: 33.33333332%;
+}
+.col-3 {
+  flex: 0 0 49.99999998%;
+  max-width: 49.99999998%;
+}
+.col-4 {
+  flex: 0 0 66.6666664%;
+  max-width: 66.6666664%;
+}
+.col-5 {
+  flex: 0 0 83.3333333%;
+  max-width: 83.3333333%;
+}
+.col-6 {
+  flex: 0 0 99.999996%;
+  max-width: 99.999996%;
+}
+.modal {
+  display: none;
+  position: fixed;
+  z-index: 1;
+  left: 10px;
+  top: 10px;
+  width: 100%;
+  height: 100%;
+  overflow: auto;
+  background-color: rgba(0, 0, 0, 0.4)
+}
