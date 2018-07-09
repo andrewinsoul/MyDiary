@@ -132,3 +132,21 @@ a.diary-btn {
 .diary-view {
   margin-top: 16%;
 }
+footer {
+  margin-left: 25%
+}
+footer.social-handles {
+  margin-left: 9px;
+}
+div.credits {
+  font-size: 15px;
+}
+#end {
+  margin-left: 27%;
+}
+#bottom-line {
+  width: 630px;
+}
+div#end>small {
+  margin-left: 30%;
+}
