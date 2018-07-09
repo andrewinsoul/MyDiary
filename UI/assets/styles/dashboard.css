@@ -24,3 +24,45 @@ div.nav-links {
 hr {
   width: 850px;
 }
+div.side-nav {
+  width: 25%; 
+  position: fixed; 
+  overflow: auto; 
+  z-index: 1; 
+  background-color: #384318; 
+  top: 0; 
+  height: 100vh;
+}
+#side-nav-head {
+  margin-top: 6%; 
+  text-align: start; 
+  margin-left: 3%;
+}
+div.side-nav-links {
+  margin-top: 25%;
+  font-size: 16px;
+}
+div.side-nav-links>a {
+  color: whitesmoke; 
+  text-decoration: none; 
+  display: block; 
+  padding-top: 18px; 
+  padding-bottom: 18px; 
+  border-top: 1px solid white; 
+  border-bottom: 1px solid white;
+}
+div.side-nav-links>a:hover {
+  color: grey;
+}
+#active {
+  font-family: cursive;
+}
+.img-link {
+  width: 35px; 
+  vertical-align: middle; 
+  margin-left: 4%; 
+  border-radius: 25px;
+}
+#logout {
+  margin-top: 65%;
+}
