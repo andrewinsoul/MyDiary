@@ -1,0 +1,17 @@
+body {
+  background-color: #266189;
+  color: #eeffff;
+}
+hr {
+  width: 544px; 
+}
+img.footer-img {
+  width: 30px;
+}
+footer {
+  margin-top: 25px;
+}
+footer>div {
+  margin: 11px;
+  padding: 10px;
+} 
