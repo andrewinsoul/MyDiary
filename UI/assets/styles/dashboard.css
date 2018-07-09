@@ -66,3 +66,69 @@ div.side-nav-links>a:hover {
 #logout {
   margin-top: 65%;
 }
+div.main-content {
+  margin-left: 23%;
+  width: auto;
+}
+div.jumbotron {
+  background-color: #ffffff;
+}
+.jumbotron>.row {
+  color: black
+}
+div.section-1{
+  border-right: 1px solid blue;
+}
+div.section-2 {
+  border-left: 1px solid green;
+}
+div.div-diaries {
+  font-size: 14px;
+}
+div.div-diary {
+  border: 1px solid whitesmoke; 
+  margin-bottom: 10%; 
+  background-color: #0c2623; 
+  color: whitesmoke; 
+  background-image: url(../images/diary-icon.png); 
+  background-repeat: no-repeat; 
+  background-size: 100%;
+}
+.img-cover {
+  background-color: rgba(0, 0, 0, 0.8);
+}
+div.diary-detail {
+  max-width: 200px;
+}
+.diary-name {
+  margin-top: 2%; 
+  margin-bottom: 2%;
+}
+.diary-desc {
+  margin-top: 20%; 
+  margin-bottom: 2%;
+}
+.diary-entry {
+  margin-top: 36%;
+}
+.diary-open {
+  margin-top: 30%; 
+  text-align: center; 
+  margin-bottom: 15%;
+}
+a.diary-btn {
+  background-color: goldenrod; 
+  -moz-appearance: button; 
+  appearance: button; 
+  padding: 10px; 
+  border-radius: 14px; 
+  text-decoration: none; 
+  font-size: 13.333px; 
+  color: black;
+}
+.diary-list {
+  margin-bottom: 6%;
+}
+.diary-view {
+  margin-top: 16%;
+}

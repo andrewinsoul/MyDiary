@@ -75,6 +75,9 @@ a.nav-link:hover {
   flex: 0 0 100%;
   max-width: 100%;
 }
+.center {
+  text-align: center;
+}
 .modal {
   display: none;
   position: fixed;
