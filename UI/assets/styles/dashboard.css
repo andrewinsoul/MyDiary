@@ -15,3 +15,12 @@ footer>div {
   margin: 11px;
   padding: 10px;
 } 
+div.container {
+  margin-left: 25%;
+}
+div.nav-links {
+  margin-left: 48%;
+}
+hr {
+  width: 850px;
+}
