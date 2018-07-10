@@ -8,6 +8,14 @@ hr {
 img.footer-img {
   width: 30px;
 }
+#nav-div {
+  position: fixed; 
+  width: 100%; 
+  z-index: 1; 
+  background-color: #266189; 
+  top: 0; 
+  bottom: auto;
+}
 footer {
   margin-top: 25px;
 }
