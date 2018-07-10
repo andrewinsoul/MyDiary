@@ -1,3 +1,3 @@
-function open(theUrl) {
+function openLink(theUrl) {
   document.location.href = theUrl;
 }
