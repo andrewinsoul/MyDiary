@@ -16,6 +16,29 @@ img.footer-img {
   top: 0; 
   bottom: auto;
 }
+#inline-form {
+  margin-right: 5%; 
+  margin-bottom: 2%;
+  text-align: end;
+}
+form {
+  display: inline-flex;
+}
+input {
+  color: #495057; 
+  background-color: #fff; 
+  width: 100%; 
+  padding: 8px; 
+  border-radius: 7px;
+}
+form>button {
+  color: white; 
+  background-color: #0069d9; 
+  border-color: #0062cc; cursor: pointer; 
+  padding: 5px; 
+  border-radius: 8px; 
+  margin-left: 8px;
+}
 footer {
   margin-top: 25px;
 }
