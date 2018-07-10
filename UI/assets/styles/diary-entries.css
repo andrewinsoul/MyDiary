@@ -107,6 +107,15 @@ div#end>small {
   color: black; 
   margin-top: 35%; 
   margin-bottom: 1%;
+  display: inline-block;
+}
+button {
+  margin-left: 55%;
+  cursor: pointer;
+}
+button>img {
+  width: 35px;
+  vertical-align: middle;
 }
 table {
   margin-top: 20px; 
