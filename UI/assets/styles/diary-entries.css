@@ -82,6 +82,58 @@ div.credits {
 div#end>small {
   margin-left: 30%;
 }
+#nav-div {
+  position: fixed; 
+  width: 100%; 
+  z-index: 1; 
+  background-color: #266189; 
+  top: 0;
+}
+.table-div-container {
+  margin-top: 9%; 
+  color: grey;
+}
+.table-main-row {
+  margin-top: 5%;
+}
+.table-div {
+  position: fixed; 
+  background-color: white; 
+  overflow-y: scroll; 
+  bottom: 200px; 
+  height: 650px
+}
+#section-title {
+  color: black; 
+  margin-top: 35%; 
+  margin-bottom: 1%;
+}
+table {
+  margin-top: 20px; 
+  margin-left: 8px; 
+  margin-right: 8px; 
+  margin-bottom: 18px;
+  font-size: 14px;
+}
+.title {
+  width: 150px;
+  text-align: start;
+}
+.entry {
+  white-space: nowrap; 
+  max-width: 300px;
+  overflow: hidden; 
+  text-overflow: ellipsis;
+  text-align: end;
+}
+footer {
+  margin-top: 30%;
+}
+.time {
+  width: 150px;
+  text-align: end;
+}
+
 tr:hover {
   cursor: pointer;
   background-color: #dcfac9;
