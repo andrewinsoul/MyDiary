@@ -89,6 +89,13 @@ a.nav-link:hover {
   overflow: auto;
   background-color: white;
 }
+button#close {
+  background: linear-gradient(to right, red, red);
+  border: 1px solid red;
+  color: white;
+  margin-left: 56%;
+  cursor: pointer;
+}
 .modal-head {
   background-color: #353a40;
 }

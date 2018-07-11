@@ -64,10 +64,7 @@ button {
   border-radius: 6px;
   border: 1px solid green;
 }
-button#close {
-  background: linear-gradient(to right, red, red);
-  border: 1px solid red;
-}
+
 div.side-nav-links {
   margin-top: 25%;
   font-size: 16px;

@@ -5,8 +5,18 @@ body {
 hr {
   width: 544px; 
 }
+.modal-title {
+  color: white;
+}
 img.footer-img {
   width: 30px;
+}
+.modal-footer {
+  margin: 0;
+}
+#modal-div {
+  padding: 15px; 
+  margin-top: 0;
 }
 footer {
   margin-top: 25px;
@@ -78,6 +88,21 @@ div.credits {
 }
 #bottom-line {
   width: 630px;
+}
+.modal {
+  z-index: 10;
+  margin-top: 3%;
+  margin-left: 25%;
+  width: 53%;
+  height: 65%;
+}
+div.modal-footer>button {
+  cursor: pointer;
+  padding: 5px;
+  background: linear-gradient(to right, green, #384318);
+  color: whitesmoke;
+  border-radius: 6px;
+  border: 1px solid green;
 }
 div#end>small {
   margin-left: 30%;
