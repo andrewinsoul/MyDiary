@@ -57,76 +57,78 @@
         </a>
       </div>
     </div>
-    <div class="container main-content">
-      <div class="row">
-        <div class="col entry">
-          <h4 id="title">Memorable Experiences</h4>
-          <h4 id="time">6:44<br/>3 July, 2018</h4>
-          <p>
-            Lorem ipsum, dolor sit amet consectetur adipisicing elit. Distinctio consequuntur ipsam nihil quia sapiente cumque quo tempora perferendis sed excepturi ab quos architecto id officiis, labore iste animi tempore et!<br/>
-            Lorem ipsum dolor sit amet consectetur adipisicing elit. Velit quas voluptas hic animi, quibusdam consequatur pariatur nostrum illo natus, inventore tenetur perferendis repellendus veritatis, vel tempora non similique sit voluptate!<br/>
-            Lorem ipsum dolor, sit amet consectetur adipisicing elit. Id, doloremque sit aperiam et ut sed ducimus hic in velit aliquid unde officiis, cumque dolorum nemo veritatis perferendis porro inventore nam?<br/>
-            Lorem ipsum dolor sit amet, consectetur adipisicing elit. Eius id error sunt ea laboriosam impedit, esse temporibus expedita hic quam, eos quidem soluta enim iure exercitationem ratione molestiae, eveniet neque. Lorem ipsum dolor sit amet, consectetur adipisicing elit. Sunt voluptates eum minima autem sit ratione. Numquam repellendus nisi fugiat soluta neque eveniet et cumque nesciunt. Porro ullam eveniet minima amet. Lorem ipsum dolor sit amet consectetur, adipisicing elit. Id debitis ea, illo sed, ab tenetur fugit non vel, quaerat a nostrum cum ipsa hic! Cumque id saepe omnis error animi! Lorem ipsum dolor sit amet consectetur adipisicing elit. Repellendus quo hic consequatur iure magni quod modi, culpa vel asperiores officia porro perspiciatis natus aliquam assumenda dolor nostrum ipsum temporibus alias.
-            Lorem ipsum dolor sit amet, consectetur adipisicing elit. Eius id error sunt ea laboriosam impedit, esse temporibus expedita hic quam, eos quidem soluta enim iure exercitationem ratione molestiae, eveniet neque.<br/>
-            Lorem ipsum dolor sit amet, consectetur adipisicing elit. Eius id error sunt ea laboriosam impedit, esse temporibus expedita hic quam, eos quidem soluta enim iure exercitationem ratione molestiae, eveniet neque.<br/>
-            Lorem ipsum dolor sit amet, consectetur adipisicing elit. Eius id error sunt ea laboriosam impedit, esse temporibus expedita hic quam, eos quidem soluta enim iure exercitationem ratione molestiae, eveniet neque.<br/>
-            Lorem ipsum dolor sit amet, consectetur adipisicing elit. Eius id error sunt ea laboriosam impedit, esse temporibus expedita hic quam, eos quidem soluta enim iure exercitationem ratione molestiae, eveniet neque.<br/>
-            Lorem ipsum dolor sit amet, consectetur adipisicing elit. Eius id error sunt ea laboriosam impedit, esse temporibus expedita hic quam, eos quidem soluta enim iure exercitationem ratione molestiae, eveniet neque.<br/>
-          </p>
+    <div id="main-div">
+      <div class="container main-content">
+        <div class="row">
+          <div class="col entry">
+            <h4 id="title">Memorable Experiences</h4>
+            <h4 id="time">6:44<br/>3 July, 2018</h4>
+            <p>
+              Lorem ipsum, dolor sit amet consectetur adipisicing elit. Distinctio consequuntur ipsam nihil quia sapiente cumque quo tempora perferendis sed excepturi ab quos architecto id officiis, labore iste animi tempore et!<br/>
+              Lorem ipsum dolor sit amet consectetur adipisicing elit. Velit quas voluptas hic animi, quibusdam consequatur pariatur nostrum illo natus, inventore tenetur perferendis repellendus veritatis, vel tempora non similique sit voluptate!<br/>
+              Lorem ipsum dolor, sit amet consectetur adipisicing elit. Id, doloremque sit aperiam et ut sed ducimus hic in velit aliquid unde officiis, cumque dolorum nemo veritatis perferendis porro inventore nam?<br/>
+              Lorem ipsum dolor sit amet, consectetur adipisicing elit. Eius id error sunt ea laboriosam impedit, esse temporibus expedita hic quam, eos quidem soluta enim iure exercitationem ratione molestiae, eveniet neque. Lorem ipsum dolor sit amet, consectetur adipisicing elit. Sunt voluptates eum minima autem sit ratione. Numquam repellendus nisi fugiat soluta neque eveniet et cumque nesciunt. Porro ullam eveniet minima amet. Lorem ipsum dolor sit amet consectetur, adipisicing elit. Id debitis ea, illo sed, ab tenetur fugit non vel, quaerat a nostrum cum ipsa hic! Cumque id saepe omnis error animi! Lorem ipsum dolor sit amet consectetur adipisicing elit. Repellendus quo hic consequatur iure magni quod modi, culpa vel asperiores officia porro perspiciatis natus aliquam assumenda dolor nostrum ipsum temporibus alias.
+              Lorem ipsum dolor sit amet, consectetur adipisicing elit. Eius id error sunt ea laboriosam impedit, esse temporibus expedita hic quam, eos quidem soluta enim iure exercitationem ratione molestiae, eveniet neque.<br/>
+              Lorem ipsum dolor sit amet, consectetur adipisicing elit. Eius id error sunt ea laboriosam impedit, esse temporibus expedita hic quam, eos quidem soluta enim iure exercitationem ratione molestiae, eveniet neque.<br/>
+              Lorem ipsum dolor sit amet, consectetur adipisicing elit. Eius id error sunt ea laboriosam impedit, esse temporibus expedita hic quam, eos quidem soluta enim iure exercitationem ratione molestiae, eveniet neque.<br/>
+              Lorem ipsum dolor sit amet, consectetur adipisicing elit. Eius id error sunt ea laboriosam impedit, esse temporibus expedita hic quam, eos quidem soluta enim iure exercitationem ratione molestiae, eveniet neque.<br/>
+              Lorem ipsum dolor sit amet, consectetur adipisicing elit. Eius id error sunt ea laboriosam impedit, esse temporibus expedita hic quam, eos quidem soluta enim iure exercitationem ratione molestiae, eveniet neque.<br/>
+            </p>
+          </div>
+        </div>
+        <div class="row">
+          <div class="col" style="margin-left: 80%; margin-bottom: 15px; margin-top: 20px">
+            <button id="edit-btn">
+              <img src="./assets/images/edit-icon.png" style="width: 25px;"/>
+            </button>
+          </div>
+          <div class="col" style="margin-top: 20px">
+            <button>
+              <img src="./assets/images/delete-icon.png" style="width: 25px;"/>
+            </button>
+          </div>
+          <div id="page-modal" class="modal">
+            <div class="modal-head">
+              <h3 class="modal-title">Add Entry</h3>
+              <span id="close-btn"><button id="close">X</button></span>
+            </div>
+            <div class="body">
+              <form action = "">
+                <div class="input-container">
+                  <label>Title of Entry</label>
+                  <input type="text" class="input-entry" placeholder="Entry title"/>
+                </div>
+                <div class="input-container">
+                  <label>Description of Entry</label>
+                  <textarea class="input-entry" rows="7"  placeholder="Entry Description"></textarea>
+                </div>
+              </form>
+            </div>
+            <div class="modal-footer">
+              <button>Add Entry</button>
+            </div>
+          </div>
         </div>
       </div>
-      <div class="row">
-        <div class="col" style="margin-left: 80%; margin-bottom: 15px; margin-top: 20px">
-          <button id="edit-btn">
-            <img src="./assets/images/edit-icon.png" style="width: 25px;"/>
-          </button>
+      <footer>
+        <div class="social-handles">
+          <img class="footer-img" src="./assets/images/facebook-icon.png"/>
+          <img class="footer-img" src="./assets/images/google-icon.png"/>
+          <img class="footer-img" src="./assets/images/instagram-icon.png"/>
+          <img class="footer-img" src="./assets/images/twitter-icon.png"/>
         </div>
-        <div class="col" style="margin-top: 20px">
-          <button>
-            <img src="./assets/images/delete-icon.png" style="width: 25px;"/>
-          </button>
+        <div>
+          Having any issues,reach out to us through any of our social handles
         </div>
-        <div id="page-modal" class="modal">
-          <div class="modal-head">
-            <h3 class="modal-title">Add Entry</h3>
-            <span id="close-btn"><button id="close">X</button></span>
-          </div>
-          <div class="body">
-            <form action = "">
-              <div class="input-container">
-                <label>Title of Entry</label>
-                <input type="text" class="input-entry" placeholder="Entry title"/>
-              </div>
-              <div class="input-container">
-                <label>Description of Entry</label>
-                <textarea class="input-entry" rows="7"  placeholder="Entry Description"></textarea>
-              </div>
-            </form>
-          </div>
-          <div class="modal-footer">
-            <button>Add Entry</button>
-          </div>
+        <div class="credits">
+          &copy; MyDiary Team 2018 All rights reserved
         </div>
+      </footer>
+      <div id="end">
+        <small>MyDiary helping you keep log your experiences</small>
+        <hr id="bottom-line"/>
       </div>
     </div>
-    <footer>
-      <div class="social-handles">
-        <img class="footer-img" src="./assets/images/facebook-icon.png"/>
-        <img class="footer-img" src="./assets/images/google-icon.png"/>
-        <img class="footer-img" src="./assets/images/instagram-icon.png"/>
-        <img class="footer-img" src="./assets/images/twitter-icon.png"/>
-      </div>
-      <div>
-        Having any issues,reach out to us through any of our social handles
-      </div>
-      <div class="credits">
-        &copy; MyDiary Team 2018 All rights reserved
-      </div>
-    </footer>
-    <div id="end">
-      <small>MyDiary helping you keep log your experiences</small>
-      <hr id="bottom-line"/>
-    </div>
-    <script src="./assets/scripts/main.js"/>
+    <script src="./assets/scripts/mainII.js"/>
   </body>
 </html>
