@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no"/>
+    <title>Diary Entries</title>
+    <link rel="stylesheet" href="./assets/styles/main.css"/>
+    <link rel="stylesheet" href="./assets/styles/create-diary.css"/>
+  </head>
+  <body>
+    <div class="container">
+      <div class="row">
+        <div class="col">
+          <figure>
+            <img src="./assets/images/diary-icon.png"/>
+            <figcaption>
+              <h3>MyDiary Create Diary</h3>
+              <hr/>
+            </figcaption>
+          </figure>
+          <div class="col-2" id="main">
+            <form action="">
+              <div class="container">
+                <div class="row">
+                  <input id="input-text" type="text" class="form-group" style="margin-top: 35px; width: 70%;margin-left: 14%" placeholder="Diary Name"/>
+                </div>
+                <div class="row">
+                  <textarea id="textarea" class="form-group" rows="8" placeholder="Diary Description"></textarea>
+                </div>
+                <div class="row" id="type">
+                  <label>
+                    <input name="diary-type" value="public" type="radio" class=""/>Public
+                  </label>
+                  <label id="private">
+                    <input name="diary-type" value="private" type="radio" class=""/>Private
+                  </label>
+                </div>
+                <div class="row">
+                  <button type="submit">Create Diary</button>
+                </div>
+              </div>
+            </form>
+          </div>
+        </div>
+      </div>
+    </div>
+  </body>
+</html>
