@@ -69,23 +69,23 @@
                     Add Entry
                   </button>
                   <div id="page-modal" class="modal">
-                    <div style="background-color: #353a40;" class="head">
-                      <h3 style="display: inline-block; margin-left: 40px">Add Entry</h3>
-                      <span style="padding-left: 90px"><button style="text-align: end;" id="close">X</button></span>
+                    <div class="modal-head">
+                      <h3 class="modal-title">Add Entry</h3>
+                      <span id="close-btn"><button id="close">X</button></span>
                     </div>
                     <div class="body">
                       <form action = "">
-                        <div style="margin-top: 3%; margin-left: 4%">
-                          <label style="float: left; width: 200px; font-size: 15px;">Title of Entry</label>
-                          <input type="text" placeholder="Entry title" style="width: 40%; padding: 10px; border-radius: 5px; border: 1px solid greenyellow"/>
+                        <div class="input-container">
+                          <label>Title of Entry</label>
+                          <input type="text" class="input-entry" placeholder="Entry title"/>
                         </div>
-                        <div style="margin-top: 5%; margin-left: 4%">
-                          <label style="float: left; width: 200px; font-size: 15px">Description of Entry</label>
-                          <textarea style="width: 40%; padding: 10px; border-radius: 5px; border: 1px solid greenyellow; font-family: Arial, Helvetica, sans-serif" rows="7"  placeholder="Entry Description"></textarea>
+                        <div class="input-container">
+                          <label>Description of Entry</label>
+                          <textarea class="input-entry" rows="7"  placeholder="Entry Description"></textarea>
                         </div>
                       </form>
                     </div>
-                    <div style="background-color: #353a40; margin-top: 14%; padding: 18px; text-align: end" class="footer">
+                    <div class="modal-footer">
                       <button>Add Entry</button>
                     </div>
                   </div>

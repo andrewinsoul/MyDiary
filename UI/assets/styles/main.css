@@ -89,3 +89,19 @@ a.nav-link:hover {
   overflow: auto;
   background-color: white;
 }
+.modal-head {
+  background-color: #353a40;
+}
+.modal-title {
+  display: inline-block;
+  margin-left: 40px;
+}
+#close-btn {
+  padding-left: 10%;
+}
+.modal-footer {
+  background-color: #353a40; 
+  margin-top: 14%; 
+  padding: 18px; 
+  text-align: end;
+}

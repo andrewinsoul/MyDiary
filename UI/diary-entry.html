@@ -59,7 +59,7 @@
     </div>
     <div class="container main-content">
       <div class="row">
-        <div class="col" style="margin-left: 5%; margin-top: 10%">
+        <div class="col entry">
           <h4 id="title">Memorable Experiences</h4>
           <h4 id="time">6:44<br/>3 July, 2018</h4>
           <p>
@@ -73,6 +73,39 @@
             Lorem ipsum dolor sit amet, consectetur adipisicing elit. Eius id error sunt ea laboriosam impedit, esse temporibus expedita hic quam, eos quidem soluta enim iure exercitationem ratione molestiae, eveniet neque.<br/>
             Lorem ipsum dolor sit amet, consectetur adipisicing elit. Eius id error sunt ea laboriosam impedit, esse temporibus expedita hic quam, eos quidem soluta enim iure exercitationem ratione molestiae, eveniet neque.<br/>
           </p>
+        </div>
+      </div>
+      <div class="row">
+        <div class="col" style="margin-left: 80%; margin-bottom: 15px; margin-top: 20px">
+          <button id="edit-btn">
+            <img src="./assets/images/edit-icon.png" style="width: 25px;"/>
+          </button>
+        </div>
+        <div class="col" style="margin-top: 20px">
+          <button>
+            <img src="./assets/images/delete-icon.png" style="width: 25px;"/>
+          </button>
+        </div>
+        <div id="page-modal" class="modal">
+          <div class="modal-head">
+            <h3 class="modal-title">Add Entry</h3>
+            <span id="close-btn"><button id="close">X</button></span>
+          </div>
+          <div class="body">
+            <form action = "">
+              <div class="input-container">
+                <label>Title of Entry</label>
+                <input type="text" class="input-entry" placeholder="Entry title"/>
+              </div>
+              <div class="input-container">
+                <label>Description of Entry</label>
+                <textarea class="input-entry" rows="7"  placeholder="Entry Description"></textarea>
+              </div>
+            </form>
+          </div>
+          <div class="modal-footer">
+            <button>Add Entry</button>
+          </div>
         </div>
       </div>
     </div>
@@ -94,5 +127,6 @@
       <small>MyDiary helping you keep log your experiences</small>
       <hr id="bottom-line"/>
     </div>
+    <script src="./assets/scripts/main.js"/>
   </body>
 </html>

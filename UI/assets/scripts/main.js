@@ -5,8 +5,6 @@ const closeBtn = this.document.getElementById('close');
 btn.onclick = function () {
   modal.style.display = "block";
   mainDiv.style.backgroundColor = "rgba(210, 200, 200, 0.6)";
-  // window.sh
-  // mainDiv.style.background = "linear-gradient(to right, #266189, rgba(210, 200, 200, 0.6))";
 }
 function openLink(theUrl) {
   document.location.href = theUrl;
