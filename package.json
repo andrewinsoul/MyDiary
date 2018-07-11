@@ -1,0 +1,24 @@
+{
+  "name": "mydiary",
+  "version": "1.0.0",
+  "description": "A web application that allows a user pen down thier thoughts and memorable experiences",
+  "main": "index.js",
+  "scripts": {
+    "test": "mocha"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/andrewinsoul/MyDiary.git"
+  },
+  "keywords": [
+    "API",
+    "web",
+    "application"
+  ],
+  "author": "Andrew Okoye",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/andrewinsoul/MyDiary/issues"
+  },
+  "homepage": "https://github.com/andrewinsoul/MyDiary#readme"
+}
