@@ -6,142 +6,165 @@
     <title>Diary Entries</title>
     <link rel="stylesheet" href="./assets/styles/main.css"/>
     <link rel="stylesheet" href="./assets/styles/diary-entries.css"/>
-    <script src="./assets/scripts/main.js"></script>
   </head>
   <body>
-    <div id="nav-div">
-      <nav>
-        <div class="container">
-          <img class="nav-brand" src="./assets/images/diary-icon.png"/>
-          <h3 class="brand">MyDiary</h3>
-          <div class="nav-links">
-            <ul>
-              <li>
-                <a href="login.html" class="nav-link">Create Diary</a>
-              </li>
-              <li>
-                <a href="signup.html" class="nav-link">Notifications</a>
-              </li>
-            </ul>
+    <div id="main-div">
+      <div id="nav-div">
+        <nav>
+          <div class="container">
+            <img class="nav-brand" src="./assets/images/diary-icon.png"/>
+            <h3 class="brand">MyDiary</h3>
+            <div class="nav-links">
+              <ul>
+                <li>
+                  <a href="login.html" class="nav-link">Create Diary</a>
+                </li>
+                <li>
+                  <a href="signup.html" class="nav-link">Notifications</a>
+                </li>
+              </ul>
+            </div>
+            <hr/>
           </div>
-          <hr/>
+        </nav>
+      </div>
+      <div class="side-nav">
+        <div id="side-nav-head">
+          <img class="nav-brand" src="./assets/images/diary-icon.png"/>
+          MyDiary<br/>
+          <small>signed in as: username</small>
         </div>
-      </nav>
-    </div>
-    <div class="side-nav">
-      <div id="side-nav-head">
-        <img class="nav-brand" src="./assets/images/diary-icon.png"/>
-        MyDiary<br/>
-        <small>signed in as: username</small>
+        <div class="side-nav-links">
+          <a id="active" href="dashboard.html">
+            <img class="img-link" src="./assets/images/dashboard-icon.png"/>
+            Dashboard
+          </a>
+          <a href="#">
+            <img class="img-link" src="./assets/images/view-pub-diary.png"/>
+            Public Diaries
+          </a>
+          <a href="#">
+            <img class="img-link" src="./assets/images/private-diary.png"/>
+            My Diaries
+          </a>
+          <a href="#">
+            <img class="img-link" src="./assets/images/profile-settings.png"/>
+            Profile
+          </a>
+          <a href="index.html" id="logout">
+            <img class="img-link" src="./assets/images/logout-icon.jpg"/>
+            log out
+          </a>
+        </div>
       </div>
-      <div class="side-nav-links">
-        <a id="active" href="dashboard.html">
-          <img class="img-link" src="./assets/images/dashboard-icon.png"/>
-          Dashboard
-        </a>
-        <a href="#">
-          <img class="img-link" src="./assets/images/view-pub-diary.png"/>
-          Public Diaries
-        </a>
-        <a href="#">
-          <img class="img-link" src="./assets/images/private-diary.png"/>
-          My Diaries
-        </a>
-        <a href="#">
-          <img class="img-link" src="./assets/images/profile-settings.png"/>
-          Profile
-        </a>
-        <a href="index.html" id="logout">
-          <img class="img-link" src="./assets/images/logout-icon.jpg"/>
-          log out
-        </a>
-      </div>
-    </div>
-    <div class="container main-content">
-      <div class="row">
-        <div class="col table-div-container">
-          <div class="row table-main-row">
-            <div class="col">
-              <div class="table-div">
-                <h3 id="section-title">Name of Diary Entries</h3>
-                <button>
-                  <img src="./assets/images/add icon.png"/>
-                  Add Entry
-                </button>
-                <table width="800px;" border="0" cellpadding="3" cellspacing="0">
-                  <tr onclick="openLink('diary-entry.html');">
-                    <td class="title"><h4>Memorable Journey</h4></td>
-                    <td class="entry">
-                      Lorem ipsum dolor sit amet consectetur adipisicing elit. Ab, ea facere est minima quas quod possimus consectetur officia voluptatibus accusamus iure, aperiam nisi natus fugiat tempora sapiente optio necessitatibus nulla?
-                    </td>
-                    <td class="time"><h4>3 July</h4></td>
-                  </tr>
-                  <tr onclick="openLink('diary-entry.html');">
-                    <td class="title"><h4>Memorable Journey</h4></td>
-                    <td class="entry">
-                      Lorem ipsum dolor sit amet consectetur adipisicing elit. Ab, ea facere est minima quas quod possimus consectetur officia voluptatibus accusamus iure, aperiam nisi natus fugiat tempora sapiente optio necessitatibus nulla?
-                    </td>
-                    <td class="time"><h4>3 July</h4></td>
-                  </tr>
-                  <tr onclick="openLink('diary-entry.html');">
-                    <td class="title"><h4>Memorable Journey</h4></td>
-                    <td class="entry">
-                      Lorem ipsum dolor sit amet consectetur adipisicing elit. Ab, ea facere est minima quas quod possimus consectetur officia voluptatibus accusamus iure, aperiam nisi natus fugiat tempora sapiente optio necessitatibus nulla?
-                    </td>
-                    <td class="time"><h4>3 July</h4></td>
-                  </tr>
-                  <tr onclick="openLink('diary-entry.html');">
-                    <td class="title"><h4>Memorable Journey</h4></td>
-                    <td class="entry">
-                      Lorem ipsum dolor sit amet consectetur adipisicing elit. Ab, ea facere est minima quas quod possimus consectetur officia voluptatibus accusamus iure, aperiam nisi natus fugiat tempora sapiente optio necessitatibus nulla?
-                    </td>
-                    <td class="time"><h4>3 July</h4></td>
-                  </tr>
-                  <tr onclick="openLink('diary-entry.html');">
-                    <td class="title"><h4>Memorable Journey</h4></td>
-                    <td class="entry">
-                      Lorem ipsum dolor sit amet consectetur adipisicing elit. Ab, ea facere est minima quas quod possimus consectetur officia voluptatibus accusamus iure, aperiam nisi natus fugiat tempora sapiente optio necessitatibus nulla?
-                    </td>
-                    <td class="time"><h4>3 July</h4></td>
-                  </tr>
-                  <tr onclick="openLink('diary-entry.html');">
-                    <td class="title"><h4>Memorable Journey</h4></td>
-                    <td class="entry">
-                      Lorem ipsum dolor sit amet consectetur adipisicing elit. Ab, ea facere est minima quas quod possimus consectetur officia voluptatibus accusamus iure, aperiam nisi natus fugiat tempora sapiente optio necessitatibus nulla?
-                    </td>
-                    <td class="time"><h4>3 July</h4></td>
-                  </tr>
-                  <tr onclick="openLink('diary-entry.html');">
-                    <td class="title"><h4>Memorable Journey</h4></td>
-                    <td class="entry">
-                      Lorem ipsum dolor sit amet consectetur adipisicing elit. Ab, ea facere est minima quas quod possimus consectetur officia voluptatibus accusamus iure, aperiam nisi natus fugiat tempora sapiente optio necessitatibus nulla?
-                    </td>
-                    <td class="time"><h4>3 July</h4></td>
-                  </tr>
-                </table>
+      <div class="container main-content">
+        <div class="row">
+          <div class="col table-div-container">
+            <div class="row table-main-row">
+              <div class="col">
+                <div class="table-div">
+                  <h3 id="section-title">Name of Diary Entries</h3>
+                  <button id="add-button">
+                    <img src="./assets/images/add icon.png"/>
+                    Add Entry
+                  </button>
+                  <div id="page-modal" class="modal">
+                    <div style="background-color: #353a40;" class="head">
+                      <h3 style="display: inline-block; margin-left: 40px">Add Entry</h3>
+                      <span style="padding-left: 90px"><button style="text-align: end;" id="close">X</button></span>
+                    </div>
+                    <div class="body">
+                      <form action = "">
+                        <div style="margin-top: 3%; margin-left: 4%">
+                          <label style="float: left; width: 200px; font-size: 15px;">Title of Entry</label>
+                          <input type="text" placeholder="Entry title" style="width: 40%; padding: 10px; border-radius: 5px; border: 1px solid greenyellow"/>
+                        </div>
+                        <div style="margin-top: 5%; margin-left: 4%">
+                          <label style="float: left; width: 200px; font-size: 15px">Description of Entry</label>
+                          <textarea style="width: 40%; padding: 10px; border-radius: 5px; border: 1px solid greenyellow; font-family: Arial, Helvetica, sans-serif" rows="7"  placeholder="Entry Description"></textarea>
+                        </div>
+                      </form>
+                    </div>
+                    <div style="background-color: #353a40; margin-top: 14%; padding: 18px; text-align: end" class="footer">
+                      <button>Add Entry</button>
+                    </div>
+                  </div>
+                  <table width="800px;" border="0" cellpadding="3" cellspacing="0">
+                    <tr onclick="openLink('diary-entry.html');">
+                      <td class="title"><h4>Memorable Journey</h4></td>
+                      <td class="entry">
+                        Lorem ipsum dolor sit amet consectetur adipisicing elit. Ab, ea facere est minima quas quod possimus consectetur officia voluptatibus accusamus iure, aperiam nisi natus fugiat tempora sapiente optio necessitatibus nulla?
+                      </td>
+                      <td class="time"><h4>3 July</h4></td>
+                    </tr>
+                    <tr onclick="openLink('diary-entry.html');">
+                      <td class="title"><h4>Memorable Journey</h4></td>
+                      <td class="entry">
+                        Lorem ipsum dolor sit amet consectetur adipisicing elit. Ab, ea facere est minima quas quod possimus consectetur officia voluptatibus accusamus iure, aperiam nisi natus fugiat tempora sapiente optio necessitatibus nulla?
+                      </td>
+                      <td class="time"><h4>3 July</h4></td>
+                    </tr>
+                    <tr onclick="openLink('diary-entry.html');">
+                      <td class="title"><h4>Memorable Journey</h4></td>
+                      <td class="entry">
+                        Lorem ipsum dolor sit amet consectetur adipisicing elit. Ab, ea facere est minima quas quod possimus consectetur officia voluptatibus accusamus iure, aperiam nisi natus fugiat tempora sapiente optio necessitatibus nulla?
+                      </td>
+                      <td class="time"><h4>3 July</h4></td>
+                    </tr>
+                    <tr onclick="openLink('diary-entry.html');">
+                      <td class="title"><h4>Memorable Journey</h4></td>
+                      <td class="entry">
+                        Lorem ipsum dolor sit amet consectetur adipisicing elit. Ab, ea facere est minima quas quod possimus consectetur officia voluptatibus accusamus iure, aperiam nisi natus fugiat tempora sapiente optio necessitatibus nulla?
+                      </td>
+                      <td class="time"><h4>3 July</h4></td>
+                    </tr>
+                    <tr onclick="openLink('diary-entry.html');">
+                      <td class="title"><h4>Memorable Journey</h4></td>
+                      <td class="entry">
+                        Lorem ipsum dolor sit amet consectetur adipisicing elit. Ab, ea facere est minima quas quod possimus consectetur officia voluptatibus accusamus iure, aperiam nisi natus fugiat tempora sapiente optio necessitatibus nulla?
+                      </td>
+                      <td class="time"><h4>3 July</h4></td>
+                    </tr>
+                    <tr onclick="openLink('diary-entry.html');">
+                      <td class="title"><h4>Memorable Journey</h4></td>
+                      <td class="entry">
+                        Lorem ipsum dolor sit amet consectetur adipisicing elit. Ab, ea facere est minima quas quod possimus consectetur officia voluptatibus accusamus iure, aperiam nisi natus fugiat tempora sapiente optio necessitatibus nulla?
+                      </td>
+                      <td class="time"><h4>3 July</h4></td>
+                    </tr>
+                    <tr onclick="openLink('diary-entry.html');">
+                      <td class="title"><h4>Memorable Journey</h4></td>
+                      <td class="entry">
+                        Lorem ipsum dolor sit amet consectetur adipisicing elit. Ab, ea facere est minima quas quod possimus consectetur officia voluptatibus accusamus iure, aperiam nisi natus fugiat tempora sapiente optio necessitatibus nulla?
+                      </td>
+                      <td class="time"><h4>3 July</h4></td>
+                    </tr>
+                  </table>
+                </div>
               </div>
             </div>
           </div>
         </div>
       </div>
+      <footer>
+        <div class="social-handles">
+          <img class="footer-img" src="./assets/images/facebook-icon.png"/>
+          <img class="footer-img" src="./assets/images/google-icon.png"/>
+          <img class="footer-img" src="./assets/images/instagram-icon.png"/>
+          <img class="footer-img" src="./assets/images/twitter-icon.png"/>
+        </div>
+        <div>
+          Having any issues,reach out to us through any of our social handles
+        </div>
+        <div class="credits">
+          &copy; MyDiary Team 2018 All rights reserved
+        </div>
+      </footer>
+      <div id="end">
+        <small>MyDiary helping you keep log your experiences</small>
+        <hr id="bottom-line"/>
+      </div>
     </div>
-    <footer>
-      <div class="social-handles">
-        <img class="footer-img" src="./assets/images/facebook-icon.png"/>
-        <img class="footer-img" src="./assets/images/google-icon.png"/>
-        <img class="footer-img" src="./assets/images/instagram-icon.png"/>
-        <img class="footer-img" src="./assets/images/twitter-icon.png"/>
-      </div>
-      <div>
-        Having any issues,reach out to us through any of our social handles
-      </div>
-      <div class="credits">
-        &copy; MyDiary Team 2018 All rights reserved
-      </div>
-    </footer>
-    <div id="end">
-      <small>MyDiary helping you keep log your experiences</small>
-      <hr id="bottom-line"/>
-    </div>
+    <script src="./assets/scripts/main.js"></script>
   </body>
 </html>

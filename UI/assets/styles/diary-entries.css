@@ -38,6 +38,18 @@ div.side-nav {
   text-align: start; 
   margin-left: 3%;
 }
+button {
+  cursor: pointer;
+  padding: 5px;
+  background: linear-gradient(to right, green, #384318);
+  color: whitesmoke;
+  border-radius: 6px;
+  border: 1px solid green;
+}
+button#close {
+  background: linear-gradient(to right, red, red);
+  border: 1px solid red;
+}
 div.side-nav-links {
   margin-top: 25%;
   font-size: 16px;
@@ -97,16 +109,25 @@ div#end>small {
   margin-top: 5%;
 }
 .table-div {
-  position: fixed; 
+  position: absolute  ; 
   background-color: white; 
-  overflow-y: scroll; 
-  bottom: 200px; 
-  height: 650px
+  overflow: auto; 
+  bottom: 0;
+  /* margin-bottom: 90px; */
+  top: 10px; 
+  height: 400px
+}
+.modal {
+  z-index: 10;
+  margin-top: 3%;
+  margin-left: 25%;
+  width: 53%;
+  height: 65%;
 }
 #section-title {
   color: black; 
-  margin-top: 35%; 
-  margin-bottom: 1%;
+  margin-top: 3%; 
+  margin-bottom: 1px;
   display: inline-block;
 }
 button {
@@ -136,7 +157,7 @@ table {
   text-align: end;
 }
 footer {
-  margin-top: 30%;
+  margin-top: 450px;
 }
 .time {
   width: 150px;
