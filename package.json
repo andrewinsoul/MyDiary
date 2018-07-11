@@ -20,5 +20,12 @@
   "bugs": {
     "url": "https://github.com/andrewinsoul/MyDiary/issues"
   },
-  "homepage": "https://github.com/andrewinsoul/MyDiary#readme"
+  "homepage": "https://github.com/andrewinsoul/MyDiary#readme",
+  "dependencies": {
+    "babel-cli": "^6.26.0",
+    "babel-preset-env": "^1.7.0",
+    "body-parser": "^1.18.3",
+    "express": "^4.16.3",
+    "morgan": "^1.9.0"
+  }
 }
