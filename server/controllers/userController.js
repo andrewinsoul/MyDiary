@@ -12,7 +12,7 @@ export default class userHandler {
     };
     user.push(userInfo);
     user.splice(user.length - 2, 1);
-    
+    // i include the line above because I get a null value before the last item of an array
     return res.status(200).send({ msg: userInfo });
   }
 }
