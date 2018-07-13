@@ -22,8 +22,7 @@ export default function validateUserResource(req, res, next) {
       req.checkBody('type', 'type is required').notEmpty();
     }
     else if (req.url === '/entries') {
-      req.checkBody('title', 'title is required').notEmpty();
-      req.checkBody('entryText', 'text of entry is required').notEmpty();
+      req.checkBody('entry', 'text of entry is required').notEmpty();
       req.checkBody('diaryId', 'diaryId is required').notEmpty();
       req.checkBody('diaryId', 'diaryId should be an integer').isInt();
     }
