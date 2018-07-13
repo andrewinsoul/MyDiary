@@ -7,6 +7,7 @@ const entryRouter = express.Router();
 
 entryRouter
   .post('/entries', [validateUserInput, appMiddleware.checkDiaryIndex, entryHandler.createEntry])
-  .get('/entry/:id', entryHandler.getEntryById);
+  .get('/entry/:id', entryHandler.getEntryById)
+  .get('/entries');
 
 export default entryRouter;
