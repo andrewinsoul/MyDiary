@@ -5,7 +5,7 @@ export default class diaryHandler {
     const newDiary = {
       id: diary.length += 1,
       name: req.body.name,
-      description: req.body.desc,
+      desc: req.body.desc,
       userId: req.body.userId,
       type: req.body.type,
     };
