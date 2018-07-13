@@ -25,20 +25,17 @@ describe('MyDiary dummy-data backend tests for entry model', () => {
     });
   });
 
-  // describe('tests for method that deletes a diary', () => {
-  //   it('should return code 204 with message diary deleted', (done) => {
-  //     chai.request(app)
-  //       .delete('/api/v1/diaries/4')
-  //       .end((err, res) => {
-  //         expect(res).to.have.status(200);
-  //         expect(res.body).to.have.property('msg');
-  //         expect(res.body.msg).to.eql('diary successfully deleted');
-  //         done();
-  //       });
-  //   });
-
-  //   it('should return the number of entries in diary model as 3', () => {
-  //     expect(diaries.length).to.eql(3);
-  //   });
-  // });
+  describe('tests for method that gets a single entry', () => {
+    it('should return code 200 with requested resource ', (done) => {
+      chai.request(app)
+        .get('/api/v1/entry/1')
+        .end((err, res) => {
+          expect(res).to.have.status(200);
+          expect(res.body).to.have.property('msg');
+          console.log(res.body.msg);
+          expect(res.body.msg.entry).to.eql('My pre-andela days made me realize that you must finish a project before starting');
+          done();
+        });
+    });
+  });
 });
