@@ -28,7 +28,7 @@ export default function validateUserResource(req, res, next) {
     }
   }
   else if (req.method === 'PUT') {
-    req.checkBody('entryText', 'text of entry is required').notEmpty();
+    req.checkBody('entry', 'text of entry is required').notEmpty();
   }
   const error = req.validationErrors();
   if (error) return res.status(400).send({ message: 'validation failed', failures: error });
