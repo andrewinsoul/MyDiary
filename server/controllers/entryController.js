@@ -23,4 +23,10 @@ export default class entryHandler {
   static getAllEntries(req, res) {
     return res.status(200).send({ msg: entries });
   }
+
+  static modifyEntry(req, res) {
+    const index = entries.findIndex(entry => entry.id === Number(req.params.id));
+    entries[index].profile = req.body.profile;
+    return res.status(200).send({ msg: 'entry successfully modified' });
+  }
 }
