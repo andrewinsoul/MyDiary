@@ -20,6 +20,6 @@ export default class diaryHandler {
       return res.status(404).send({ error: 'Diary not found' });
     }
     diary.splice(diaryIndex, 1);
-    return res.status(204).send({ msg: 'diary successfully deleted' });
+    return res.status(200).send({ msg: 'diary successfully deleted' });
   }
 }
