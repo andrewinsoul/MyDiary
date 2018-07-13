@@ -1,7 +1,7 @@
 export default function validateUserResource(req, res, next) {
   if (req.method === 'POST') {
     if (req.url === '/users') {
-      req.checkBody('name', 'name isi required').notEmpty();
+      req.checkBody('name', 'name is required').notEmpty();
       req.checkBody('email', 'email is required').notEmpty();
       req.checkBody('email', 'email should be valid').isEmail();
       req.checkBody('username', 'username is required').notEmpty();
