@@ -5,6 +5,8 @@ import appMiddleware from '../middlewares/helperClass';
 
 const entryRouter = express.Router();
 
-entryRouter.post('/entries', [validateUserInput, appMiddleware.checkDiaryIndex, entryHandler.createEntry]);
+entryRouter
+  .post('/entries', [validateUserInput, appMiddleware.checkDiaryIndex, entryHandler.createEntry])
+  .get('/entry/:id', entryHandler.getEntryById);
 
 export default entryRouter;
