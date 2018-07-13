@@ -11,4 +11,12 @@ export default class appMiddleware {
     if (username) return res.status(409).send({ error: 'username already taken, choose another one' });
     return next();
   }
+
+  static checkUserIndex(req, res, next) {
+    const index = users.findIndex(user => user.id === Number(req.body.userId));
+    if (index === -1) {
+      return res.status(404).send({ error: 'User not found' });
+    }
+    return next();
+  }
 }
