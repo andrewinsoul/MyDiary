@@ -25,7 +25,7 @@ export default class entryHandler {
 
   static modifyEntry(req, res) {
     const index = entries.findIndex(entry => entry.id === Number(req.params.id));
-    entries[index].entry = req.body.entry;
+    entries[index].entry = req.body.entryText;
     return res.status(200).send({ msg: 'entry successfully modified' });
   }
 }
