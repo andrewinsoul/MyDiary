@@ -19,4 +19,11 @@ export default class appMiddleware {
     }
     return next();
   }
+
+  static addDiaryMiddleware(req, res, next) {
+    if (req.body.type.toLowerCase() === 'private' || req.body.type.toLowerCase() === 'public') {
+      return next();
+    }
+    return res.status(400).send({ error: 'type must be either private or public' });
+  }
 }
