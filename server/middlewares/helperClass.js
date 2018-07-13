@@ -1,5 +1,6 @@
 import users from '../models/user';
 import diaries from '../models/diary';
+import entries from '../models/entry';
 
 export default class appMiddleware {
   static addUserMiddleware(req, res, next) {
@@ -31,6 +32,12 @@ export default class appMiddleware {
   static checkDiaryIndex(req, res, next) {
     const index = diaries.findIndex(diary => diary.id === Number(req.body.diaryId));
     if (index === -1) return res.status(404).send({ error: 'diary not found' });
+    return next();
+  }
+
+  static checkEntryIndex(req, res, next) {
+    const index = entries.findIndex(entry => entry.id === Number(req.params.id));
+    if (index === -1) return res.status(404).send({ error: 'entry not found' });
     return next();
   }
 }
