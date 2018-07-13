@@ -6,8 +6,7 @@ export default class userHandler {
       id: user.length += 1,
       name: req.body.name,
       username: req.body.username,
-      password1: req.body.password1,
-      password2: req.body.password2,
+      password: req.body.password1,
       email: req.body.email,
     };
     user.push(userInfo);
