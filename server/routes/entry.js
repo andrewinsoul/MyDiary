@@ -9,6 +9,6 @@ entryRouter
   .post('/entries', [validateUserInput, appMiddleware.checkDiaryIndex, entryHandler.createEntry])
   .get('/entry/:id', entryHandler.getEntryById)
   .get('/entries', entryHandler.getAllEntries)
-  .put('/entry/:id', entryHandler.modifyEntry);
+  .put('/entry/:id', [validateUserInput, appMiddleware.checkEntryIndex, entryHandler.modifyEntry]);
 
 export default entryRouter;
