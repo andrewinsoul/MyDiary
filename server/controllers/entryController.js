@@ -10,7 +10,7 @@ export default class entryHandler {
     };
     entries.push(newEntry);
     entries.splice(entries.length - 2, 1);
-    return res.status(200).send({ msg: newEntry });
+    return res.status(201).send({ msg: newEntry });
   }
 
   static getEntryById(req, res) {
