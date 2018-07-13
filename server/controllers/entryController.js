@@ -4,8 +4,7 @@ export default class entryHandler {
   static createEntry(req, res) {
     const newEntry = {
       id: entries.length += 1,
-      title: req.body.title,
-      description: req.body.desc,
+      entry: req.body.entry,
       diaryId: req.body.diaryId,
       time: new Date(),
     };
