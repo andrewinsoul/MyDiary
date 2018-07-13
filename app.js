@@ -18,3 +18,4 @@ app.use('/api/v1', entryRouter);
 const port = parseInt(process.env.PORT, 10) || 8000;
 
 app.listen(port, () => console.log(`server live on port ${port}`));
+export default app;
