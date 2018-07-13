@@ -17,7 +17,6 @@ describe('MyDiary dummy-data backend tests for entry model', () => {
         .post('/api/v1/entries')
         .send(newEntry)
         .end((err, res) => {
-          console.log(res.body);
           expect(res).to.have.status(201);
           expect(res.body).to.have.property('msg');
           expect(res.body.msg.id).to.eql(4);
