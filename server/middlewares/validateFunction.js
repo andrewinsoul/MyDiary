@@ -21,6 +21,12 @@ export default function validateUserResource(req, res, next) {
       req.checkBody('desc', 'the description field must not be greater than 150 characters').isLength({ max: 150 });
       req.checkBody('type', 'type is required').notEmpty();
     }
+    else if (req.url === '/entries') {
+      req.checkBody('title', 'title is required').notEmpty();
+      req.checkBody('entryText', 'text of entry is required').notEmpty();
+      req.checkBody('diaryId', 'diaryId is required').notEmpty();
+      req.checkBody('diaryId', 'diaryId should be an integer').isInt();
+    }
   }
   const error = req.validationErrors();
   if (error) return res.status(400).send({ message: 'validation failed', failures: error });
