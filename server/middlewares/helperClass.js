@@ -1,4 +1,5 @@
 import users from '../models/user';
+import diaries from '../models/diary';
 
 export default class appMiddleware {
   static addUserMiddleware(req, res, next) {
@@ -25,5 +26,11 @@ export default class appMiddleware {
       return next();
     }
     return res.status(400).send({ error: 'type must be either private or public' });
+  }
+
+  static checkDiaryIndex(req, res, next) {
+    const index = diaries.findIndex(diary => diary.id === Number(req.body.diaryId));
+    if (index === -1) return res.status(404).send({ error: 'diary not found' });
+    return next();
   }
 }
