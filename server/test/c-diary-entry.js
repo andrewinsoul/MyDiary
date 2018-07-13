@@ -37,4 +37,19 @@ describe('MyDiary dummy-data backend tests for entry model', () => {
         });
     });
   });
+
+  describe('tests for method that gets all entries', () => {
+    it('should return code 200 with requested resource ', (done) => {
+      chai.request(app)
+        .get('/api/v1/entries')
+        .end((err, res) => {
+          expect(res).to.have.status(200);
+          expect(res.body).to.have.property('msg');
+          expect(res.body.msg.length).to.eql(4);
+          console.log(res.body.msg);
+          // expect(res.body.msg.entry).to.eql('My pre-andela days made me realize that you must finish a project before starting');
+          done();
+        });
+    });
+  });
 });
