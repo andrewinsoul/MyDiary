@@ -7,9 +7,10 @@ export default class entryHandler {
       title: req.body.title,
       description: req.body.desc,
       diaryId: req.body.diaryId,
+      time: new Date(),
     };
     entry.push(newEntry);
     entry.splice(entry.length - 2, 1);
-    return res.status(200).send({ msg: 'entry successfully added to diary' });
+    return res.status(200).send({ msg: newEntry });
   }
 }
