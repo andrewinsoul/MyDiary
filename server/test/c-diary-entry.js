@@ -46,8 +46,6 @@ describe('MyDiary dummy-data backend tests for entry model', () => {
           expect(res).to.have.status(200);
           expect(res.body).to.have.property('msg');
           expect(res.body.msg.length).to.eql(4);
-          console.log(res.body.msg);
-          // expect(res.body.msg.entry).to.eql('My pre-andela days made me realize that you must finish a project before starting');
           done();
         });
     });
