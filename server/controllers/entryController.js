@@ -19,4 +19,8 @@ export default class entryHandler {
     if (index === -1) return res.status(404).send({ error: 'entry not found' });
     return res.status(200).send({ msg: entries[index] });
   }
+
+  static getAllEntries(req, res) {
+    return res.status(200).send({ msg: entries });
+  }
 }
