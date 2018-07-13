@@ -28,6 +28,9 @@ export default function validateUserResource(req, res, next) {
       req.checkBody('diaryId', 'diaryId should be an integer').isInt();
     }
   }
+  else if (req.method === 'PUT') {
+    req.checkBody('entryText', 'text of entry is required').notEmpty();
+  }
   const error = req.validationErrors();
   if (error) return res.status(400).send({ message: 'validation failed', failures: error });
   return next();
