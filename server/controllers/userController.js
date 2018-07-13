@@ -17,13 +17,9 @@ export default class userHandler {
   }
 
   static loginUser(req, res) {
-    // const email = user.find(userInfo => userInfo.email === req.body.email);
-    // const password = user.find(userInfo => userInfo.password === req.body.password);
     const userIndex = user.findIndex(
-      userInfo => userInfo.email === req.body.email && userInfo.password === req.body.password,
+      info => info.email === req.body.email && info.password === req.body.password,
     );
-    // if (!email) return res.status(401).send({ error: 'the email you entered is incorrect ' });
-    // if (!password) return res.status(401).send({ error: 'the password you entered is incorrect ' });
     if (userIndex === -1) return res.status(401).send({ error: 'incorrect credentials supplied' });
     return res.status(200).send({ msg: `signed in as ${user[userIndex].username}` });
   }
