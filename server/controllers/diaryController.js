@@ -11,7 +11,7 @@ export default class diaryHandler {
     };
     diary.push(newDiary);
     diary.splice(diary.length - 2, 1);
-    return res.status(200).send({ msg: newDiary });
+    return res.status(201).send({ msg: newDiary });
   }
 
   static deleteDiary(req, res) {
