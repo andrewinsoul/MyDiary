@@ -5,5 +5,6 @@ module.exports = {
         "linebreak-style": 0,
         "brace-style": 0,
         "import/no-extraneous-dependencies": 0,
+        "no-undef": 0,
     }
 };
