@@ -75,7 +75,7 @@ describe('MyDiary dummy-data backend tests for middleware validating user input'
 
     it('should return code 400 with error message', (done) => {
       chai.request(app)
-        .put('/api/v1/entries')
+        .put('/api/v1/entry/1')
         .send({ wrongParameter: 'entry' })
         .end((err, res) => {
           expect(res).to.have.status(400);
