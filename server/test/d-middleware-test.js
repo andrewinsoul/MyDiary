@@ -171,6 +171,16 @@ describe('MyDiary dummy-data backend tests for middlewares validating user input
           done();
         })
     });
-    
+    it('should return status code 404 with error message', (done) => {
+      chai.request(app)
+        .put('/api/v1/entry/90')
+        .send({ entry: 'update entry' })
+        .end((err, res) => {
+          expect(res).to.have.status(404);
+          expect(res.body).to.have.property('error');
+          expect(res.body.error).to.eql('entry not found');
+          done();
+        })
+    });
   });
 });
