@@ -74,7 +74,7 @@ describe('MyDiary dummy-data backend tests for middleware validating user input'
     });
   });
 
-  describe('tests for method that gets a single entry', () => {
+  describe('tests for middleware that gets a single entry', () => {
     it('should return code 200 with requested resource ', (done) => {
       chai.request(app)
         .get('/api/v1/entry/1')
@@ -87,7 +87,7 @@ describe('MyDiary dummy-data backend tests for middleware validating user input'
     });
   });
 
-  describe('tests for method that gets all entries', () => {
+  describe('tests for middleware that gets all entries', () => {
     it('should return code 200 with requested resource ', (done) => {
       chai.request(app)
         .get('/api/v1/entries')
