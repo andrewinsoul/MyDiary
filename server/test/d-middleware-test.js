@@ -5,7 +5,7 @@ import app from '../../app';
 chai.use(chaiHttp);
 const { expect } = chai;
 
-describe('MyDiary dummy-data backend tests for middleware validating user input', () => {
+describe('MyDiary dummy-data backend tests for middlewares validating user input', () => {
   describe('test for middleware that validates user input for all defined routes', () => {
     const newUser = {
       email: 'andrewinsoul@gmail.com',
@@ -22,70 +22,6 @@ describe('MyDiary dummy-data backend tests for middleware validating user input'
     const newEntry = {
       entry: 'text of entry',
     };
-    it('should return code 400 with error message', (done) => {
-      chai.request(app)
-        .post('/api/v1/users')
-        .send(newUser)
-        .end((err, res) => {
-          expect(res).to.have.status(400);
-          expect(res.body).to.have.property('failures');
-
-          expect(res.body.message).to.eql('validation failed');
-          done();
-        });
-    });
-
-    it('should return code 400 with error message', (done) => {
-      chai.request(app)
-        .post('/api/v1/login')
-        .send(oldUser)
-        .end((err, res) => {
-          expect(res).to.have.status(400);
-          expect(res.body).to.have.property('failures');
-
-          expect(res.body.message).to.eql('validation failed');
-          done();
-        });
-    });
-
-    it('should return code 400 with error message', (done) => {
-      chai.request(app)
-        .post('/api/v1/diaries')
-        .send(newDiary)
-        .end((err, res) => {
-          expect(res).to.have.status(400);
-          expect(res.body).to.have.property('failures');
-          expect(res.body.message).to.eql('validation failed');
-          done();
-        });
-    });
-
-    it('should return code 400 with error message', (done) => {
-      chai.request(app)
-        .post('/api/v1/entries')
-        .send(newEntry)
-        .end((err, res) => {
-          expect(res).to.have.status(400);
-          expect(res.body).to.have.property('failures');
-          expect(res.body.message).to.eql('validation failed');
-          done();
-        });
-    });
-
-    it('should return code 400 with error message', (done) => {
-      chai.request(app)
-        .put('/api/v1/entry/1')
-        .send({ wrongParameter: 'entry' })
-        .end((err, res) => {
-          expect(res).to.have.status(400);
-          expect(res.body).to.have.property('failures');
-          expect(res.body.message).to.eql('validation failed');
-          done();
-        });
-    });
-  });
-
-  describe('test for middleware that checks for certain conditions', () => {
     const userBadPassword = {
       email: 'azukaokoye99@yahoo.com',
       username: 'az',
@@ -100,7 +36,6 @@ describe('MyDiary dummy-data backend tests for middleware validating user input'
       password1: 'qwertyuiop',
       password2: 'qwertyuiop',
     };
-
     const userBadUsername = {
       email: 'azukaokoye99@gmail.com',
       username: 'slava',
@@ -108,6 +43,79 @@ describe('MyDiary dummy-data backend tests for middleware validating user input'
       password1: 'qwertyuiop',
       password2: 'qwertyuiop',
     };
+    const userNotFound = {
+      name: 'Diary Name',
+      type: 'private',
+      desc: 'Diary description',
+      userId: 90,
+    };
+    const wrongType = {
+      name: 'Diary Name',
+      type: 'wrongTYpe',
+      desc: 'Diary description',
+      userId: 2,
+    };
+    const diaryNotFound = {
+      entry: 'entry',
+      diaryId: 90,
+    }
+    it('should return code 400 with error message', (done) => {
+      chai.request(app)
+        .post('/api/v1/users')
+        .send(newUser)
+        .end((err, res) => {
+          expect(res).to.have.status(400);
+          expect(res.body).to.have.property('failures');
+
+          expect(res.body.message).to.eql('validation failed');
+          done();
+        });
+    });
+    it('should return code 400 with error message', (done) => {
+      chai.request(app)
+        .post('/api/v1/login')
+        .send(oldUser)
+        .end((err, res) => {
+          expect(res).to.have.status(400);
+          expect(res.body).to.have.property('failures');
+
+          expect(res.body.message).to.eql('validation failed');
+          done();
+        });
+    });
+    it('should return code 400 with error message', (done) => {
+      chai.request(app)
+        .post('/api/v1/diaries')
+        .send(newDiary)
+        .end((err, res) => {
+          expect(res).to.have.status(400);
+          expect(res.body).to.have.property('failures');
+          expect(res.body.message).to.eql('validation failed');
+          done();
+        });
+    });
+    it('should return code 400 with error message', (done) => {
+      chai.request(app)
+        .post('/api/v1/entries')
+        .send(newEntry)
+        .end((err, res) => {
+          expect(res).to.have.status(400);
+          expect(res.body).to.have.property('failures');
+          expect(res.body.message).to.eql('validation failed');
+          done();
+        });
+    });
+    it('should return code 400 with error message', (done) => {
+      chai.request(app)
+        .put('/api/v1/entry/1')
+        .send({ wrongParameter: 'entry' })
+        .end((err, res) => {
+          expect(res).to.have.status(400);
+          expect(res.body).to.have.property('failures');
+          expect(res.body.message).to.eql('validation failed');
+          done();
+        });
+    });
     it('should return status code 409 with error message', (done) => {
       chai.request(app)
         .post('/api/v1/users')
@@ -119,7 +127,6 @@ describe('MyDiary dummy-data backend tests for middleware validating user input'
           done();
         });
     });
-
     it('should return status code 409 with error message', (done) => {
       chai.request(app)
         .post('/api/v1/users')
@@ -131,7 +138,6 @@ describe('MyDiary dummy-data backend tests for middleware validating user input'
           done();
         });
     });
-
     it('should return status code 409 with error message', (done) => {
       chai.request(app)
         .post('/api/v1/users')
@@ -143,5 +149,28 @@ describe('MyDiary dummy-data backend tests for middleware validating user input'
           done();
         });
     });
+    it('should return status code 409 with error message', (done) => {
+      chai.request(app)
+        .post('/api/v1/diaries')
+        .send(wrongType)
+        .end((err, res) => {
+          expect(res).to.have.status(400);
+          expect(res.body).to.have.property('error');
+          expect(res.body.error).to.eql('type must be either private or public')
+          done();
+        });
+    });
+    it('should return status code 404 with error message', (done) => {
+      chai.request(app)
+        .post('/api/v1/entries')
+        .send(diaryNotFound)
+        .end((err, res) => {
+          expect(res).to.have.status(404);
+          expect(res.body).to.have.property('error');
+          expect(res.body.error).to.eql('diary not found');
+          done();
+        })
+    });
+    
   });
 });
