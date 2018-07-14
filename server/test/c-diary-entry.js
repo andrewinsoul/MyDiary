@@ -59,7 +59,6 @@ describe('MyDiary dummy-data backend tests for entry model', () => {
           entry: 'why now',
         })
         .end((err, res) => {
-          console.log(entries[0].entry === 'why now');
           expect(res).to.have.status(200);
           expect(res.body.msg).to.eql('entry successfully modified');
           expect(entries[0].entry).to.eql('why now');
