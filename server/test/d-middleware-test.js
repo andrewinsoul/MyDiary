@@ -52,7 +52,7 @@ const diaryNotFound = {
 };
 
 describe('MyDiary dummy-data backend tests for middlewares validating user input', () => {
-  describe('test for middleware that validates user input for all defined routes', () => {
+  describe('test for middleware that validates user input and check certain conditionsfor all defined routes', () => {
     it('should return code 400 with error message', (done) => {
       chai.request(app)
         .post('/api/v1/users')
