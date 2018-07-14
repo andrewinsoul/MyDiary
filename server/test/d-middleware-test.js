@@ -43,12 +43,6 @@ describe('MyDiary dummy-data backend tests for middlewares validating user input
       password1: 'qwertyuiop',
       password2: 'qwertyuiop',
     };
-    const userNotFound = {
-      name: 'Diary Name',
-      type: 'private',
-      desc: 'Diary description',
-      userId: 90,
-    };
     const wrongType = {
       name: 'Diary Name',
       type: 'wrongTYpe',
@@ -58,7 +52,7 @@ describe('MyDiary dummy-data backend tests for middlewares validating user input
     const diaryNotFound = {
       entry: 'entry',
       diaryId: 90,
-    }
+    };
     it('should return code 400 with error message', (done) => {
       chai.request(app)
         .post('/api/v1/users')
@@ -156,7 +150,7 @@ describe('MyDiary dummy-data backend tests for middlewares validating user input
         .end((err, res) => {
           expect(res).to.have.status(400);
           expect(res.body).to.have.property('error');
-          expect(res.body.error).to.eql('type must be either private or public')
+          expect(res.body.error).to.eql('type must be either private or public');
           done();
         });
     });
@@ -169,7 +163,7 @@ describe('MyDiary dummy-data backend tests for middlewares validating user input
           expect(res.body).to.have.property('error');
           expect(res.body.error).to.eql('diary not found');
           done();
-        })
+        });
     });
     it('should return status code 404 with error message', (done) => {
       chai.request(app)
@@ -180,7 +174,7 @@ describe('MyDiary dummy-data backend tests for middlewares validating user input
           expect(res.body).to.have.property('error');
           expect(res.body.error).to.eql('entry not found');
           done();
-        })
+        });
     });
   });
 });
