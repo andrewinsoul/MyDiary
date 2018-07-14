@@ -72,31 +72,6 @@ describe('MyDiary dummy-data backend tests for middleware validating user input'
           done();
         });
     });
-  });
 
-  describe('tests for middleware that gets a single entry', () => {
-    it('should return code 200 with requested resource ', (done) => {
-      chai.request(app)
-        .get('/api/v1/entry/1')
-        .end((err, res) => {
-          expect(res).to.have.status(200);
-          expect(res.body).to.have.property('msg');
-          expect(res.body.msg.entry).to.eql('why now');
-          done();
-        });
-    });
-  });
-
-  describe('tests for middleware that gets all entries', () => {
-    it('should return code 200 with requested resource ', (done) => {
-      chai.request(app)
-        .get('/api/v1/entries')
-        .end((err, res) => {
-          expect(res).to.have.status(200);
-          expect(res.body).to.have.property('msg');
-          expect(res.body.msg.length).to.eql(4);
-          done();
-        });
-    });
   });
 });
