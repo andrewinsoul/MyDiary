@@ -4,55 +4,55 @@ import app from '../../app';
 
 chai.use(chaiHttp);
 const { expect } = chai;
+const newUser = {
+  email: 'andrewinsoul@gmail.com',
+  username: 'andypy',
+  password1: 'amazing',
+  password2: 'amazing',
+};
+const oldUser = {
+  email: 'andrewinsoul@gmail.com',
+};
+const newDiary = {
+  name: 'perfect times',
+};
+const newEntry = {
+  entry: 'text of entry',
+};
+const userBadPassword = {
+  email: 'azukaokoye99@yahoo.com',
+  username: 'az',
+  name: 'Veronica',
+  password1: 'qwerty',
+  password2: 'asdfgh',
+};
+const userBadMail = {
+  email: 'andrewinsoul@gmail.com',
+  username: 'aaaa',
+  name: 'Andrew Johnson',
+  password1: 'qwertyuiop',
+  password2: 'qwertyuiop',
+};
+const userBadUsername = {
+  email: 'azukaokoye99@gmail.com',
+  username: 'slava',
+  name: 'Andrew Johnson',
+  password1: 'qwertyuiop',
+  password2: 'qwertyuiop',
+};
+const wrongType = {
+  name: 'Diary Name',
+  type: 'wrongTYpe',
+  desc: 'Diary description',
+  userId: 2,
+};
+const diaryNotFound = {
+  entry: 'entry',
+  diaryId: 90,
+};
 
 describe('MyDiary dummy-data backend tests for middlewares validating user input', () => {
   describe('test for middleware that validates user input for all defined routes', () => {
-    const newUser = {
-      email: 'andrewinsoul@gmail.com',
-      username: 'andypy',
-      password1: 'amazing',
-      password2: 'amazing',
-    };
-    const oldUser = {
-      email: 'andrewinsoul@gmail.com',
-    };
-    const newDiary = {
-      name: 'perfect times',
-    };
-    const newEntry = {
-      entry: 'text of entry',
-    };
-    const userBadPassword = {
-      email: 'azukaokoye99@yahoo.com',
-      username: 'az',
-      name: 'Veronica',
-      password1: 'qwerty',
-      password2: 'asdfgh',
-    };
-    const userBadMail = {
-      email: 'andrewinsoul@gmail.com',
-      username: 'aaaa',
-      name: 'Andrew Johnson',
-      password1: 'qwertyuiop',
-      password2: 'qwertyuiop',
-    };
-    const userBadUsername = {
-      email: 'azukaokoye99@gmail.com',
-      username: 'slava',
-      name: 'Andrew Johnson',
-      password1: 'qwertyuiop',
-      password2: 'qwertyuiop',
-    };
-    const wrongType = {
-      name: 'Diary Name',
-      type: 'wrongTYpe',
-      desc: 'Diary description',
-      userId: 2,
-    };
-    const diaryNotFound = {
-      entry: 'entry',
-      diaryId: 90,
-    };
     it('should return code 400 with error message', (done) => {
       chai.request(app)
         .post('/api/v1/users')
