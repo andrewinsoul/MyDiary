@@ -73,5 +73,16 @@ describe('MyDiary dummy-data backend tests for middleware validating user input'
         });
     });
 
+    it('should return code 400 with error message', (done) => {
+      chai.request(app)
+        .put('/api/v1/entries')
+        .send({ wrongParameter: 'entry' })
+        .end((err, res) => {
+          expect(res).to.have.status(400);
+          expect(res.body).to.have.property('failures');
+          expect(res.body.message).to.eql('validation failed');
+          done();
+        });
+    });
   });
 });
