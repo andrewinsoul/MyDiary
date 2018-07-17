@@ -4,55 +4,61 @@ import app from '../../app';
 
 chai.use(chaiHttp);
 const { expect } = chai;
-const newUser = {
-  email: 'andrewinsoul@gmail.com',
-  username: 'andypy',
-  password1: 'amazing',
-  password2: 'amazing',
-};
-const oldUser = {
-  email: 'andrewinsoul@gmail.com',
-};
-const newDiary = {
-  name: 'perfect times',
-};
-const newEntry = {
-  entry: 'text of entry',
-};
-const userBadPassword = {
-  email: 'azukaokoye99@yahoo.com',
-  username: 'az',
-  name: 'Veronica',
-  password1: 'qwerty',
-  password2: 'asdfgh',
-};
-const userBadMail = {
-  email: 'andrewinsoul@gmail.com',
-  username: 'aaaa',
-  name: 'Andrew Johnson',
-  password1: 'qwertyuiop',
-  password2: 'qwertyuiop',
-};
-const userBadUsername = {
-  email: 'azukaokoye99@gmail.com',
-  username: 'slava',
-  name: 'Andrew Johnson',
-  password1: 'qwertyuiop',
-  password2: 'qwertyuiop',
-};
-const wrongType = {
-  name: 'Diary Name',
-  type: 'wrongTYpe',
-  desc: 'Diary description',
-  userId: 2,
-};
-const diaryNotFound = {
-  entry: 'entry',
-  diaryId: 90,
-};
 
 describe('MyDiary dummy-data backend tests for middlewares validating user input', () => {
-  describe('test for middleware that validates user input and check certain conditionsfor all defined routes', () => {
+  describe('test for middleware that validates user input for all defined routes', () => {
+    const newUser = {
+      email: 'andrewinsoul@gmail.com',
+      username: 'andypy',
+      password1: 'amazing',
+      password2: 'amazing',
+    };
+    const oldUser = {
+      email: 'andrewinsoul@gmail.com',
+    };
+    const newDiary = {
+      name: 'perfect times',
+    };
+    const newEntry = {
+      entry: 'text of entry',
+    };
+    const userBadPassword = {
+      email: 'azukaokoye99@yahoo.com',
+      username: 'az',
+      name: 'Veronica',
+      password1: 'qwerty',
+      password2: 'asdfgh',
+    };
+    const userBadMail = {
+      email: 'andrewinsoul@gmail.com',
+      username: 'aaaa',
+      name: 'Andrew Johnson',
+      password1: 'qwertyuiop',
+      password2: 'qwertyuiop',
+    };
+    const userBadUsername = {
+      email: 'azukaokoye99@gmail.com',
+      username: 'slava',
+      name: 'Andrew Johnson',
+      password1: 'qwertyuiop',
+      password2: 'qwertyuiop',
+    };
+    const wrongType = {
+      name: 'Diary Name',
+      type: 'wrongTYpe',
+      desc: 'Diary description',
+      userId: 2,
+    };
+    const userNotFound = {
+      name: 'Diary Name',
+      type: 'public',
+      desc: 'Diary description',
+      userId: 20,
+    };
+    const diaryNotFound = {
+      entry: 'entry',
+      diaryId: 90,
+    };
     it('should return code 400 with error message', (done) => {
       chai.request(app)
         .post('/api/v1/users')
@@ -60,7 +66,6 @@ describe('MyDiary dummy-data backend tests for middlewares validating user input
         .end((err, res) => {
           expect(res).to.have.status(400);
           expect(res.body).to.have.property('failures');
-
           expect(res.body.message).to.eql('validation failed');
           done();
         });
@@ -154,6 +159,17 @@ describe('MyDiary dummy-data backend tests for middlewares validating user input
           done();
         });
     });
+    it('should return status code 409 with error message', (done) => {
+      chai.request(app)
+        .post('/api/v1/diaries')
+        .send(userNotFound)
+        .end((err, res) => {
+          expect(res).to.have.status(404);
+          expect(res.body).to.have.property('error');
+          expect(res.body.error).to.eql('User not found');
+          done();
+        });
+    });
     it('should return status code 404 with error message', (done) => {
       chai.request(app)
         .post('/api/v1/entries')
@@ -173,6 +189,16 @@ describe('MyDiary dummy-data backend tests for middlewares validating user input
           expect(res).to.have.status(404);
           expect(res.body).to.have.property('error');
           expect(res.body.error).to.eql('entry not found');
+          done();
+        });
+    });
+    it('should return status code 400 with error message', (done) => {
+      chai.request(app)
+        .put('/api/v1/entry/1')
+        .end((err, res) => {
+          expect(res).to.have.status(400);
+          expect(res.body).to.have.property('failures');
+          expect(res.body.message).to.eql('validation failed');
           done();
         });
     });

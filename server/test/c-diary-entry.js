@@ -36,6 +36,17 @@ describe('MyDiary dummy-data backend tests for entry model', () => {
           done();
         });
     });
+
+    it('should return code 404 with error message entry not found', (done) => {
+      chai.request(app)
+        .get('/api/v1/entry/18')
+        .end((err, res) => {
+          expect(res).to.have.status(404);
+          expect(res.body).to.have.property('error');
+          expect(res.body.error).to.eql('entry not found');
+          done();
+        });
+    });
   });
 
   describe('tests for method that gets all entries', () => {

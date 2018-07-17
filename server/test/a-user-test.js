@@ -47,5 +47,20 @@ describe('MyDiary dummy-data backend tests for user model', () => {
           done();
         });
     });
+
+    it('should return code 401 with error message incorrect credentials', (done) => {
+      chai.request(app)
+        .post('/api/v1/login')
+        .send({
+          email: 'andrewinsoul@gmail.com',
+          password: 'andyjs+jpy',
+        })
+        .end((err, res) => {
+          expect(res).to.have.status(401);
+          expect(res.body).to.have.property('error');
+          expect(res.body.error).to.eql('incorrect credentials supplied');
+          done();
+        });
+    });
   });
 });

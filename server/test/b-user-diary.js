@@ -40,6 +40,17 @@ describe('MyDiary dummy-data backend tests for diary model', () => {
         });
     });
 
+    it('should return code 404 with message diary not found', (done) => {
+      chai.request(app)
+        .delete('/api/v1/diaries/40')
+        .end((err, res) => {
+          expect(res).to.have.status(404);
+          expect(res.body).to.have.property('error');
+          expect(res.body.error).to.eql('Diary not found');
+          done();
+        });
+    });
+
     it('should return the number of entries in diary model as 3', () => {
       expect(diaries.length).to.eql(3);
     });
