@@ -1,0 +1,11 @@
+language: node_js
+node_js: 
+  - "stable"
+cache: bundler
+before_script:
+  - npm i -D coveralls
+script: 
+  - npm test
+after_success:
+  - npm run coverage
+  - npm run report-coverage
