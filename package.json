@@ -5,7 +5,9 @@
   "main": "index.js",
   "scripts": {
     "test": "mocha ./server/test --compilers js:babel-core/register --exit",
-    "start": "nodemon --exec babel-node ./app"
+    "start": "nodemon --exec babel-node ./app",
+    "coverage": "nyc --reporter=lcov --reporter=text-lcov npm test",
+    "report-coverage": "cat ./coverage/lcov.info | coveralls"
   },
   "repository": {
     "type": "git",
