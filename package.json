@@ -4,7 +4,7 @@
   "description": "A web application that allows a user pen down thier thoughts and memorable experiences",
   "main": "index.js",
   "scripts": {
-    "test": "mocha ./server/test --compilers js:babel-core/register --exit",
+    "test": "nyc mocha ./server/test --compilers js:babel-core/register --exit",
     "start": "nodemon --exec babel-node ./app",
     "coverage": "nyc --reporter=lcov --reporter=text-lcov npm test",
     "report-coverage": "cat ./coverage/lcov.info | coveralls"
