@@ -1,13 +1,18 @@
 import express from 'express';
 import bodyParser from 'body-parser';
 import logger from 'morgan';
+import YAML from 'yamljs';
 import ExpressValidator from 'express-validator';
+import swaggerUi from 'swagger-ui-express';
 import userRouter from './server/routes/user';
 import diaryRouter from './server/routes/diary';
 import entryRouter from './server/routes/entry';
 
 const app = express();
+const swaggerDocument = YAML.load('./swagger.yaml');
+
 app.use(logger('dev'));
+app.use('/api/v1/api-docs', swaggerUi.serve, swaggerUi.setup(swaggerDocument));
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: false }));
 app.use(ExpressValidator());
