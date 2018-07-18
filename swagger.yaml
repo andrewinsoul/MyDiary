@@ -1,0 +1,336 @@
+swagger: '2.0'
+info:
+  description: API for MyDiary
+  version: 1.0.0
+  title: MyDiary
+  # My Contact Info
+  contact:
+    email: andrewinsoul@gmail.com
+basePath: /api/v1
+
+# tags are used for organizing operations
+tags:
+- name: diary
+  description: Diary operations
+- name: auth
+  description: Operations for user details
+- name: entries
+  description: Operations for entries
+
+paths:
+  /diaries:
+    post:
+      summary: creates a diary
+      tags:
+      - diary
+      description: Add diary to the application
+      operationId: add-diary
+      produces:
+      - application/json
+      consumes: 
+        - application/x-www-form-urlencoded
+      parameters:
+      - in: formData
+        name: name
+        type: string
+        description: Name of diary
+        required: true
+      - in: formData
+        name: description
+        type: string
+        description: summary of diary contents
+      - in: formData
+        name: type
+        type: string
+        enum: ["private", "public"]
+      - in: formData
+        name: userId
+        type: integer 
+        description: 'id of user who created diary'
+      responses:
+        201:
+          description: Added Diary Successfully
+          examples:
+            application/json:
+              error: false
+              message: Diary created successfully
+              diary:
+                id: 1
+                name: pre-Andela Days
+                description: my activities before I was accepted into the fellowship
+                type: public
+                userId: 2
+        400:
+          description: Invalid input
+          examples:
+            application/json:
+              error: true
+              message: 'Name is required'
+  /diary/{id}:
+    delete:
+      tags:
+      - diary
+      summary: removes a diary
+      description: deletes a particular diary
+      produces:
+      - application/json
+      parameters:
+        - in: path
+          name: id
+          required: true
+          description: The id of the diary to delete
+          type: integer
+      responses:
+        200:
+          description: Diary deleted
+          examples:
+            application/json:
+              error: false
+              message: 'diary successfully deleted'
+        404:
+          description: diary not found
+          examples:
+            application/json:
+              error: 'true'
+              message: 'Diary not found'
+
+  /entries:
+    post:
+      summary: creates an entry in a diary
+      tags:
+      - entries
+      description: Add entry to a diary
+      operationId: add-entry
+      produces:
+      - application/json
+      consumes: 
+        - application/x-www-form-urlencoded
+      parameters:
+      - in: formData
+        name: entry
+        type: string
+        description: text that describes entry to be added
+        required: true
+      - in: formData
+        name: diaryId
+        type: integer
+        description: id of diary where entry is to be added
+        required: true
+      - in: formData
+        name: id
+        type: integer
+      - in: formData
+        name: time
+        type: string
+      responses:
+        201:
+          description: Added entry Successfully
+          examples:
+            application/json:
+              error: false
+              message: entry created successfully
+              diary:
+                id: 1
+                entry: made sure I spent 5hrs of my day coding.
+                diaryId: 1
+                time: 3rd September, 6:45pm
+        400:
+          description: Invalid input
+          examples:
+            application/json:
+              error: true
+              message: 'entry is required'
+    get:
+      summary: gets all entries
+      tags:
+      - entries
+      description: gets all entry to a diary
+      operationId: get-all-entry
+      produces:
+      - application/json
+      responses:
+        200:
+          description: Object of all entries
+          examples:
+            application/json:
+              error: false
+              message: object of all entries
+              entries:
+                - id: 1
+                  entry: made sure I spent 5hrs of my day coding.
+                  diaryId: 1
+                  time: 3rd September, 6:45pm
+                - id: 2
+                  entry: made sure I always call family and friends no matter how busy I am.
+                  diaryId: 1
+                  time: 3rd September, 6:45pm
+                - id: 3
+                  entry: made sure I spent 5hrs of my day coding.
+                  diaryId: 1
+                  time: 3rd September, 6:45pm
+  /entry/{id}:
+    get:
+      summary: retrieve a specific entry
+      tags:
+        - entries
+      produces:
+        - application/json
+      parameters:
+        - name: id
+          in: path
+          required: true
+          description: The id of the entry to retrieve
+          type: integer
+      responses:
+        200:
+          description: Success, entry found
+          examples:
+            application/json:
+              message: 'Success'
+              error: false
+              business:
+                id: 3
+                entry: 'I made sure I always called my family and friends no matter how busyI am'
+                diaryId: 2
+                time: '3rd September, 6:23pm'
+        404:
+          description: entry not found
+          examples:
+            application/json:
+              error: 'true'
+              message: 'entry not found'
+    put:
+      summary: update specific entry
+      tags:
+        - entries
+      consumes: 
+        - application/x-www-form-urlencoded
+      produces:
+        - application/json
+      parameters:
+        - in: path
+          name: id
+          required: true
+          description: The id of the entry to update
+          type: integer
+        - in: formData
+          name: entry
+          type: string
+          description: entry text to be updated with
+          required: true
+      responses:
+        200:
+          description: entry successfully updated
+          examples:
+            application/json:
+              message: 'Success'
+              error: false
+              entry:
+                id: 3
+                entry: 'hustling and hitting set goals is what makes life intresting'
+                diaryId: 2
+                time: '6th September 7:00pm'
+        404:
+          description: entry not found
+          examples:
+            application/json:
+              error: 'true'
+              message: 'entry not found'
+
+  /login:
+    post:
+      tags:
+      - auth
+      summary: login a user
+      description: Log in a user to the application
+      consumes: 
+        - application/x-www-form-urlencoded
+      produces:
+      - application/json
+      parameters:
+      - name: email
+        in: formData
+        description: email of the user
+        type: string
+        required: true
+      - name: password
+        in: formData
+        description: password of the user
+        type: string
+        required: true
+      responses:
+        200:
+          description: Success, user is logged in
+          examples:
+            application/json:
+              error: false
+              message: 'logged in as <username>'
+        400:
+          description: Invalid Input
+          examples:
+            application/json:
+              error: true
+              message: Unable to login
+        401:
+          description: wrong credentials
+          examples:
+            application/json:
+              error: true
+              message: wrong credentials supplied
+
+  /signup:
+    post:
+      tags:
+      - auth
+      summary: Signup a user
+      description: add user into the application
+      consumes: 
+        - application/x-www-form-urlencoded
+      produces:
+      - application/json
+      parameters:
+      - name: name
+        in: formData
+        description: name of the user
+        type: string
+        required: true
+      - name: email
+        in: formData
+        description: email of the user
+        type: string
+        required: true
+      - name: password1
+        in: formData
+        description: password of the user
+        type: string
+        required: true
+      - name: password2
+        in: formData
+        description: password confirmation
+        type: string
+        required: true
+      - name: username
+        in: formData
+        description: username of user
+        type: string
+        required: true
+
+      responses:
+        200:
+          description: Success, user is signed up
+          examples:
+            application/json:
+              error: false
+              message: 'signup in successfully'
+        400:
+          description: Invalid Input
+          examples:
+            application/json:
+              error: true
+              message: Unable to signup
+        409:
+          description: password mismatch
+          examples:
+            application/json:
+              error: true
+              message: password1 does not match with password2
