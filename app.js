@@ -20,7 +20,7 @@ app.use('/api/v1', userRouter);
 app.use('/api/v1', diaryRouter);
 app.use('/api/v1', entryRouter);
 
-app.get('/api/v1', (req, res) => {
+app.get('/api/v1/', (req, res) => {
   res.status(200).send('Welcome to MyDiary API');
 });
 
