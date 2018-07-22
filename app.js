@@ -22,10 +22,6 @@ app.use('/api/v1', diaryRouter);
 app.use('/api/v1', entryRouter);
 app.get('*', (req, res) => res.redirect(302, '/api/v1/api-docs'));
 
-app.get('/api/v1/', (req, res) => {
-  res.status(200).send('Welcome to MyDiary API');
-});
-
 const port = parseInt(process.env.PORT, 10) || 8000;
 
 app.listen(port, () => console.log(`server live on port ${port}`));
