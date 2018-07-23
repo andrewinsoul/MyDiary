@@ -21,8 +21,8 @@ describe('MyDiary dummy-data backend tests for diary model', () => {
         .end((err, res) => {
           newDiary.id = 4;
           expect(res).to.have.status(201);
-          expect(res.body).to.have.property('msg');
-          expect(res.body.msg).to.eql(newDiary);
+          expect(res.body).to.have.property('message');
+          expect(res.body.message).to.eql(newDiary);
           done();
         });
     });
@@ -34,8 +34,8 @@ describe('MyDiary dummy-data backend tests for diary model', () => {
         .delete('/api/v1/diaries/4')
         .end((err, res) => {
           expect(res).to.have.status(200);
-          expect(res.body).to.have.property('msg');
-          expect(res.body.msg).to.eql('diary successfully deleted');
+          expect(res.body).to.have.property('message');
+          expect(res.body.message).to.eql('diary successfully deleted');
           done();
         });
     });
