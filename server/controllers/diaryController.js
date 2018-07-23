@@ -11,7 +11,7 @@ export default class diaryHandler {
     };
     diary.push(newDiary);
     diary.splice(diary.length - 2, 1);
-    return res.status(201).send({ msg: newDiary });
+    return res.status(201).send({ message: newDiary });
   }
 
   static deleteDiary(req, res) {
@@ -20,6 +20,6 @@ export default class diaryHandler {
       return res.status(404).send({ error: 'Diary not found' });
     }
     diary.splice(diaryIndex, 1);
-    return res.status(200).send({ msg: 'diary successfully deleted' });
+    return res.status(200).send({ message: 'diary successfully deleted' });
   }
 }
