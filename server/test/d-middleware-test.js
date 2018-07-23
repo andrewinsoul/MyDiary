@@ -26,7 +26,7 @@ describe('MyDiary dummy-data backend tests for middlewares validating user input
       email: 'azukaokoye99@yahoo.com',
       username: 'az',
       name: 'Veronica',
-      password: 'qwerty',
+      password: 'qwerthhoojpy',
       confirmPassword: 'asdfgh',
     };
     const userBadMail = {

@@ -5,8 +5,8 @@ export default function validateUserResource(req, res, next) {
       req.checkBody('email', 'email is required').notEmpty();
       req.checkBody('email', 'email should be valid').isEmail();
       req.checkBody('username', 'username is required').notEmpty();
-      req.checkBody('password', 'password1 is required').notEmpty();
-      req.checkBody('confirmPassword', 'password2 is required').notEmpty();
+      req.checkBody('password', 'password is required').notEmpty();
+      req.checkBody('password', 'password should be at least 8 characters long').isLength({ min: 8 });
     }
     else if (req.url === '/login') {
       req.checkBody('email', 'email is required').notEmpty();
