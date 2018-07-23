@@ -10,8 +10,8 @@ describe('MyDiary dummy-data backend tests for middlewares validating user input
     const newUser = {
       email: 'andrewinsoul@gmail.com',
       username: 'andypy',
-      password1: 'amazing',
-      password2: 'amazing',
+      password: 'amazing',
+      confirmPassword: 'amazing',
     };
     const oldUser = {
       email: 'andrewinsoul@gmail.com',
@@ -26,22 +26,22 @@ describe('MyDiary dummy-data backend tests for middlewares validating user input
       email: 'azukaokoye99@yahoo.com',
       username: 'az',
       name: 'Veronica',
-      password1: 'qwerty',
-      password2: 'asdfgh',
+      password: 'qwerty',
+      confirmPassword: 'asdfgh',
     };
     const userBadMail = {
       email: 'andrewinsoul@gmail.com',
       username: 'aaaa',
       name: 'Andrew Johnson',
-      password1: 'qwertyuiop',
-      password2: 'qwertyuiop',
+      password: 'qwertyuiop',
+      confirmPassword: 'qwertyuiop',
     };
     const userBadUsername = {
       email: 'azukaokoye99@gmail.com',
       username: 'slava',
       name: 'Andrew Johnson',
-      password1: 'qwertyuiop',
-      password2: 'qwertyuiop',
+      password: 'qwertyuiop',
+      confirmPassword: 'qwertyuiop',
     };
     const wrongType = {
       name: 'Diary Name',

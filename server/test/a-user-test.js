@@ -14,8 +14,8 @@ describe('MyDiary dummy-data backend tests for user model', () => {
           name: 'Tracey Sophia',
           username: 'sophee',
           email: 'sophee23@yahoo.com',
-          password1: 'sophee23',
-          password2: 'sophee23',
+          password: 'sophee23',
+          confirmPassword: 'sophee23',
         })
         .end((err, res) => {
           expect(res).to.have.status(201);
