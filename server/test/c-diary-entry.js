@@ -18,8 +18,8 @@ describe('MyDiary dummy-data backend tests for entry model', () => {
         .send(newEntry)
         .end((err, res) => {
           expect(res).to.have.status(201);
-          expect(res.body).to.have.property('msg');
-          expect(res.body.msg.id).to.eql(4);
+          expect(res.body).to.have.property('message');
+          expect(res.body.message.id).to.eql(4);
           done();
         });
     });
@@ -31,8 +31,8 @@ describe('MyDiary dummy-data backend tests for entry model', () => {
         .get('/api/v1/entry/1')
         .end((err, res) => {
           expect(res).to.have.status(200);
-          expect(res.body).to.have.property('msg');
-          expect(res.body.msg.entry).to.eql('My pre-andela days made me realize that you must finish a project before starting');
+          expect(res.body).to.have.property('message');
+          expect(res.body.message.entry).to.eql('My pre-andela days made me realize that you must finish a project before starting');
           done();
         });
     });
@@ -55,8 +55,8 @@ describe('MyDiary dummy-data backend tests for entry model', () => {
         .get('/api/v1/entries')
         .end((err, res) => {
           expect(res).to.have.status(200);
-          expect(res.body).to.have.property('msg');
-          expect(res.body.msg.length).to.eql(4);
+          expect(res.body).to.have.property('message');
+          expect(res.body.message.length).to.eql(4);
           done();
         });
     });
@@ -71,7 +71,7 @@ describe('MyDiary dummy-data backend tests for entry model', () => {
         })
         .end((err, res) => {
           expect(res).to.have.status(200);
-          expect(res.body.msg).to.eql('entry successfully modified');
+          expect(res.body.message).to.eql('entry successfully modified');
           expect(entries[0].entry).to.eql('why now');
           done();
         });

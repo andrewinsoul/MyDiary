@@ -19,8 +19,8 @@ describe('MyDiary dummy-data backend tests for user model', () => {
         })
         .end((err, res) => {
           expect(res).to.have.status(201);
-          expect(res.body).to.have.property('msg');
-          expect(res.body.msg).to.eql({
+          expect(res.body).to.have.property('message');
+          expect(res.body.message).to.eql({
             id: 4,
             name: 'Tracey Sophia',
             username: 'sophee',
@@ -42,8 +42,8 @@ describe('MyDiary dummy-data backend tests for user model', () => {
         })
         .end((err, res) => {
           expect(res).to.have.status(200);
-          expect(res.body).to.have.property('msg');
-          expect(res.body.msg).to.eql('signed in as andyjs');
+          expect(res.body).to.have.property('message');
+          expect(res.body.message).to.eql('signed in as andyjs');
           done();
         });
     });
