@@ -18,7 +18,7 @@ tags:
   description: Operations for entries
 
 paths:
-  /diaries:
+  /diary:
     post:
       summary: creates a diary
       tags:
@@ -94,7 +94,7 @@ paths:
               error: 'true'
               message: 'Diary not found'
 
-  /entries:
+  /entry:
     post:
       summary: creates an entry in a diary
       tags:
@@ -278,7 +278,7 @@ paths:
               error: true
               message: wrong credentials supplied
 
-  /signup:
+  /user:
     post:
       tags:
       - auth
@@ -333,4 +333,4 @@ paths:
           examples:
             application/json:
               error: true
-              message: password1 does not match with password2
+              message: passwords do not match
