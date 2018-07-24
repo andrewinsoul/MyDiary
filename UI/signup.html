@@ -9,47 +9,28 @@
   </head>
   <body>
     <div class="container">
-      <div class="row">
-        <div class="col">
-          <figure>
-            <img src="./assets/images/diary-icon.png"/>
-            <figcaption>
-              <h3>MyDiary sign up</h3>
-              <hr/>
-            </figcaption>
-          </figure>
-          <div class="col-1">
-            <form action="dashboard.html">
-              <div class="row">
-                <div class="row">
-                  <input class="col form-group" style="margin-top: 35px; margin-bottom: 10px;" placeholder=Name />
-                </div>
-                <div class="row">
-                  <input class="col form-group" style="margin-top: 15px; margin-bottom: 10px;" placeholder="Enter your email"/>
-                </div>
-                <div class="row">
-                  <input class="col form-group" style="margin-top: 15px; margin-bottom: 10px;" placeholder="Enter your username"/>
-                </div>
-                <div class="row">
-                  <input class="col form-group" style="margin-top: 15px; margin-bottom: 10px;" placeholder="Enter password"/>
-                </div>
-                <div class="row">
-                  <input class="col form-group" style="margin-top: 15px; margin-bottom: 10px;" placeholder="Confirm password"/>
-                  </div>
-                <div class="row">
-                  <center><button type="submit" class="col" style="margin-top: 15px; margin-left: 75px; padding: 10px; margin-bottom: 18px;">Sign Up</button></center>
-                </div>
-                <div class="row">
-                  <div class="col">
-                    <a href="login.html">I have an account? Log In</a>
-                    <div style="margin-bottom: 15%; display: block;"></div>  
-                  </div>  
-                </div>
-              </div>
+      <figure>
+        <img src="./assets/images/diary-icon.png"/>
+        <figcaption>
+          <h3>MyDiary sign up</h3>
+          <hr/>
+        </figcaption>
+      </figure>
+      <main class="row">
+        <div class="row jumbotron">
+          <div>
+            <form method="POST" action="dashboard.html">
+              <input class="text-input" placeholder="Name" type="text" required/>
+              <input class="text-input" placeholder="Username" required type="text"/>
+              <input class="text-input" placeholder="Email" type="email" required/>
+              <input class="text-input" required placeholder="Password" type="password"/>
+              <input class="text-input" placeholder="Confirm Password" type="password" required/>
+              <input class="text-input btn" type="submit" value="Sign Up">
             </form>
           </div>
+          <a href="login.html">I have an account, sign in</a>
         </div>
-      </div>
+      </main>
     </div>
   </body>
 </html>
