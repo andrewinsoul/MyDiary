@@ -8,7 +8,7 @@ body {
   background-color: rgba(255, 255, 255, 0.6);
   margin: 0;
   font-family: -apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,"Helvetica Neue",Arial,sans-serif,"Apple Color Emoji","Segoe UI Emoji","Segoe UI Symbol";
-  font-size: 18px;
+  font-size: 16px;
 }
 .brand {
   display: inline;
@@ -39,9 +39,8 @@ a.nav-link:hover {
   color: grey;
 }
 .nav-links {
-  display: -webkit-inline-flex;
-  margin-left: 59%;
-  justify-content: flex-end;
+  display: inline-flex;
+  margin-left: 65%;
   padding-right: .5rem;
 }
 .row {
