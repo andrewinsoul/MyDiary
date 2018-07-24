@@ -21,6 +21,20 @@ footer div img.footer-img:hover {
   transition: .5s;
   transform: scale(1.2) rotate(360deg);
 }
+#social-handles {
+  margin-left: -10px; 
+  margin-right: 60px;
+}
+.intro {
+  line-height: 1.7;
+}
+#reach {
+  margin-right: 4%;
+}
+#terms {
+  font-size: 15px;
+}
+
 div.row>div.section {
   border: 2px solid #eeffff;
   margin: 15px;
@@ -31,6 +45,24 @@ p>a {
   text-decoration: none;
   color: beige;
 }
+button {
+  padding: 15px; 
+  border-radius: 10%; 
+  background-color: #1d4a47; 
+  color: whitesmoke;
+  margin-bottom: 8px;
+}
+.diary-section {
+  border: 1px solid cyan; 
+  margin: 15px; 
+  border-radius: 33px;
+}
+.diary-section > p {
+  white-space: nowrap;
+  max-width: 300px;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
 p>a:hover {
   color: #1d4a47;
 }
@@ -38,6 +70,6 @@ footer {
   margin-top: 25px;
 }
 footer>div {
-  margin: 11px;
+  margin-left: 19px;
   padding: 10px;
 } 
