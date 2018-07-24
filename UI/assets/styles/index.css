@@ -5,7 +5,7 @@ body {
 hr {
   width: 544px; 
 }
-div.main-content {
+main {
   background-image: url(../images/diary-edit.jpg);
   background-size: 100vw;
   background-repeat: no-repeat;
