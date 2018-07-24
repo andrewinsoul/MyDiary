@@ -17,10 +17,6 @@ div#content {
 img.footer-img {
   width: 30px;
 }
-footer div img.footer-img:hover {
-  transition: .5s;
-  transform: scale(1.2) rotate(360deg);
-}
 #social-handles {
   margin-left: -10px; 
   margin-right: 60px;
