@@ -26,7 +26,7 @@ describe('MyDiary dummy-data backend tests for middlewares validating user input
       email: 'azukaokoye99@yahoo.com',
       username: 'az',
       name: 'Veronica',
-      password: 'qwerthhoojpy',
+      password: 'qwerthhoojpty',
       confirmPassword: 'asdfgh',
     };
     const userBadMail = {
@@ -61,7 +61,7 @@ describe('MyDiary dummy-data backend tests for middlewares validating user input
     };
     it('should return code 400 with error message', (done) => {
       chai.request(app)
-        .post('/api/v1/users')
+        .post('/api/v1/user')
         .send(newUser)
         .end((err, res) => {
           expect(res).to.have.status(400);
@@ -84,7 +84,7 @@ describe('MyDiary dummy-data backend tests for middlewares validating user input
     });
     it('should return code 400 with error message', (done) => {
       chai.request(app)
-        .post('/api/v1/diaries')
+        .post('/api/v1/diary')
         .send(newDiary)
         .end((err, res) => {
           expect(res).to.have.status(400);
@@ -95,7 +95,7 @@ describe('MyDiary dummy-data backend tests for middlewares validating user input
     });
     it('should return code 400 with error message', (done) => {
       chai.request(app)
-        .post('/api/v1/entries')
+        .post('/api/v1/entry')
         .send(newEntry)
         .end((err, res) => {
           expect(res).to.have.status(400);
@@ -117,7 +117,7 @@ describe('MyDiary dummy-data backend tests for middlewares validating user input
     });
     it('should return status code 409 with error message', (done) => {
       chai.request(app)
-        .post('/api/v1/users')
+        .post('/api/v1/user')
         .send(userBadPassword)
         .end((err, res) => {
           expect(res).to.have.status(409);
@@ -128,7 +128,7 @@ describe('MyDiary dummy-data backend tests for middlewares validating user input
     });
     it('should return status code 409 with error message', (done) => {
       chai.request(app)
-        .post('/api/v1/users')
+        .post('/api/v1/user')
         .send(userBadMail)
         .end((err, res) => {
           expect(res).to.have.status(409);
@@ -139,7 +139,7 @@ describe('MyDiary dummy-data backend tests for middlewares validating user input
     });
     it('should return status code 409 with error message', (done) => {
       chai.request(app)
-        .post('/api/v1/users')
+        .post('/api/v1/user')
         .send(userBadUsername)
         .end((err, res) => {
           expect(res).to.have.status(409);
@@ -150,7 +150,7 @@ describe('MyDiary dummy-data backend tests for middlewares validating user input
     });
     it('should return status code 409 with error message', (done) => {
       chai.request(app)
-        .post('/api/v1/diaries')
+        .post('/api/v1/diary')
         .send(wrongType)
         .end((err, res) => {
           expect(res).to.have.status(400);
@@ -161,7 +161,7 @@ describe('MyDiary dummy-data backend tests for middlewares validating user input
     });
     it('should return status code 409 with error message', (done) => {
       chai.request(app)
-        .post('/api/v1/diaries')
+        .post('/api/v1/diary')
         .send(userNotFound)
         .end((err, res) => {
           expect(res).to.have.status(404);
@@ -172,7 +172,7 @@ describe('MyDiary dummy-data backend tests for middlewares validating user input
     });
     it('should return status code 404 with error message', (done) => {
       chai.request(app)
-        .post('/api/v1/entries')
+        .post('/api/v1/entry')
         .send(diaryNotFound)
         .end((err, res) => {
           expect(res).to.have.status(404);

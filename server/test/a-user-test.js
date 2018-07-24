@@ -9,7 +9,7 @@ describe('MyDiary dummy-data backend tests for user model', () => {
   describe('tests for method that adds a user', () => {
     it('should return code 201 with object of user just added', (done) => {
       chai.request(app)
-        .post('/api/v1/users')
+        .post('/api/v1/user')
         .send({
           name: 'Tracey Sophia',
           username: 'sophee',

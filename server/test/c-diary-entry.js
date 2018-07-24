@@ -14,7 +14,7 @@ describe('MyDiary dummy-data backend tests for entry model', () => {
     };
     it('should return code 201 with object of entry just added', (done) => {
       chai.request(app)
-        .post('/api/v1/entries')
+        .post('/api/v1/entry')
         .send(newEntry)
         .end((err, res) => {
           expect(res).to.have.status(201);
