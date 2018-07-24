@@ -52,6 +52,7 @@ button {
   background-color: #1d4a47; 
   color: whitesmoke;
   margin-bottom: 8px;
+  cursor: pointer;
 }
 .diary-section {
   border: 1px solid cyan; 
