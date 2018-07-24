@@ -1,6 +1,6 @@
 export default function validateUserResource(req, res, next) {
   if (req.method === 'POST') {
-    if (req.url === '/users') {
+    if (req.url === '/user') {
       req.checkBody('name', 'name is required').notEmpty();
       req.checkBody('email', 'email is required').notEmpty();
       req.checkBody('email', 'email should be valid').isEmail();
@@ -13,7 +13,7 @@ export default function validateUserResource(req, res, next) {
       req.checkBody('email', 'email should be valid').isEmail();
       req.checkBody('password', 'password is required').notEmpty();
     }
-    else if (req.url === '/diaries') {
+    else if (req.url === '/diary') {
       req.checkBody('name', 'name is required').notEmpty();
       req.checkBody('userId', 'userId is required').notEmpty();
       req.checkBody('userId', 'userId should be an integer').isInt();
@@ -21,7 +21,7 @@ export default function validateUserResource(req, res, next) {
       req.checkBody('desc', 'the description field must not be greater than 150 characters').isLength({ max: 150 });
       req.checkBody('type', 'type is required').notEmpty();
     }
-    else if (req.url === '/entries') {
+    else if (req.url === '/entry') {
       req.checkBody('entry', 'text of entry is required').notEmpty();
       req.checkBody('diaryId', 'diaryId is required').notEmpty();
       req.checkBody('diaryId', 'diaryId should be an integer').isInt();
