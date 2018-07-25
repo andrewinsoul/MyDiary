@@ -5,7 +5,7 @@ import appMiddleware from '../middlewares/helperClass';
 
 const diaryRouter = express.Router();
 diaryRouter
-  .post('/diaries', [validateUserInput, appMiddleware.checkUserIndex, appMiddleware.addDiaryMiddleware, diaryHandler.createDiary])
-  .delete('/diaries/:id', diaryHandler.deleteDiary);
+  .post('/diary', [validateUserInput, appMiddleware.checkUserIndex, appMiddleware.addDiaryMiddleware, diaryHandler.createDiary])
+  .delete('/diary/:id', diaryHandler.deleteDiary);
 
 export default diaryRouter;

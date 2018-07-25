@@ -16,7 +16,7 @@ app.use('/api/v1/api-docs', swaggerUi.serve, swaggerUi.setup(swaggerDocument));
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: false }));
 app.use(ExpressValidator());
-app.get('/', (req, res) => res.status(200).send({ msg: 'welcome to MyDiary API' }));
+app.get('/', (req, res) => res.status(200).send({ message: 'welcome to MyDiary API' }));
 app.use('/api/v1', userRouter);
 app.use('/api/v1', diaryRouter);
 app.use('/api/v1', entryRouter);

@@ -9,18 +9,18 @@ describe('MyDiary dummy-data backend tests for user model', () => {
   describe('tests for method that adds a user', () => {
     it('should return code 201 with object of user just added', (done) => {
       chai.request(app)
-        .post('/api/v1/users')
+        .post('/api/v1/user')
         .send({
           name: 'Tracey Sophia',
           username: 'sophee',
           email: 'sophee23@yahoo.com',
-          password1: 'sophee23',
-          password2: 'sophee23',
+          password: 'sophee23',
+          confirmPassword: 'sophee23',
         })
         .end((err, res) => {
           expect(res).to.have.status(201);
-          expect(res.body).to.have.property('msg');
-          expect(res.body.msg).to.eql({
+          expect(res.body).to.have.property('message');
+          expect(res.body.message).to.eql({
             id: 4,
             name: 'Tracey Sophia',
             username: 'sophee',
@@ -42,8 +42,8 @@ describe('MyDiary dummy-data backend tests for user model', () => {
         })
         .end((err, res) => {
           expect(res).to.have.status(200);
-          expect(res.body).to.have.property('msg');
-          expect(res.body.msg).to.eql('signed in as andyjs');
+          expect(res.body).to.have.property('message');
+          expect(res.body.message).to.eql('signed in as andyjs');
           done();
         });
     });

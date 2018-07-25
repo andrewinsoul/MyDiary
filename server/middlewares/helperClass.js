@@ -4,7 +4,7 @@ import entries from '../models/entry';
 
 export default class appMiddleware {
   static addUserMiddleware(req, res, next) {
-    if (req.body.password1 !== req.body.password2) {
+    if (req.body.password !== req.body.confirmPassword) {
       return res.status(409).send({ error: 'password mismatch' });
     }
     const email = users.find(item => item.email === req.body.email);

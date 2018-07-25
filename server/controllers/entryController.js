@@ -10,22 +10,22 @@ export default class entryHandler {
     };
     entries.push(newEntry);
     entries.splice(entries.length - 2, 1);
-    return res.status(201).send({ msg: newEntry });
+    return res.status(201).send({ message: newEntry });
   }
 
   static getEntryById(req, res) {
     const index = entries.findIndex(entry => entry.id === Number(req.params.id));
     if (index === -1) return res.status(404).send({ error: 'entry not found' });
-    return res.status(200).send({ msg: entries[index] });
+    return res.status(200).send({ message: entries[index] });
   }
 
   static getAllEntries(req, res) {
-    return res.status(200).send({ msg: entries });
+    return res.status(200).send({ message: entries });
   }
 
   static modifyEntry(req, res) {
     const index = entries.findIndex(entry => entry.id === Number(req.params.id));
     entries[index].entry = req.body.entry;
-    return res.status(200).send({ msg: 'entry successfully modified' });
+    return res.status(200).send({ message: 'entry successfully modified' });
   }
 }
