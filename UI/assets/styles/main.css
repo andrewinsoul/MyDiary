@@ -97,21 +97,27 @@ button#close {
   border: 1px solid red;
   color: white;
   margin-left: 56%;
+  margin-bottom: 3%;
   cursor: pointer;
 }
 .modal-head {
-  background-color: #353a40;
+  background-color: #266189;
+}
+.modal-footer > button {
+  background-color: blue;
+  color: white;
+  padding: 10px;
+  margin: 0 3px;
 }
 .modal-title {
   display: inline-block;
   margin-left: 40px;
 }
 #close-btn {
-  padding-left: 10%;
+  padding-left: 39%;
 }
 .modal-footer {
-  background-color: #353a40; 
-  margin-top: 14%; 
+  background-color: #266189; 
   padding: 18px; 
   text-align: end;
 }
