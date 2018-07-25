@@ -2,10 +2,6 @@ body {
   background-color: #266189;
   color: #eeffff;
 }
-.center {
-  margin-left: 25%;
-  margin-right: 25%;
-}
 figure {
   text-align: center;
 }
@@ -13,32 +9,41 @@ figure>img {
   width: 90px; 
   vertical-align: middle;
 }
-div.col-1 {
-  background-color: whitesmoke;
-  color: black;
-  border-radius: 5px;
-  margin-left: 37.5%;
-  margin-right: 37.5%;
+.jumbotron {
+  background-color: white;
+  justify-content: center;
+  width: 40%;
+  border-radius: 5px;  
 }
-.form-group {
-  margin-left: 45px;
-  padding: 10px;
-  border-radius: 5px;
-  border: 1px solid green;
+.text-input {
+  display: block;
+  width: 400px;
+  margin: 18px;
+  padding: 8px;
+  border: 1px solid grey;
+  color: grey;
+  border-radius: 3px;
 }
-button {
+.btn {
+  text-align: center;
+  margin-top: 25px;
   background-color: #0363c9;
+  padding: 5px 0;  
   color: white;
+  cursor: pointer;
   border-radius: 9px;
-  margin-top: 15px; 
-  margin-left: 75px;
 }
 a { 
   text-decoration: none;
   color: cornflowerblue;
   font-size: 13px;
   margin: 12px; 
+  margin-right: auto;
 }
 a:hover {
   color: brown;
+}
+main.row {
+  justify-content: center;
+  align-items: center;
 }

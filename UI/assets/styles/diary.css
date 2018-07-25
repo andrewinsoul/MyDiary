@@ -1,7 +1,4 @@
-body {
-  background-color: #266189;
-  color: #eeffff;
-}
+@import url("my-diaries.css");
 hr {
   width: 544px; 
 }
@@ -9,47 +6,35 @@ img.footer-img {
   width: 30px;
 }
 footer {
-  margin-top: 35%;
+  margin-top: 36%;
 }
 footer>div {
   margin: 11px;
   padding: 10px;
-} 
-div.container {
-  margin-left: 25%;
 }
+form {
+  display: block;
+  margin: 5%;
+} 
 div.nav-links {
-  margin-left: 48%;
+  margin-left: 60%;
 }
 label {
-  float: left; 
+  display: block;
   width: 200px; 
   font-size: 15px;
 }
 .input-entry {
-  width: 40%; 
+  width: 100%; 
   padding: 10px; 
   border-radius: 5px; 
-  border: 1px solid greenyellow;
+  border: 1px solid gray;
 }
 textarea {
   font-family: Arial, Helvetica, sans-serif;
 }
-.input-container {
-  margin-top: 3%; 
-  margin-left: 4%;
-}
 hr {
   width: 850px;
-}
-div.side-nav {
-  width: 25%; 
-  position: fixed; 
-  overflow: hidden; 
-  z-index: 1; 
-  background-color: #384318; 
-  top: 0; 
-  height: 100vh;
 }
 #side-nav-head {
   margin-top: 6%; 
@@ -57,9 +42,9 @@ div.side-nav {
   margin-left: 3%;
 }
 button {
+  margin-top: 3%;
   cursor: pointer;
   padding: 5px;
-  background: linear-gradient(to right, green, #384318);
   color: whitesmoke;
   border-radius: 6px;
   border: 1px solid green;
@@ -90,59 +75,53 @@ div.side-nav-links>a {
 #logout {
   margin-top: 65%;
 }
-div.main-content {
-  margin-left: 23%;
-  width: auto;
-}
-footer {
-  margin-left: 25%
-}
 div.credits {
   font-size: 15px;
 }
-#end {
-  margin-left: 27%;
-}
-#bottom-line {
-  width: 630px;
-}
-div#end>small {
-  margin-left: 30%;
+#description-div {
+  margin-top: 4%;
 }
 #nav-div {
   position: fixed; 
-  width: 100%; 
+  width: 100%;
   z-index: 1; 
   background-color: #266189; 
   top: 0;
 }
 .table-div-container {
-  margin-top: 9%; 
+  margin-bottom: 10%;
   color: grey;
 }
 .table-main-row {
   margin-top: 5%;
 }
+
 .table-div {
-  position: absolute  ; 
+  position: fixed; 
   background-color: white; 
   overflow: auto; 
-  bottom: 0;
-  /* margin-bottom: 90px; */
-  top: 10px; 
-  height: 400px
+  width: 100%;
+  margin-bottom: 2%;
+  margin-left: 12%;
+  top: 100; 
+  bottom: 3;
+  height: 80%;
 }
 .modal {
-  z-index: 10;
-  margin-top: 3%;
+  z-index: 1;
+  margin-top: 8%;
   margin-left: 25%;
-  width: 53%;
+  width: 63%;
   height: 65%;
+}
+.modal-footer {
+  margin-top: 3%;
 }
 #section-title {
   color: black; 
   margin-top: 3%; 
   margin-bottom: 1px;
+  margin-left: 12px;
   display: inline-block;
 }
 button {
@@ -166,17 +145,22 @@ table {
 }
 .entry {
   white-space: nowrap; 
-  max-width: 300px;
+  max-width: 849px;
   overflow: hidden; 
   text-overflow: ellipsis;
-  text-align: end;
+  text-align: start;
+  padding-left: 12px;
 }
-.time {
-  width: 150px;
-  text-align: end;
+
+.time>h4 {
+  width: 300px;
 }
 
 tr:hover {
   cursor: pointer;
   background-color: #dcfac9;
+}
+
+hr {
+  width: 850px;
 }

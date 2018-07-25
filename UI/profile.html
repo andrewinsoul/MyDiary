@@ -1,0 +1,146 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no"/>
+    <title>MyDiary Profile</title>
+    <link rel="stylesheet" href="./assets/styles/profile.css"/>
+  </head>
+  <body>
+    <nav>
+      <div class="container">
+        <img class="nav-brand" src="./assets/images/diary-icon.png"/>
+        <h3 class="brand">MyDiary</h3>
+        <div class="nav-links">
+          <ul>
+            <li>
+              <a href="create-diary.html" class="nav-link">Create Diary</a>
+            </li>
+            <li>
+              <a href="signup.html" class="nav-link">Notifications</a>
+            </li>
+          </ul>
+        </div>
+        <hr/>
+      </div>
+    </nav>
+    <div class="side-nav">
+      <div id="side-nav-head">
+        <img class="nav-brand" src="./assets/images/diary-icon.png"/>
+        MyDiary<br/>
+        <small>signed in as: username</small>
+      </div>
+      <div class="side-nav-links">
+        <a id="active" href="dashboard.html">
+          <img class="img-link" src="./assets/images/dashboard-icon.png"/>
+          Dashboard
+        </a>
+        <a href="public-diaries.html">
+          <img class="img-link" src="./assets/images/view-pub-diary.png"/>
+          Public Diaries
+        </a>
+        <a href="my-diaries.html">
+          <img class="img-link" src="./assets/images/private-diary.png"/>
+          My Diaries
+        </a>
+        <a href="profile.html">
+          <img class="img-link" src="./assets/images/profile-settings.png"/>
+          Profile
+        </a>
+        <a href="index.html" id="logout">
+          <img class="img-link" src="./assets/images/logout-icon.jpg"/>
+          log out
+        </a>
+      </div>
+    </div>
+    <main>
+      <div class="row">
+        <div class="col jumbotron">
+          <div class="row">
+            <div class="col section-1">
+              <h3>Edit Credentials</h3>
+              <form>
+                <div id="mail-div">
+                  <label for="mail">Email</label>
+                  <input id="mail" class="entry" type="text" value="andrewinsoul@gmail.com"/>
+                  <button>Change</button>
+                </div>
+                <div id="password-div">
+                  <label for="password">Password</label>
+                  <input id="password" class="entry" type="password" value="andyjs+py"/>
+                  <button>Change</button>
+                </div>
+                <div id="username-div">
+                  <label for="username">Username</label>
+                  <input id="username" class="entry" type="text" value="andrewinsoul"/>
+                  <button>Change</button>
+                </div>
+                <div id="name-div">
+                  <label for="name">Name</label>
+                  <input id="name" class="entry" type="text" value="Okoye Andrew"/>
+                  <button>Change</button>
+                </div>
+                <div id="submit-div">
+                  <input type="submit" value="Save Changes">
+                </div>
+              </form>
+              <button class="del">
+                Delete My Account
+              </button>
+            </div>
+            <div class="col">
+              <h3>Reminder Settings</h3>
+              <div class="col">
+                <div class="diary-info">
+                  Number of Diaries: 12
+                </div>
+                <div class="diary-info">
+                  Number of Entries: 1,232
+                </div>
+                <div class="diary-info">
+                  Pending Actions: 121
+                </div>
+              </div>
+              <div class="col config">
+                <p>
+                  Send me Reminder Notifications on:
+                </p>
+                <form>
+                  <span id="mail-platform">
+                    <input class="platform" id="mail" type="radio" name="platform" value="mail"/>
+                    <label class="radio-label" for="dashboard">Email</label>
+                  </span>
+                  <span id="dashboard-platform">
+                    <input class="platform" id="dashboard" type="radio" name="platform" value="dashboard"/>
+                    <label class="radio-label" for="mail">Dashboard</label>
+                  </span>
+                  <span id="dashboard-mail">
+                    <input class="platform" id="dashboardMail" type="radio" name="platform" value="dashboardMail"/>
+                    <label class="radio-label" for="mail">Dashboard & Mail</label>
+                  </span>
+                  <div id="save-config">
+                    <input type="submit" value="Save Settings"/>
+                  </div>
+                </form>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </main>
+    <footer>
+      <div class="social-handles">
+        <img class="footer-img" src="./assets/images/facebook-icon.png"/>
+        <img class="footer-img" src="./assets/images/google-icon.png"/>
+        <img class="footer-img" src="./assets/images/instagram-icon.png"/>
+        <img class="footer-img" src="./assets/images/twitter-icon.png"/>
+      </div>
+      <div>
+        Having any issues,reach out to us through any of our social handles
+      </div>
+      <div class="credits">
+        &copy; MyDiary Team 2018 All rights reserved
+      </div>
+    </footer>
+  </body>
+</html>

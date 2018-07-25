@@ -1,3 +1,4 @@
+@import url("./my-diaries.css");
 body {
   background-color: #266189;
   color: #eeffff;
@@ -16,32 +17,19 @@ img.footer-img {
 }
 #modal-div {
   padding: 15px; 
-  margin-top: 0;
+  margin-top: 5%;
 }
-footer {
-  margin-top: 25px;
+.modal-body {
+  padding: 50px;
 }
-footer>div {
-  margin: 11px;
-  padding: 10px;
-} 
 div.container {
-  margin-left: 25%;
+  margin-left: 14%;
 }
 div.nav-links {
-  margin-left: 48%;
+  margin-left: 63%;
 }
 hr {
   width: 850px;
-}
-div.side-nav {
-  width: 25%; 
-  position: fixed; 
-  overflow: hidden; 
-  z-index: 1; 
-  background-color: #384318; 
-  top: 0; 
-  height: 100vh;
 }
 #side-nav-head {
   margin-top: 6%; 
@@ -51,6 +39,9 @@ div.side-nav {
 div.side-nav-links {
   margin-top: 25%;
   font-size: 16px;
+}
+footer>div {
+  margin-left: 1%;
 }
 div.side-nav-links>a {
   color: whitesmoke; 
@@ -74,11 +65,15 @@ div.side-nav-links>a {
   margin-top: 65%;
 }
 div.main-content {
-  margin-left: 23%;
+  margin-left: 10%;
   width: auto;
+  background-color: white 
 }
 footer {
-  margin-left: 25%
+  margin-left: 13%
+}
+#main-div {
+  margin-left: 5%;
 }
 div.credits {
   font-size: 15px;
@@ -91,7 +86,7 @@ div.credits {
 }
 .modal {
   z-index: 10;
-  margin-top: 3%;
+  margin-top: 9%;
   margin-left: 25%;
   width: 53%;
   height: 65%;
@@ -99,7 +94,7 @@ div.credits {
 div.modal-footer>button {
   cursor: pointer;
   padding: 5px;
-  background: linear-gradient(to right, green, #384318);
+  background-color: blue;
   color: whitesmoke;
   border-radius: 6px;
   border: 1px solid green;
@@ -122,7 +117,7 @@ h4 {
   display: inline-flex
 }
 #time {
-  margin-left: 50%
+  margin-left: 72%
 }
 div.main-content {
   background-color: #eeffff;

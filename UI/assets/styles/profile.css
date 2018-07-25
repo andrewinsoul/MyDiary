@@ -1,0 +1,58 @@
+@import url("main.css");
+@import url("dashboard.css");
+.entry {
+  width: 70%;
+  padding: 5px;
+  margin: 8px;
+}
+label {
+  display: block;
+  margin-left: 8px;
+}
+#mail-div {
+  margin-bottom: 12px;
+}
+#password-div {
+  margin-bottom: 12px;
+}
+#username-div {
+  margin-bottom: 12px;
+}
+#name-div {
+  margin-bottom: 20px;
+}
+#submit-div {
+  padding: 7px;
+}
+.del {
+  background-color: tomato;
+  color: white;
+  padding: 14px;
+  width: 90%;
+  border-radius: 7px;
+  margin-top: 44px;
+  margin-bottom: 22px;
+  cursor: pointer;
+}
+.diary-info {
+  margin: 10px;
+}
+.radio-label {
+  display: inline;
+  margin-left: 1px;
+}
+#mail-platform {
+  margin-right: 12px;
+}
+#dashboard-platform {
+  margin-right: 12px;
+}
+.platform {
+  margin-left: 0
+}
+#save-config {
+  margin-top: 24px;
+}
+.config {
+  margin-top: 32px;
+}
