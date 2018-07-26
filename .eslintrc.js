@@ -6,5 +6,6 @@ module.exports = {
         "brace-style": 0,
         "import/no-extraneous-dependencies": 0,
         "no-undef": 0,
+        "quotes": 0,
     }
 };
