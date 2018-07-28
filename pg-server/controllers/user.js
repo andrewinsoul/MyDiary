@@ -14,10 +14,12 @@ const userHandler = {
       password: encodedPassword,
       username: req.body.username,
     };
+    console.log(userInfo.username);
     client.query(
       'INSERT INTO users(Name, Username, Password, Email) values($1, $2, $3, $4)', [userInfo.name, userInfo.username, userInfo.password, userInfo.email],
     ).then(
       () => {
+        console.log(userInfo.username);
         const token = jwt.sign(
           {
             id: userInfo.email,
@@ -30,10 +32,7 @@ const userHandler = {
         return res.status(201).send({ auth: true, token });
       },
     )
-      .catch((error) => {
-        if (error.detail.includes('exists')) return res.status(409).send({ error: 'username already exists' });
-        return res.status(500).send({ error });
-      });
+      .catch(error => res.status(409).send({ error: error.detail }));
   },
 };
 export default userHandler;
