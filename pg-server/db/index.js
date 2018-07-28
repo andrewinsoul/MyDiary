@@ -1,20 +1,11 @@
-import pg from 'pg';
+import dotenv from 'dotenv';
 
-export const pool = new pg.Pool({
-  user: 'postgres',
-  host: '127.0.0.1',
-  database: 'MyDiary',
-  password: 'postgres',
-  port: 5432,
-});
-const queryObject = {
-  query: (text, params, callback) => {
-    const start = Date.now();
-    return pool.query(text, params, (err, res) => {
-      const duration = Date.now() - start;
-      console.log('executed query', { text, duration, rows: res.rowCount });
-      callback(err, res);
-    });
-  },
+dotenv.config();
+const credential = {
+  user: process.env.DB_USER,
+  host: process.env.DB_HOST,
+  database: process.env.DB_DATABASE,
+  password: process.env.DB_PASSWORD,
+  port: process.env.DB_PORT,
 };
-export default queryObject;
+export default credential;
