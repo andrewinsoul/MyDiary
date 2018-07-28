@@ -7,5 +7,6 @@ module.exports = {
         "import/no-extraneous-dependencies": 0,
         "no-undef": 0,
         "quotes": 0,
+        "consistent-return": 0,
     }
 };
