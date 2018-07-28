@@ -7,5 +7,5 @@ const userRouter = express.Router();
 
 userRouter
   .post('/auth/signup', [validateUserResource, appMiddleware.addUserMiddleware, userHandler.createUser])
-  .post('/auth/login', userHandler.loginUser);
+  .post('/auth/login', [validateUserResource, userHandler.loginUser]);
 export default userRouter;
