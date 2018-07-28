@@ -30,7 +30,10 @@ const userHandler = {
         return res.status(201).send({ auth: true, token });
       },
     )
-      .catch(err => console.log(err));
+      .catch((error) => {
+        if (error.detail.includes('exists')) return res.status(409).send({ error: 'username already exists' });
+        return res.status(500).send({ error });
+      });
   },
 };
 export default userHandler;
