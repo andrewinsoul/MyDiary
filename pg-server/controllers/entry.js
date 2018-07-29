@@ -14,5 +14,14 @@ const entryHandler = {
     )
       .catch(error => res.status(500).send({ error }));
   },
+
+  getAllEntry(req, res) {
+    client.query(
+      'SELECT * FROM entries',
+    ).then(
+      result => res.status(200).send({ message: result.rows }),
+    )
+      .catch(error => res.status(500).send({ error }));
+  },
 };
 export default entryHandler;
