@@ -46,7 +46,7 @@ const entryHandler = {
       }
       client.query(
         'UPDATE entries SET title=($1), entry=($2), createdAt=NOW() WHERE entryId=($3) RETURNING *', [req.body.title, req.body.entry, req.params.entryId],
-      ).then(queryOut => res.status(200).send({ message: queryOut }));
+      ).then(queryOut => res.status(200).send({ message: queryOut.rows }));
     })
       .catch(error => res.status(500).send({ error }));
   },
