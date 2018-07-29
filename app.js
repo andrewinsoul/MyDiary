@@ -7,6 +7,7 @@ import swaggerUi from 'swagger-ui-express';
 import sqlCode from './pg-server/sql/sqlObject';
 import userRoute from './pg-server/routes/userRouter';
 import diaryRoute from './pg-server/routes/diaryRouter';
+import entryRoute from './pg-server/routes/entryRouter';
 import client from './pg-server/config/config';
 
 let query = client.query(sqlCode.CreateUserTable);
@@ -26,6 +27,7 @@ app.use(bodyParser.urlencoded({ extended: false }));
 app.use(ExpressValidator());
 app.use('/api/v1/', userRoute);
 app.use('/api/v1/', diaryRoute);
+app.use('/api/v1/', entryRoute);
 app.get('/', (req, res) => res.status(200).send({ message: 'welcome to MyDiary API' }));
 app.get('*', (req, res) => res.redirect(302, '/api/v1/api-docs'));
 
