@@ -6,5 +6,6 @@ import appMiddleware from '../middlewares/appMiddleware';
 const entryRouter = express.Router();
 
 entryRouter
-  .post('/entries', [appMiddleware.verifyToken, validateUserResource, entryHandler.addEntry]);
+  .post('/entries', [appMiddleware.verifyToken, validateUserResource, entryHandler.addEntry])
+  .get('/entries', entryHandler.getAllEntry);
 export default entryRouter;
