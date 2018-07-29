@@ -41,7 +41,7 @@ const userHandler = {
       password: req.body.password,
     };
     client.query(
-      'SELECT email, password FROM users WHERE email=($1)', [userInput.email],
+      'SELECT email, password FROM users WHERE email=($1) LIMIT 1', [userInput.email],
     ).then((result) => {
       if (result.rowCount === 0) return res.status(404).send({ auth: false, token: null, error: 'User with mail not found.' });
       const isPasswordValid = bcrypt.compareSync(req.body.password, result.rows[0].password);

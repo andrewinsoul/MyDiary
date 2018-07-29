@@ -13,6 +13,13 @@ export default function validateUserResource(req, res, next) {
       req.checkBody('email', 'email should be valid').isEmail();
       req.checkBody('password', 'password is required').notEmpty();
     }
+    if (req.url === '/diaries') {
+      req.checkBody('name', 'name of diary is required').notEmpty();
+      req.checkBody('type', 'type of diary is required').notEmpty();
+      req.checkBody('userId', 'userId is required').notEmpty();
+      req.checkBody('userId', 'userId must be an integer').isInt();
+      req.checkBody('desc', 'description of diary is required').notEmpty();
+    }
     const error = req.validationErrors();
     if (error) return res.status(400).send({ message: 'validation failed', failures: error });
     return next();
