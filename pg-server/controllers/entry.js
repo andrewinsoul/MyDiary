@@ -23,5 +23,15 @@ const entryHandler = {
     )
       .catch(error => res.status(500).send({ error }));
   },
+
+  getAnEntry(req, res) {
+    client.query(
+      'SELECT * FROM entries WHERE entryId=($1) LIMIT 1', [req.params.entryId],
+    ).then((result) => {
+      if (!result.rows.length) return res.status(404).send({ error: 'entry not found' });
+      return res.status(200).send({ message: result.rows });
+    })
+      .catch(error => res.status(500).send({ error }));
+  },
 };
 export default entryHandler;

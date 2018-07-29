@@ -7,5 +7,6 @@ const entryRouter = express.Router();
 
 entryRouter
   .post('/entries', [appMiddleware.verifyToken, validateUserResource, entryHandler.addEntry])
-  .get('/entries', entryHandler.getAllEntry);
+  .get('/entries', entryHandler.getAllEntry)
+  .get('/entry/:entryId', entryHandler.getAnEntry);
 export default entryRouter;
