@@ -45,7 +45,7 @@ const userHandler = {
     ).then((result) => {
       if (result.rowCount === 0) return res.status(404).send({ auth: false, token: null, error: 'User with mail not found.' });
       const isPasswordValid = bcrypt.compareSync(req.body.password, result.rows[0].password);
-      if (!isPasswordValid) return res.status(401).send({ auth: false, token: null, msg: 'incorrect password' });
+      if (!isPasswordValid) return res.status(401).send({ auth: false, token: null, error: 'incorrect password' });
       const token = jwt.sign(
         {
           id: result.rows[0].email,
