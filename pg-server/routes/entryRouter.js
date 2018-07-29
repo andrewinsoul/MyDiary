@@ -6,7 +6,8 @@ import appMiddleware from '../middlewares/appMiddleware';
 const entryRouter = express.Router();
 
 entryRouter
-  .post('/entries', [appMiddleware.verifyToken, validateUserResource, entryHandler.addEntry])
-  .get('/entries', entryHandler.getAllEntry)
-  .get('/entry/:entryId', entryHandler.getAnEntry);
+  .post('/entries', [validateUserResource, appMiddleware.verifyToken, entryHandler.addEntry])
+  .get('/entries', [appMiddleware.verifyToken, entryHandler.getAllEntry])
+  .get('/entry/:entryId', [appMiddleware.verifyToken, entryHandler.getAnEntry])
+  .put('/entries/:entryId', [validateUserResource, appMiddleware.verifyToken, entryHandler.modifyEntry]);
 export default entryRouter;
