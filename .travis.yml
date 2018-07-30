@@ -1,11 +1,16 @@
 language: node_js
-node_js: 
+node_js:
   - "stable"
-cache: bundler
+services:
+  - postgresql
 before_script:
-  - npm i -D coveralls
-script: 
-  - npm test
+  - psql -c "CREATE USER andy WITH PASSWORD 'postgres';" -U postgres
+  - psql -c "CREATE DATABASE MyDiaryTestDB;" -U postgres
+  - npm i -D coveralls 
+script:
+  - npm run db-test
 after_success:
   - npm run coverage
   - npm run report-coverage
+env:
+  - NODE_ENV = test
