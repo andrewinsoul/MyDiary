@@ -5,7 +5,7 @@ services:
   - postgresql
 before_script:
   - psql -c "CREATE USER andy WITH PASSWORD 'postgres';" -U postgres
-  - psql -c "CREATE DATABASE MyDiaryTest;" -U postgres
+  - psql -c "CREATE DATABASE MyDiaryTestDB;" -U postgres
   - npm i -D coveralls 
 script:
   - npm run db-test
