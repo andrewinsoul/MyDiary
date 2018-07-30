@@ -14,6 +14,7 @@ after_success:
   - npm run report-coverage
 env:
   global:
-    - TEST_DATABASE=MyDiaryTest
+    - TEST_DATABASE=MyDiaryTestDB
     - DB_PASSWORD=postgres
     - jwtKEY='amazing_grace'
+    -DB_USER='andy'
