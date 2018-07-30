@@ -6,6 +6,13 @@ const userData = {
     username: 'andy',
     email: 'andrewinsoul@gmail.com',
   },
+  userWithNotSamePassword: {
+    name: 'Andrew Okoye',
+    password: 'pythonismystack',
+    confirmPassword: 'javascriptismystack',
+    username: 'andy',
+    email: 'andrewinsoul@gmail.com',
+  },
   userWithIncompleteDetails: {
     name: 'Andrew Okoye',
     password: 'pythonismystack',

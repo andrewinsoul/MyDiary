@@ -19,6 +19,17 @@ describe('MyDiary backend tests with postgres database for user model', () => {
           done();
         });
     });
+
+    it('should return code 409 error message', (done) => {
+      chai.request(app)
+        .post('/api/v1/auth/signup')
+        .send(userData.userWithCompleteDetails)
+        .end((err, res) => {
+          expect(res).to.have.status(409);
+          expect(res.body).to.have.property('error');
+          done();
+        });
+    });
   });
 
   describe('tests method that logins a user', () => {

@@ -42,4 +42,21 @@ describe('MyDiary backend tests with postgres database for entry model', () => {
         });
     });
   });
+
+  describe('tests method that updates an entry in the databse', () => {
+    it('should return code 200 with array containing updated entry', (done) => {
+      chai.request(app)
+        .put('/api/v1/entries/1')
+        .send({
+          title: 'Play Hard',
+          token: entryData.entryWithCompleteDetails.token,
+          entry: 'working hard to me is not complete...',
+        })
+        .end((err, res) => {
+          expect(res).to.have.status(200);
+          expect(res.body).to.have.property('message');
+          done();
+        });
+    });
+  });
 });
