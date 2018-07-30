@@ -10,9 +10,9 @@ const credential = {
     port: process.env.DB_PORT,
   },
   test: {
-    username: process.env.DB_USER,
+    username: 'andy',
     host: process.env.DB_HOST,
-    // database: process.env.TEST_DATABASE,
+    database: process.env.TEST_DATABASE,
     password: process.env.DB_PASSWORD,
     port: process.env.DB_PORT,
   },
