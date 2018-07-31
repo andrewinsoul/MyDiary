@@ -4,11 +4,35 @@ import app from '../../app';
 import userData from '../seed-data/user-data';
 import entryData from '../seed-data/entry-data';
 import diaryData from '../seed-data/diary-data';
+import queryTool from '../config/config';
 
 chai.use(chaiHttp);
 const { expect } = chai;
+let tokenValue;
 
 describe('MyDiary backend tests with postgres database for middlewares', () => {
+  after((done) => {
+    queryTool.query('DROP TABLE users CASCADE')
+      .then(() => queryTool.query('DROP TABLE diaries CASCADE'))
+      .then(() => queryTool.query('DROP TABLE entries CASCADE'));
+    done();
+  });
+
+  describe('login with valid credentials to get token', () => {
+    it('should return token', (done) => {
+      chai.request(app)
+        .post('/api/v1/auth/login')
+        .send({
+          email: 'andrewinsoul@gmail.com',
+          password: 'pythonismystack',
+        })
+        .end((err, res) => {
+          tokenValue = res.body.token;
+          done();
+        });
+    });
+  });
+
   describe('tests method that inserts a user to the databse', () => {
     it('should return code 400 with error message', (done) => {
       chai.request(app)
@@ -71,6 +95,7 @@ describe('MyDiary backend tests with postgres database for middlewares', () => {
       chai.request(app)
         .post('/api/v1/diaries')
         .send(diaryData.diaryWithWrongType)
+        .set('x-access-token', tokenValue)
         .end((err, res) => {
           expect(res).to.have.status(400);
           expect(res.body.error).to.eql('type must be either private or public');

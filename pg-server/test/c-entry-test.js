@@ -1,30 +1,26 @@
 import chai from 'chai';
 import chaiHttp from 'chai-http';
 import app from '../../app';
-import queryTool from '../config/config';
-import entryData from '../seed-data/entry-data';
 
 chai.use(chaiHttp);
 const { expect } = chai;
+let tokenValue;
 
 describe('MyDiary backend tests with postgres database for entry model', () => {
-  after((done) => {
-    queryTool.query('DROP TABLE users CASCADE')
-      .then(() => queryTool.query('DROP TABLE diaries CASCADE'))
-      .then(() => queryTool.query('DROP TABLE entries CASCADE'));
-    done();
-  });
-
   describe('tests method that inserts an entry to the databse', () => {
-    it('should return code 201 with row containing entry just added', (done) => {
-      chai.request(app)
-        .post('/api/v1/entries')
-        .send(entryData.entryWithCompleteDetails)
-        .end((err, res) => {
-          expect(res).to.have.status(201);
-          expect(res.body).to.have.property('message');
-          done();
-        });
+    describe('login with valid credentials to get token', () => {
+      it('should return token', (done) => {
+        chai.request(app)
+          .post('/api/v1/auth/login')
+          .send({
+            email: 'andrewinsoul@gmail.com',
+            password: 'pythonismystack',
+          })
+          .end((err, res) => {
+            tokenValue = res.body.token;
+            done();
+          });
+      });
     });
   });
 
@@ -32,26 +28,7 @@ describe('MyDiary backend tests with postgres database for entry model', () => {
     it('should return code 200 with array containing all entries', (done) => {
       chai.request(app)
         .get('/api/v1/entries')
-        .send({
-          token: entryData.entryWithCompleteDetails.token,
-        })
-        .end((err, res) => {
-          expect(res).to.have.status(200);
-          expect(res.body).to.have.property('message');
-          done();
-        });
-    });
-  });
-
-  describe('tests method that updates an entry in the databse', () => {
-    it('should return code 200 with array containing updated entry', (done) => {
-      chai.request(app)
-        .put('/api/v1/entries/1')
-        .send({
-          title: 'Play Hard',
-          token: entryData.entryWithCompleteDetails.token,
-          entry: 'working hard to me is not complete...',
-        })
+        .set('x-access-token', tokenValue)
         .end((err, res) => {
           expect(res).to.have.status(200);
           expect(res.body).to.have.property('message');
