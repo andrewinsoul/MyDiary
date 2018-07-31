@@ -53,7 +53,7 @@ paths:
           examples:
             application/json:
               error: false
-              message: Diary created successfully
+              message: {auth: true, token: xxx-xxx-xxxx}
               diary:
                 id: 1
                 name: pre-Andela Days
@@ -66,35 +66,8 @@ paths:
             application/json:
               error: true
               message: 'Name is required'
-  /diary/{id}:
-    delete:
-      tags:
-      - diary
-      summary: removes a diary
-      description: deletes a particular diary
-      produces:
-      - application/json
-      parameters:
-        - in: path
-          name: id
-          required: true
-          description: The id of the diary to delete
-          type: integer
-      responses:
-        200:
-          description: Diary deleted
-          examples:
-            application/json:
-              error: false
-              message: 'diary successfully deleted'
-        404:
-          description: diary not found
-          examples:
-            application/json:
-              error: 'true'
-              message: 'Diary not found'
 
-  /entry:
+  /entries:
     post:
       summary: creates an entry in a diary
       tags:
@@ -122,6 +95,9 @@ paths:
       - in: formData
         name: time
         type: string
+      - in: formData
+        type: token
+        descriptionss: token that will be used to access endpoint
       responses:
         201:
           description: Added entry Successfully
@@ -150,7 +126,7 @@ paths:
       - application/json
       responses:
         200:
-          description: Object of all entries
+          description: Object of all entries in the diary
           examples:
             application/json:
               error: false
