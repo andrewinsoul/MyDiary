@@ -66,9 +66,9 @@ https://mydiaryandy.herokuapp.com/
 - Create your feature branch on your local machine with ```git checkout -b your-feature-branch```
 - Push your changes to your remote branch with ```git push origin your-feature-branch```
 - Open a pull request to the master branch, and describe how your feature works
-
-Ensure your codes follow <a href="https://github.com/airbnb/javascript">AirBnB Javascript Styles Guide</a>
 ````
+Ensure your codes follow [AirBnB Javascript Styles Guide]('https://github.com/airbnb/javascript')
+
 
 ## Author
 
