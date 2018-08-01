@@ -67,7 +67,7 @@ https://mydiaryandy.herokuapp.com/
 - Push your changes to your remote branch with ```git push origin your-feature-branch```
 - Open a pull request to the master branch, and describe how your feature works
 ````
-Ensure your codes follow [AirBnB Javascript Styles Guide]('https://github.com/airbnb/javascript')
+Ensure your codes follow [AirBnB Javascript Styles Guide](https://github.com/airbnb/javascript)
 
 
 ## Author
