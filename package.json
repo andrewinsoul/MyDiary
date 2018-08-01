@@ -7,8 +7,7 @@
     "test": "nyc mocha ./server/test --compilers js:babel-core/register --exit",
     "db-test": "cross-env NODE_ENV=test nyc mocha ./pg-server/test/*.js --compilers js:babel-core/register --timeout 18000 --exit",
     "heroku-postbuild": "npm install --production",
-    "start-server": "babel-node ./app",
-    "start": "cross-env NODE_ENV=production babel-node ./app",
+    "start": "babel-node ./app",
     "coverage": "nyc --reporter=lcov --reporter=text-lcov npm run db-test",
     "report-coverage": "cat ./coverage/lcov.info | coveralls"
   },
