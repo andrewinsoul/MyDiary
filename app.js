@@ -11,9 +11,15 @@ import entryRoute from './server/routes/entryRouter';
 import client from './server/config/config';
 
 let query = client.query(sqlCode.CreateUserTable);
-query.then(() => console.log('users table successfully created'));
+query.then(
+  () => console.log('users table successfully created'),
+)
+  .catch(err => console.log(err));
 query = client.query(sqlCode.CreateDiaryTable);
-query.then(() => console.log('diary table created successfully'));
+query.then(
+  () => console.log('diary table created successfully'),
+)
+  .catch(err => console.log(err));
 query = client.query(sqlCode.CreateEntryTable);
 query.then(() => console.log('entries table successfully created'));
 
