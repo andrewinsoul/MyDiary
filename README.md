@@ -5,7 +5,8 @@ MyDiary is an online platform that enables a user to keep log of memorable exper
 
 <p align="center"> 
   <li><a href="#Hosted Template">Link to hosted Template</a></li>
-  <li><a href="#Pivotal Tracker Link">Pivotal Tracker Link</a></li> 
+  <li><a href="#Technologies Used">API Documentation</a></li>
+  <li><a href="#Technologies Used">Hosted Application</a></li>
   <li><a href="#Technologies Used">Technologies Used</a></li>
   <li><a href="#Installation">How to Use</a></li>
   <li><a href="#Tests">How to test</a></li>
@@ -28,8 +29,8 @@ https://www.pivotaltracker.com/n/projects/2183393
 
 ## Hosted Application
 https://mydiaryandy.herokuapp.com/
-## Technologies Used
 
+## Technologies Used
 - NodeJS
 - Express
 - Babel
