@@ -8,5 +8,6 @@ module.exports = {
         "no-undef": 0,
         "quotes": 0,
         "consistent-return": 0,
+        "import/no-mutable-exports": 0,
     }
 };
