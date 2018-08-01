@@ -4,11 +4,11 @@ import logger from 'morgan';
 import YAML from 'yamljs';
 import ExpressValidator from 'express-validator';
 import swaggerUi from 'swagger-ui-express';
-import sqlCode from './pg-server/sql/sqlObject';
-import userRoute from './pg-server/routes/userRouter';
-import diaryRoute from './pg-server/routes/diaryRouter';
-import entryRoute from './pg-server/routes/entryRouter';
-import client from './pg-server/config/config';
+import sqlCode from './server/sql/sqlObject';
+import userRoute from './server/routes/userRouter';
+import diaryRoute from './server/routes/diaryRouter';
+import entryRoute from './server/routes/entryRouter';
+import client from './server/config/config';
 
 let query = client.query(sqlCode.CreateUserTable);
 query.then(() => console.log('users table successfully created'));
