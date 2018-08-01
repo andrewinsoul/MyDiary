@@ -23,12 +23,20 @@ https://andrewinsoul.github.io/MyDiary/UI/index.html
 
 https://www.pivotaltracker.com/n/projects/2183393
 
+## API Documentation
+<a href='https://mydiaryandy.herokuapp.com/api-docs'>View </a>the documentation of the API
+
+## Hosted Application
+https://mydiaryandy.herokuapp.com/
 ## Technologies Used
 
 - NodeJS
 - Express
 - Babel
 - Eslint
+- JsonWebToken
+- Postgres Database
+- Swagger
 
 ## Installation
 
@@ -43,6 +51,7 @@ https://www.pivotaltracker.com/n/projects/2183393
 ## Tests
 
 - Run dummy test using `npm test`
+- Run database test using `npm run db-test`
 
 ## Coding Style
 
