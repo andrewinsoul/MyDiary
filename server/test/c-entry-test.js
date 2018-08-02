@@ -50,7 +50,7 @@ describe('MyDiary backend tests with postgres database for entry model', () => {
         });
     });
 
-    it('should return code 400 with row containing user information just added', (done) => {
+    it('should return code 400 with error message', (done) => {
       chai.request(app)
         .post('/api/v1/entries')
         .send(entryData.entryWithTitleAsSpace)
@@ -79,15 +79,15 @@ describe('MyDiary backend tests with postgres database for entry model', () => {
   describe('tests method that modifies an entry in the databse', () => {
     it('should return code 200 with array containing modified entry', (done) => {
       chai.request(app)
-        .put('/api/v1/entries/1')
+        .put('/api/v1/entries/169')
         .send({
           title: 'My Best Journey',
           entry: 'I have been through many journrys but this',
         })
         .set('x-access-token', tokenValue)
         .end((err, res) => {
-          expect(res).to.have.status(200);
-          expect(res.body).to.have.property('message');
+          expect(res).to.have.status(404);
+          expect(res.body).to.have.property('error');
           done();
         });
     });

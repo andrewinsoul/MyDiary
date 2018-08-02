@@ -48,11 +48,27 @@ describe('MyDiary backend tests with postgres database for middlewares', () => {
     it('should return code 400 with error message', (done) => {
       chai.request(app)
         .post('/api/v1/auth/signup')
+        .send({
+          name: 878,
+          username: 'oeuiu',
+          email: 'andrewinsoul@gmail.com',
+          password: 'overthrown',
+          confirmPassword: 'overthrown',
+        })
+        .end((err, res) => {
+          expect(res).to.have.status(400);
+          expect(res.body).to.have.property('failure');
+          done();
+        });
+    });
+
+    it('should return code 400 with error message', (done) => {
+      chai.request(app)
+        .post('/api/v1/auth/signup')
         .send(userData.userWithNotSamePassword)
         .end((err, res) => {
           expect(res).to.have.status(409);
           expect(res.body.error).to.eql('password mismatch');
-          expect(res.body).to.have.property('error');
           done();
         });
     });
