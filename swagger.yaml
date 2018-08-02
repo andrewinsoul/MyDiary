@@ -18,7 +18,7 @@ tags:
   description: Operations for entries
 
 paths:
-  /diary:
+  /diaries:
     post:
       summary: creates a diary
       tags:
@@ -39,6 +39,7 @@ paths:
         name: description
         type: string
         description: summary of diary contents
+        required: true
       - in: formData
         name: type
         type: string
@@ -47,6 +48,12 @@ paths:
         name: userId
         type: integer 
         description: 'id of user who created diary'
+        required: true
+      - in: formData
+        name: token
+        type: string
+        description: 'a string that authenticates a user to access an endpoint'
+        required: true
       responses:
         201:
           description: Added Diary Successfully
