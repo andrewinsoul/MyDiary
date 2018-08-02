@@ -14,9 +14,10 @@ class EntryHandler {
   getAllEntry(req, res) {
     client.query(
       'SELECT * FROM entries',
-    ).then(
-      result => res.status(200).send({ message: result.rows }),
-    )
+    ).then((result) => {
+      if (result.rowCount === 0) return res.status(200).send({ message: 'no entries created yet' });
+      return res.status(200).send({ message: result.rows });
+    })
       .catch(error => res.status(500).send({ error }));
   }
 
