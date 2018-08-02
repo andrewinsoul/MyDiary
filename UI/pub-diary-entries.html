@@ -6,6 +6,23 @@
     <title>Diary Entries</title>
     <link rel="stylesheet" href="./assets/styles/main.css"/>
     <link rel="stylesheet" href="./assets/styles/diary.css"/>
+    <style>
+      div.container {
+        margin-left: 0;     
+      }
+      nav {
+        margin-left: 0;
+      }
+      .table-div {
+        margin: 0;
+      }
+      .col, .col-1, .col-2, .col-3, .col-4 {
+        padding: 0;
+      }
+      footer {
+        margin-left: 1%;
+      }
+    </style>
   </head>
   <body>
     <div id="main-div">
@@ -17,45 +34,15 @@
             <div class="nav-links">
               <ul>
                 <li>
-                  <a href="create-diary.html" class="nav-link">Create Diary</a>
+                  <a href="login.html" class="nav-link">login</a>
                 </li>
                 <li>
-                  <a href="signup.html" class="nav-link">Notifications</a>
+                  <a href="signup.html" class="nav-link">sign up</a>
                 </li>
               </ul>
             </div>
-            <hr/>
           </div>
         </nav>
-      </div>
-      <div class="side-nav">
-        <div id="side-nav-head">
-          <img class="nav-brand" src="./assets/images/diary-icon.png"/>
-          MyDiary<br/>
-          <small>signed in as: username</small>
-        </div>
-        <div class="side-nav-links">
-          <a id="active" href="dashboard.html">
-            <img class="img-link" src="./assets/images/dashboard-icon.png"/>
-            Dashboard
-          </a>
-          <a href="#">
-            <img class="img-link" src="./assets/images/view-pub-diary.png"/>
-            Public Diaries
-          </a>
-          <a href="#">
-            <img class="img-link" src="./assets/images/private-diary.png"/>
-            My Diaries
-          </a>
-          <a href="#">
-            <img class="img-link" src="./assets/images/profile-settings.png"/>
-            Profile
-          </a>
-          <a href="index.html" id="logout">
-            <img class="img-link" src="./assets/images/logout-icon.jpg"/>
-            log out
-          </a>
-        </div>
       </div>
       <main class="container">
         <div class="row">
@@ -64,9 +51,6 @@
               <div class="col">
                 <div class="table-div row">
                   <h3 id="section-title">My Holidays</h3>
-                  <button id="add-button">
-                    <img src="./assets/images/add icon.png"/>
-                  </button>
                   <div id="page-modal" class="modal">
                       <div class="modal-head">
                         <span id="close-btn"><button id="close">X</button></span>
@@ -88,49 +72,49 @@
                       </div>
                     </div>
                   <table width="800px;" border="0" cellpadding="3" cellspacing="0">
-                    <tr onclick="openLink('diary-entry.html');">
+                    <tr onclick="openLink('public-diary-entry.html');">
                       <td class="title"><h4>Memorable Journey</h4></td>
                       <td class="entry">
                         Lorem ipsum dolor sit amet consectetur adipisicing elit. Ab, ea facere est minima quas quod possimus consectetur officia voluptatibus accusamus iure, aperiam nisi natus fugiat tempora sapiente optio necessitatibus nulla?
                       </td>
                       <td class="time"><h4>3 years ago </h4></td>
                     </tr>
-                    <tr onclick="openLink('diary-entry.html');">
+                    <tr onclick="openLink('public-diary-entry.html');">
                       <td class="title"><h4>Memorable Journey</h4></td>
                       <td class="entry">
                         Lorem ipsum dolor sit amet consectetur adipisicing elit. Ab, ea facere est minima quas quod possimus consectetur officia voluptatibus accusamus iure, aperiam nisi natus fugiat tempora sapiente optio necessitatibus nulla?
                       </td>
                       <td class="time"><h4>2 years ago</h4></td>
                     </tr>
-                    <tr onclick="openLink('diary-entry.html');">
+                    <tr onclick="openLink('public-diary-entry.html');">
                       <td class="title"><h4>Memorable Journey</h4></td>
                       <td class="entry">
                         Lorem ipsum dolor sit amet consectetur adipisicing elit. Ab, ea facere est minima quas quod possimus consectetur officia voluptatibus accusamus iure, aperiam nisi natus fugiat tempora sapiente optio necessitatibus nulla?
                       </td>
                       <td class="time"><h4>1 year ago</h4></td>
                     </tr>
-                    <tr onclick="openLink('diary-entry.html');">
+                    <tr onclick="openLink('public-diary-entry.html');">
                       <td class="title"><h4>Memorable Journey</h4></td>
                       <td class="entry">
                         Lorem ipsum dolor sit amet consectetur adipisicing elit. Ab, ea facere est minima quas quod possimus consectetur officia voluptatibus accusamus iure, aperiam nisi natus fugiat tempora sapiente optio necessitatibus nulla?
                       </td>
                       <td class="time"><h4>6 months ago</h4></td>
                     </tr>
-                    <tr onclick="openLink('diary-entry.html');">
+                    <tr onclick="openLink('public-diary-entry.html');">
                       <td class="title"><h4>Memorable Journey</h4></td>
                       <td class="entry">
                         Lorem ipsum dolor sit amet consectetur adipisicing elit. Ab, ea facere est minima quas quod possimus consectetur officia voluptatibus accusamus iure, aperiam nisi natus fugiat tempora sapiente optio necessitatibus nulla?
                       </td>
                       <td class="time"><h4>6 months ago</h4></td>
                     </tr>
-                    <tr onclick="openLink('diary-entry.html');">
+                    <tr onclick="openLink('public-diary-entry.html');">
                       <td class="title"><h4>Memorable Journey</h4></td>
                       <td class="entry">
                         Lorem ipsum dolor sit amet consectetur adipisicing elit. Ab, ea facere est minima quas quod possimus consectetur officia voluptatibus accusamus iure, aperiam nisi natus fugiat tempora sapiente optio necessitatibus nulla?
                       </td>
                       <td class="time"><h4>2 weeks ago</h4></td>
                     </tr>
-                    <tr onclick="openLink('diary-entry.html');">
+                    <tr onclick="openLink('public-diary-entry.html');">
                       <td class="title"><h4>Memorable Journey</h4></td>
                       <td class="entry">
                         Lorem ipsum dolor sit amet consectetur adipisicing elit. Ab, ea facere est minima quas quod possimus consectetur officia voluptatibus accusamus iure, aperiam nisi natus fugiat tempora sapiente optio necessitatibus nulla?
