@@ -12,6 +12,7 @@ module.exports = {
         "no-else-return": 0,
         "new-cap": 0,
         "class-methods-use-this": 0,
+        "import/no-mutable-exports": 0,
             
     }
 };
