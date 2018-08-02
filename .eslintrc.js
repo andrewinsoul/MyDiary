@@ -10,6 +10,7 @@ module.exports = {
         "consistent-return": 0,
         "object-curly-newline": 0,
         "no-else-return": 0,
+        "class-methods-use-this": 0,
             
     }
 };

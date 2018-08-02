@@ -1,6 +1,6 @@
 import client from '../config/config';
 
-const entryHandler = {
+class EntryHandler {
   addEntry(req, res) {
     const { title, entry, diaryId } = req.body;
     client.query(
@@ -9,7 +9,7 @@ const entryHandler = {
       result => res.status(201).send({ message: result.rows }),
     )
       .catch(error => res.status(500).send({ error }));
-  },
+  }
 
   getAllEntry(req, res) {
     client.query(
@@ -18,7 +18,7 @@ const entryHandler = {
       result => res.status(200).send({ message: result.rows }),
     )
       .catch(error => res.status(500).send({ error }));
-  },
+  }
 
   getAnEntry(req, res) {
     client.query(
@@ -28,7 +28,7 @@ const entryHandler = {
       return res.status(200).send({ message: result.rows });
     })
       .catch(error => res.status(500).send({ error }));
-  },
+  }
 
   modifyEntry(req, res) {
     client.query(
@@ -45,6 +45,6 @@ const entryHandler = {
       ).then(queryOut => res.status(200).send({ message: queryOut.rows }));
     })
       .catch(error => res.status(500).send({ error }));
-  },
-};
-export default entryHandler;
+  }
+}
+export default new EntryHandler();

@@ -6,7 +6,7 @@ import client from '../config/config';
 dotenv.load();
 const key = process.env.jwtKEY;
 
-const userHandler = {
+class UserHandler {
   createUser(req, res) {
     const encodedPassword = bcrypt.hashSync(req.body.password, 8);
     const { name, email, username } = req.body;
@@ -27,7 +27,7 @@ const userHandler = {
       },
     )
       .catch(error => res.status(409).send({ error }));
-  },
+  }
 
   loginUser(req, res) {
     const message = 'login successful';
@@ -50,6 +50,6 @@ const userHandler = {
       return res.status(200).send({ auth: true, token, message });
     })
       .catch(error => res.status(500).send({ error }));
-  },
-};
-export default userHandler;
+  }
+}
+export default new UserHandler();
