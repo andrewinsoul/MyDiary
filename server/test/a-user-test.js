@@ -30,6 +30,28 @@ describe('MyDiary backend tests with postgres database for user model', () => {
           done();
         });
     });
+
+    it('should return code 400 error message', (done) => {
+      chai.request(app)
+        .post('/api/v1/auth/signup')
+        .send(userData.userWithSpaceAsName)
+        .end((err, res) => {
+          expect(res).to.have.status(400);
+          expect(res.body).to.have.property('error');
+          done();
+        });
+    });
+
+    it('should return code 400 error message', (done) => {
+      chai.request(app)
+        .post('/api/v1/auth/signup')
+        .send(userData.userWithSpaceAsUserName)
+        .end((err, res) => {
+          expect(res).to.have.status(400);
+          expect(res.body).to.have.property('error');
+          done();
+        });
+    });
   });
 
   describe('tests method that logins a user', () => {

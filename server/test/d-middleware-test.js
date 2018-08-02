@@ -104,4 +104,46 @@ describe('MyDiary backend tests with postgres database for middlewares', () => {
         });
     });
   });
+
+  describe('tests method that adds an entry', () => {
+    it('should return code 400 with error message', (done) => {
+      chai.request(app)
+        .post('/api/v1/entries')
+        .send(entryData.entryWithIncompleteDetails)
+        .set('x-access-token', tokenValue)
+        .end((err, res) => {
+          expect(res).to.have.status(400);
+          expect(res.body.message).to.eql('validation failed');
+          expect(res.body).to.have.property('message');
+          done();
+        });
+    });
+  });
+
+  describe('tests method that verifies a token', () => {
+    it('should return code 403 with error message', (done) => {
+      chai.request(app)
+        .post('/api/v1/diaries')
+        .send(diaryData.diaryWithCompleteDetails)
+        .end((err, res) => {
+          expect(res).to.have.status(403);
+          expect(res.body.auth).to.eql(false);
+          expect(res.body).to.have.property('auth');
+          done();
+        });
+    });
+
+    it('should return code 401 with error message', (done) => {
+      chai.request(app)
+        .post('/api/v1/diaries')
+        .send(diaryData.diaryWithCompleteDetails)
+        .set('x-access-token', 'wrongToken')
+        .end((err, res) => {
+          expect(res).to.have.status(401);
+          expect(res.body.auth).to.eql(false);
+          expect(res.body).to.have.property('auth');
+          done();
+        });
+    });
+  });
 });

@@ -35,5 +35,29 @@ describe('MyDiary backend tests with postgres database for diary model', () => {
           done();
         });
     });
+
+    it('should return code 400 with error message', (done) => {
+      chai.request(app)
+        .post('/api/v1/diaries')
+        .send(diaryData.diaryWithNameAsSpace)
+        .set('x-access-token', tokenValue)
+        .end((err, res) => {
+          expect(res).to.have.status(400);
+          expect(res.body).to.have.property('error');
+          done();
+        });
+    });
+
+    it('should return code 400 with row containing user information just added', (done) => {
+      chai.request(app)
+        .post('/api/v1/diaries')
+        .send(diaryData.diaryWithDescAsSpace)
+        .set('x-access-token', tokenValue)
+        .end((err, res) => {
+          expect(res).to.have.status(400);
+          expect(res.body).to.have.property('error');
+          done();
+        });
+    });
   });
 });
