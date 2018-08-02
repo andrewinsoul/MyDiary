@@ -40,8 +40,10 @@ class EntryHandler {
       if (currentDate - createEntryDate >= 3600000) {
         return res.status(200).send({ message: 'sorry, cannot modify entry after 24hrs of when it was created or modified.' });
       }
+      const { title, entry } = req.body;
+
       client.query(
-        'UPDATE entries SET title=($1), entry=($2), createdAt=NOW() WHERE entryId=($3) RETURNING *', [req.body.title, req.body.entry, req.params.entryId],
+        'UPDATE entries SET title=($1), entry=($2), createdAt=NOW() WHERE entryId=($3) RETURNING *', [title, entry, req.params.entryId],
       ).then(queryOut => res.status(200).send({ message: queryOut.rows }));
     })
       .catch(error => res.status(500).send({ error }));

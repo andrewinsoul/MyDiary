@@ -37,6 +37,30 @@ describe('MyDiary backend tests with postgres database for entry model', () => {
           done();
         });
     });
+
+    it('should return code 400 with error message', (done) => {
+      chai.request(app)
+        .post('/api/v1/entries')
+        .send(entryData.entryWithEntryAsSpace)
+        .set('x-access-token', tokenValue)
+        .end((err, res) => {
+          expect(res).to.have.status(400);
+          expect(res.body).to.have.property('error');
+          done();
+        });
+    });
+
+    it('should return code 400 with row containing user information just added', (done) => {
+      chai.request(app)
+        .post('/api/v1/entries')
+        .send(entryData.entryWithTitleAsSpace)
+        .set('x-access-token', tokenValue)
+        .end((err, res) => {
+          expect(res).to.have.status(400);
+          expect(res.body).to.have.property('error');
+          done();
+        });
+    });
   });
 
   describe('tests method that gets all entry in the databse', () => {
