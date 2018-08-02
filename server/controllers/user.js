@@ -11,12 +11,12 @@ class UserHandler {
     const encodedPassword = bcrypt.hashSync(req.body.password, 8);
     const { name, email, username } = req.body;
     client.query(
-      'INSERT INTO users(Name, Username, Password, Email) values($1, $2, $3, $4)', [name, username, encodedPassword, email],
+      'INSERT INTO users(Name, Username, Password, Email) values($1, $2, $3, $4) RETURNING *', [name, username, encodedPassword, email],
     ).then(
-      () => {
+      (result) => {
         const token = jwt.sign(
           {
-            id: email,
+            id: result.rows[0].userid,
           },
           key,
           {
@@ -26,7 +26,7 @@ class UserHandler {
         return res.status(201).send({ auth: true, token });
       },
     )
-      .catch(error => res.status(409).send({ error }));
+      .catch(error => res.status(409).send({ error: error.detail }));
   }
 
   loginUser(req, res) {
@@ -40,7 +40,7 @@ class UserHandler {
       if (!isPasswordValid) return res.status(401).send({ auth: false, token: null, error: 'incorrect password' });
       const token = jwt.sign(
         {
-          id: result.rows[0].email,
+          id: result.rows[0].userid,
         },
         key,
         {
@@ -49,7 +49,7 @@ class UserHandler {
       );
       return res.status(200).send({ auth: true, token, message });
     })
-      .catch(error => res.status(500).send({ error }));
+      .catch(error => res.status(500).send({ error: error.detail }));
   }
 }
 export default new UserHandler();

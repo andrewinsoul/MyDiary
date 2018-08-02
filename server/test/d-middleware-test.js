@@ -40,7 +40,6 @@ describe('MyDiary backend tests with postgres database for middlewares', () => {
         .send(userData.userWithIncompleteDetails)
         .end((err, res) => {
           expect(res).to.have.status(400);
-          expect(res.body.message).to.eql('validation failed');
           expect(res.body).to.have.property('failures');
           done();
         });
@@ -69,7 +68,6 @@ describe('MyDiary backend tests with postgres database for middlewares', () => {
         })
         .end((err, res) => {
           expect(res).to.have.status(400);
-          expect(res.body.message).to.eql('validation failed');
           expect(res.body).to.have.property('failures');
           done();
         });
@@ -83,7 +81,6 @@ describe('MyDiary backend tests with postgres database for middlewares', () => {
         .send(entryData.entryWithIncompleteDetails)
         .end((err, res) => {
           expect(res).to.have.status(400);
-          expect(res.body.message).to.eql('validation failed');
           expect(res.body).to.have.property('failures');
           done();
         });
@@ -113,8 +110,7 @@ describe('MyDiary backend tests with postgres database for middlewares', () => {
         .set('x-access-token', tokenValue)
         .end((err, res) => {
           expect(res).to.have.status(400);
-          expect(res.body.message).to.eql('validation failed');
-          expect(res.body).to.have.property('message');
+          expect(res.body).to.have.property('failures');
           done();
         });
     });
