@@ -8,5 +8,8 @@ module.exports = {
         "no-undef": 0,
         "quotes": 0,
         "consistent-return": 0,
+        "object-curly-newline": 0,
+        "no-else-return": 0,
+            
     }
 };

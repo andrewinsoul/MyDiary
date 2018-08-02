@@ -2,13 +2,9 @@ import client from '../config/config';
 
 const entryHandler = {
   addEntry(req, res) {
-    const entryInfo = {
-      title: req.body.title,
-      entry: req.body.entry,
-      diaryId: req.body.diaryId,
-    };
+    const { title, entry, diaryId } = req.body;
     client.query(
-      'INSERT INTO entries(Title, Entry, diaryId) values($1, $2, $3) RETURNING *', [entryInfo.title, entryInfo.entry, entryInfo.diaryId],
+      'INSERT INTO entries(Title, Entry, diaryId) values($1, $2, $3) RETURNING *', [title, entry, diaryId],
     ).then(
       result => res.status(201).send({ message: result.rows }),
     )
