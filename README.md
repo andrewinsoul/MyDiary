@@ -25,10 +25,10 @@ https://andrewinsoul.github.io/MyDiary/UI/index.html
 https://www.pivotaltracker.com/n/projects/2183393
 
 ## API Documentation
-<a href='https://mydiaryandy.herokuapp.com/api-docs'>View </a>the documentation of the API
+<a href='https://https://andy-diary.herokuapp.com'>View </a>the documentation of the API
 
 ## Hosted Application
-https://mydiaryandy.herokuapp.com/
+https://andy-diary.herokuapp.com
 
 ## Technologies Used
 - NodeJS
