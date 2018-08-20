@@ -12,24 +12,24 @@ footer {
   margin-top: 25px;
 }
 footer>div {
-  margin: 11px;
-  padding: 10px;
+  margin: 5px;
+  padding: 3px 13px;
 } 
 div.container {
-  margin-left: 25%;
+  margin-left: 14%;
 }
 div.nav-links {
-  margin-left: 48%;
+  margin-left: 60%;
 }
 hr {
   width: 850px;
 }
 div.side-nav {
-  width: 25%; 
+  width: 15%; 
   position: fixed; 
   overflow: auto; 
-  z-index: 1; 
-  background-color: #384318; 
+  z-index: 1;
+  background-color: #0c2623; 
   top: 0; 
   height: 100vh;
 }
@@ -66,8 +66,8 @@ div.side-nav-links>a:hover {
 #logout {
   margin-top: 65%;
 }
-div.main-content {
-  margin-left: 23%;
+main {
+  margin-left: 13%;
   width: auto;
 }
 div.jumbotron {
@@ -117,14 +117,14 @@ div.diary-detail {
   margin-bottom: 15%;
 }
 a.diary-btn {
-  background-color: goldenrod; 
+  background-color: #0c2623; 
   -moz-appearance: button; 
   appearance: button; 
   padding: 10px; 
   border-radius: 14px; 
   text-decoration: none; 
   font-size: 13.333px; 
-  color: black;
+  color: whitesmoke;
 }
 .diary-list {
   margin-bottom: 6%;
@@ -133,7 +133,7 @@ a.diary-btn {
   margin-top: 16%;
 }
 footer {
-  margin-left: 25%
+  margin-left: 14%
 }
 footer.social-handles {
   margin-left: 9px;

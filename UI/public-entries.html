@@ -1,0 +1,535 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no"/>
+    <title>MyDiary</title>
+    <link rel="stylesheet" href="./assets/styles/main.css"/>
+    <link rel="stylesheet" href="./assets/styles/index.css"/>
+    <link href='https://fonts.googleapis.com/css?family=Aguafina Script' rel='stylesheet'>
+    <link rel="icon" href="../favicon.ico" type="image/x-icon"/>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css"/>
+  </head>
+  <style>
+    html, body {
+      height: 100%;
+      position: relative;
+    }
+    #spacer {
+      margin-bottom: 4vw;
+    }
+    #container {
+      min-height: 100vh;
+      overflow: hidden;
+      position: relative;
+      padding-bottom: 130px;
+    }
+    .pagination {
+      display: flex;
+      justify-content: center;
+      margin-bottom: 2%;
+    }
+    .pagination a {
+      color: black;
+      padding: 8px 16px;
+      text-decoration: none;
+      transition: background-color .3s;
+    }
+    .pagination a.active {
+      background-color: dodgerblue;
+      color: #ddd;
+    }
+    .pagination a:hover:not(.active) {
+      background-color: #ddd;
+    }
+    nav, footer {
+      display: flex; 
+      flex-flow: row nowrap; 
+      align-items: center; 
+      background-color: black;
+      overflow: hidden;
+      justify-content: space-between;
+    }
+    #end, footer {
+      position: absolute;
+      bottom: 0;
+      width: 100%
+    }
+    #public-div {
+      display: flex;
+      flex-flow: row wrap;
+    }
+    .wrap {
+      text-overflow: ellipsis; 
+      overflow: hidden; 
+      white-space: nowrap;
+    }
+    .sub-form {
+      padding: 8px;
+    }
+    .entry-div {
+      color: #3f3f3f;
+    }
+    .entry-div h3 {
+      color: dodgerblue;
+      display: block;
+      margin: 5px;
+      margin-top: 5%;
+    }
+    #nav-links a:hover {
+      color: cornflowerblue;
+    }
+    .entry-div span {
+      margin: 5px;
+    }
+    p {
+      margin: 5px;
+    }
+    .footer-div p {
+      color: white;
+    }
+    #title-header {
+      margin-top: 3%;
+    }
+    #foot-entry {
+      width: 80%;
+    }
+    #foot-btn {
+      background-color: dodgerblue;
+      color: white;
+    }
+    small {
+      color: white;
+      margin-bottom: 15px;
+    }
+    #end, #title {
+      background-color: black; 
+      display: flex; 
+      justify-content: center;
+    }
+    .entry-div {
+      margin-bottom: 6%;
+      width: 30%; 
+      box-shadow: 0 0 15px rgba(0, 0, 0, 0.5);
+      border-radius: 6px;
+    }
+    .entry-div button {
+      color: dodgerblue;
+      border: 1px solid dodgerblue;
+      background-color: white;
+      padding: 10px 20px;
+      margin: 6% 2%;  
+    }
+    .entry-div button:hover {
+      color: white;
+      cursor: pointer;
+      background-color: dodgerblue;
+    }
+    #title {
+      background-color: white;
+    }
+    #entries-div {
+      background-color: white;
+      margin-left: 2%;
+      margin-bottom: 5%;
+    }
+    /* .icon {
+      padding: 10px;
+      background-color: dodgerblue;
+      color: white;
+      width: 5%;
+      margin-left: 10%;
+      text-align: center
+    } */
+    #email {
+      margin-right: 45px;
+    }
+    .topnav a {
+      color: #f2f2f2;
+      padding: 14px 16px;
+      text-decoration: none
+    }
+    .form-inline {
+      margin-right: 1%;
+    }
+    .form-inline input {
+      vertical-align: middle;
+      margin: 5px 10px 5px 0;
+      padding: 10px;
+      background-color: #fff;
+      border: 1px solid #ddd;
+    }
+    .form-inline button {
+      padding: 10px 20px;
+      background-color: dodgerblue;
+      border: 1px solid #ddd;
+      color: white;
+    }
+    .form-inline button:hover {
+      background-color: royalblue;
+    }
+    .topnav h3 {
+      color: #ddd;
+      padding: 14px 0;
+    }
+    .form-inline label {
+      color: #fff;
+    }
+    .typo {
+      display: inline;
+    }
+    .sec-1 {
+      margin: 57px 0;
+      text-align: center;
+    }
+    .nav-brand {
+      margin-left: 1rem;
+      margin-top: 1rem;
+      margin-bottom: 1rem;
+    }
+    h1 {
+      text-align: center;
+    }
+    button.icon {
+      display: none;
+      cursor: pointer;
+    }
+    #main-div {
+      background: url(./assets/images/diary.jpg) no-repeat fixed;
+      background-size: cover;
+    }
+    main {
+      background-color: rgba(1, 1, 1, 0.8); 
+      color: white;
+      display: flex;
+      flex-direction: row-reverse;
+      align-items: center;
+      justify-content: space-evenly;
+    }
+
+    .jumbotron {
+      background-color: #fff; 
+      margin: 57px 0; 
+      width: 35vw;
+    }
+    .jumbotron h4 {
+      color: black;
+      text-align: center;
+    }
+    .jumbotron form {
+      display: flex;
+      flex-direction: column;
+    }
+    #join-btn {
+      margin-left: 10%;
+      color: #fff;
+      width: 84%;
+      margin-bottom: 44px;
+      background-color: dodgerblue
+    }
+    #social-handles, #subscribe {
+      margin-left: 1rem;
+      margin-right: 1rem;
+    }
+    .footer-div a {
+      color: beige;
+    }
+    .footer-div a:hover {
+      color: cornflowerblue;
+      text-decoration: none;
+    }
+    input, button {
+      border-radius: 4px;
+      border: 1px solid grey
+    }
+    .reg-div {
+      background-color: #fff; 
+      display: flex;
+      margin-top: 27px;
+      margin-right: auto; 
+      width: 35vw;
+    }
+    .sec-1 {
+      width: 45vw;
+    }
+    .reg-div input {
+      width: 70%;
+      color: rgba(1, 1, 1, 0.8);
+      letter-spacing: 0.025cm;
+      padding: 10px
+    }
+    #public-btn {
+      display: block;
+      cursor: pointer;
+      color: #fff;
+      margin: auto;
+      margin-top: 7%;
+      padding: 20px;
+      background-color: rgb(6, 110, 214); 
+    }
+    .footer-div {
+      color: white;
+    }
+    #card-1 {
+      margin-left: 2%;
+    }
+    #card-2 {
+      margin-left: 2%;
+      margin-right: 2%;
+    }
+    #card-3 {
+      margin-right: 2%;
+    }
+    .fa-eye {
+      color: #3f3f3f;
+    }
+    @media screen and (max-width: 803px) {
+      .topnav a {
+        display: none
+      }
+      #social-handles, #subscribe {
+      margin-left: auto;
+      margin-right: auto;
+    }
+      #subscribe {
+        margin-bottom: 5%
+      }
+      #card-3, #card-1, #card-2 {
+        margin-left: 5vw;
+      }
+      small {
+        margin-top: 3%
+      }
+      footer {
+        text-align: center;
+        flex-flow: column;
+      }
+      #public-div {
+        flex-direction: column;
+      }
+      .entry-div {
+        margin-bottom: 6%;
+        width: 90vw;
+        margin-left: 5vw; 
+        box-shadow: 0 0 50px rgba(0, 0, 0, 0.5);
+        border-radius: 6px;
+      }
+      .nav-btn {
+        display: block;
+        margin: 4% 0;
+      }
+      label {
+        display: block;
+      }
+      .reg-div label {
+        width: 22%
+      }
+      #email {
+        margin-bottom: 35px
+      }
+      .jumbotron, .sec-1 {
+        width: 75vw;
+        margin-left: auto;
+        margin-right: auto
+      }
+      #main-div {
+        background-size: 1200px;
+      }
+      .topnav button.icon {
+        float: right;
+        padding: 10px;
+        display: block;
+        margin: 14px 16px;
+      }
+      .topnav.responsive {
+        position: relative;
+        display: block;
+      }
+      .topnav.responsive button.icon {
+        position: absolute;
+        right: 0;
+        top: 0;
+      }
+      .topnav.responsive a {
+        float: none;
+        text-align: center;
+        display: block;
+      }
+    }
+  </style>
+  <body>
+    <div id="container">
+      <nav class="topnav" id="Topnav">
+        <div id="brand-div">
+          <img class="nav-brand" src="./assets/images/diary-icon.png"/>
+          <h1 style="font-family: Aguafina Script; color: white; display: inline-block">MyDiary</h1>
+        </div>
+        <div id="nav-links">
+          <a id="login-link" href="login.html">Login</a>
+          <a href="signup.html">Sign Up</a>
+          <a href="about.html">About</a>
+          <a id="faq-link" href="faq.html">FAQ</a>
+        </div>
+        <button href="javascript:void(0);" class="icon" onclick="toggler()">
+          <i class="fa fa-bars"></i>
+        </button>
+      </nav>
+      <div id="title">
+        <h3>Public Entries</h3>
+      </div>
+      <div id="public-div">
+        <div class="entry-div" id="card-1">
+          <div>
+            <h3 class="wrap" id="title-header">Title: </h3>
+            <span>My First Kiss</span>
+          </div>
+          <div>
+            <h3>Entry: </h3>
+            <p class="wrap">
+              Lorem ipsum dolor, sit amet consectetur adipisicing elit. Nostrum dignissimos officiis corrupti, facilis similique explicabo vitae corporis architecto animi vero inventore voluptates? Asperiores tenetur deleniti sapiente distinctio exercitationem voluptates in. Lorem ipsum dolor sit amet consectetur adipisicing elit. Illo doloribus labore, enim quod maxime fugiat rerum nemo accusantium! Nemo quae aut est debitis fugiat, modi deserunt sunt magnam explicabo officia? Lorem ipsum dolor sit amet consectetur, adipisicing elit. Eligendi cumque distinctio neque dicta facere, asperiores dolores commodi suscipit voluptatum fugiat deserunt aliquid ad itaque odit iste ut maiores id reprehenderit.
+            </p>
+          </div>
+          <div>
+            <h3>Owner: </h3>
+            <span>Andy</span>
+          </div>
+          <div>
+            <h3></h3>
+            <span>
+              <i class="fa fa-eye">
+                <b><i>4k</i></b>
+              </i>
+            </span>
+          </div>
+          <button onclick="openLink('public-entry.html')">View Entry</button>
+        </div>
+        <div class="entry-div" id="card-2">
+          <div>
+            <h3 class="wrap" id="title-header">Title: </h3>
+            <span>My First Kiss</span>
+          </div>
+          <div>
+            <h3>Entry: </h3>
+            <p class="wrap">
+              Lorem ipsum dolor, sit amet consectetur adipisicing elit. Nostrum dignissimos officiis corrupti, facilis similique explicabo vitae corporis architecto animi vero inventore voluptates? Asperiores tenetur deleniti sapiente distinctio exercitationem voluptates in. Lorem ipsum dolor sit amet consectetur adipisicing elit. Illo doloribus labore, enim quod maxime fugiat rerum nemo accusantium! Nemo quae aut est debitis fugiat, modi deserunt sunt magnam explicabo officia? Lorem ipsum dolor sit amet consectetur, adipisicing elit. Eligendi cumque distinctio neque dicta facere, asperiores dolores commodi suscipit voluptatum fugiat deserunt aliquid ad itaque odit iste ut maiores id reprehenderit.
+            </p>
+          </div>
+          <div>
+            <h3>Owner: </h3>
+            <span>Andy</span>
+          </div>
+          <div>
+            <h3></h3>
+            <span>
+              <i class="fa fa-eye">
+                <b><i>999</i></b>
+              </i>
+            </span>
+          </div>
+          <button onclick="openLink('public-entry.html')">View Entry</button>
+        </div>
+        <div class="entry-div" id="card-3">
+          <div>
+            <h3 class="wrap" id="title-header">Title: </h3>
+            <span>My First Kiss</span>
+          </div>
+          <div>
+            <h3>Entry: </h3>
+            <p class="wrap">
+              Lorem ipsum dolor, sit amet consectetur adipisicing elit. Nostrum dignissimos officiis corrupti, facilis similique explicabo vitae corporis architecto animi vero inventore voluptates? Asperiores tenetur deleniti sapiente distinctio exercitationem voluptates in. Lorem ipsum dolor sit amet consectetur adipisicing elit. Illo doloribus labore, enim quod maxime fugiat rerum nemo accusantium! Nemo quae aut est debitis fugiat, modi deserunt sunt magnam explicabo officia? Lorem ipsum dolor sit amet consectetur, adipisicing elit. Eligendi cumque distinctio neque dicta facere, asperiores dolores commodi suscipit voluptatum fugiat deserunt aliquid ad itaque odit iste ut maiores id reprehenderit.
+            </p>
+          </div>
+          <div>
+            <h3>Owner: </h3>
+            <span>Andy</span>
+          </div>
+          <div>
+            <h3></h3>
+            <span>
+              <i class="fa fa-eye">
+                <b><i>666</i></b>
+              </i>
+            </span>
+          </div>
+          <button onclick="openLink('public-entry.html')">View Entry</button>
+        </div>
+        <div class="entry-div" id="card-1">
+          <div>
+            <h3 class="wrap" id="title-header">Title: </h3>
+            <span>My First Kiss</span>
+          </div>
+          <div>
+            <h3>Entry: </h3>
+            <p class="wrap">
+              Lorem ipsum dolor, sit amet consectetur adipisicing elit. Nostrum dignissimos officiis corrupti, facilis similique explicabo vitae corporis architecto animi vero inventore voluptates? Asperiores tenetur deleniti sapiente distinctio exercitationem voluptates in. Lorem ipsum dolor sit amet consectetur adipisicing elit. Illo doloribus labore, enim quod maxime fugiat rerum nemo accusantium! Nemo quae aut est debitis fugiat, modi deserunt sunt magnam explicabo officia? Lorem ipsum dolor sit amet consectetur, adipisicing elit. Eligendi cumque distinctio neque dicta facere, asperiores dolores commodi suscipit voluptatum fugiat deserunt aliquid ad itaque odit iste ut maiores id reprehenderit.
+            </p>
+          </div>
+          <div>
+            <h3>Owner: </h3>
+            <span>Andy</span>
+          </div>
+          <div>
+            <h3></h3>
+            <span>
+              <i class="fa fa-eye">
+                <b><i>4k</i></b>
+              </i>
+            </span>
+          </div>
+          <button onclick="openLink('public-entry.html')">View Entry</button>
+        </div>
+      </div>
+      <div class="pagination">
+        <a href="#">&laquo;</a>
+        <a href="#" class="active">1</a>
+        <a href="#">2</a>
+        <a href="#">3</a>
+        <a href="#">4</a>
+        <a href="#">5</a>
+        <a href="#">&raquo;</a>
+      </div>
+      <div id="spacer">&nbsp;</div>
+      <footer>
+        <div class="footer-div" id="social-handles">
+          <h4>Reach us on our social handles</h4>
+          <img class="footer-img" src="./assets/images/facebook-icon.png"/>
+          <img class="footer-img" src="./assets/images/google-icon.png"/>
+          <img class="footer-img" src="./assets/images/instagram-icon.png"/>
+          <img class="footer-img" src="./assets/images/twitter-icon.png"/>
+        </div>
+        <div class="footer-div">
+          <h4 style="text-align: center">
+            Terms and Conditions
+          </h4>
+          <p>
+            Using MyDiary means you agree to the <a href="terms.html">Terms &AMP; Conditions</a> of the app 
+          </p>
+        </div>
+        <div class="footer-div" id="subscribe">
+          <h4>Subscribe and get latest news on our updates</h4>
+          <form>
+            <input id="foot-entry" class="sub-form" type="email" placeholder="Enter Email..."/>
+            <button class="sub-form" id="foot-btn">
+              <i class="fa fa-send"></i>
+            </button>
+          </form>
+        </div>
+      </footer>
+      <!-- <div id="end">
+        <small>&COPY; Andela Team 2018 All Rights Reserved. Designed by Andy</small>
+      </div> -->
+    </div>
+    <script src="./assets/scripts/main.js"></script>
+    <script>
+      function toggler() {
+        let x = document.getElementById("Topnav");
+        if (x.className === "topnav") {
+          x.className += " responsive";
+        }
+        else {
+          x.className = "topnav";
+        }
+      }
+    </script>
+  </body>
+</html>

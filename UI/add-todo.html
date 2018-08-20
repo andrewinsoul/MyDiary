@@ -1,0 +1,198 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no"/>
+    <title>Add TODO</title>
+    <link href='https://fonts.googleapis.com/css?family=Aguafina Script' rel='stylesheet'>
+    <link rel="icon" href="../favicon.ico" type="image/x-icon"/>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css"/>
+    <link rel="icon" href="../favicon.ico" type="image/x-icon"/>
+    <link rel="stylesheet" href="./assets/styles/style3.css">
+    <style>
+      #dashboard-link:hover {
+        color: cornflowerblue;
+      }
+      main {
+        display: flex;
+        justify-content: center;
+      }
+      textarea {
+        overflow: auto;
+        resize: vertical;
+      }
+      .date {
+        width: 25px;
+        margin: 0 1%;
+      }
+      #yy {
+        width: 40px;
+        margin-left: 1%
+      }
+      form h3 {
+        color: dodgerblue;
+      }
+      .jumbotron {
+        width: 70%;
+      }
+      #nav-btn {
+        color: black;
+      }
+      #nav-btn:hover {
+        background-color: whitesmoke;
+      }
+      div.container span {
+        margin-right: 1%
+      }
+      button {
+        margin-bottom: 4%;
+        color: dodgerblue;
+        background-color: white;
+      }
+      button:hover {
+        background-color: dodgerblue;
+        color: white;
+      }
+      select {
+        border-radius: 4px;
+      }
+      div.container label {
+        width: 10px;
+        margin-left: 3%;
+        margin-right: 5%;
+      }
+      div.container select {
+        padding: 5px;
+        margin-right: 2%;
+      }
+      @media screen and (max-width: 803px) {
+        .container {
+          flex-flow: column;
+          margin-left: 6%;
+        }
+        div.container {
+          width: 90%;
+        }
+        .jumbotron {
+          width: 90vw;
+          margin: 5vw 0;
+        }
+        #date-div {
+          flex-flow: row;
+          flex-wrap: wrap;
+        }
+        #entries-link {
+          padding-bottom: 3px;
+        }
+        .dropdown-content {
+          display: none;
+          margin: .125rem 0 0;
+          left: 0;
+          padding: .5rem 0;
+          position: static;
+          background-color: whitesmoke;
+          margin-left: 70vw;
+          width: 30vw;
+          text-align: center;
+          box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.5);
+          z-index: 1000;
+          top: 100%;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <div id="container">
+      <nav class="topnav" id="Topnav">
+        <div id="brand-div">
+          <img class="nav-brand" src="./assets/images/diary-icon.png"/>
+          <h1 style="font-family: Aguafina Script; color: white; display: inline-block">MyDiary</h1>
+        </div>
+        <div id="nav-links">
+          <a id="dashboard-link" href="dashboard.html">Dashboard</a>
+          <span onmouseover="mousehover()" onmouseout="mouseleave()" class="dropdown">  
+            <a class="dropbtn active" id="entries-link">
+              Entries
+              <i id="caret" class="fa fa-caret-right"></i>
+            </a>
+            <div class="dropdown-content">
+              <a href="dd.html">Add Entry</a>
+              <a href="add-todo.html">Add TODO</a>
+              <a href="cc.html">View Entries</a>
+            </div>
+          </span>
+          <a id="profile-link" href="profile.html">Profile</a>
+          <a id="logout" href="index.html">Logout</a>
+        </div>
+        <button id="nav-btn" class="icon" onclick="toggler()">
+          <i class="fa fa-bars"></i>
+        </button>
+      </nav>
+      <main>
+        <div class="jumbotron" style="margin-top: 6%">
+          <form action="">
+            <h3>Add TODO plan</h3>
+            <div class="container">
+              <label style="width: 10px; margin-left: 3%; margin-right: 5%" for="title">Title</label>
+              <input style="width: 80%" type="text" id="title" value="TODO" readonly="readonly"/>
+            </div>
+            <div class="container">
+              <label style="width: 10px; margin-left: 3%; margin-right: 5%" for="todo">TODO</label>
+              <textarea style="width: 82%; border-radius: 4px; border: 1px solid grey; font: 400 13.3333px Arial" name="todo-entry" id="todo" cols="30" rows="10" placeholder="Enter TODO plans..."></textarea>
+            </div>
+            <div class="container" id="date-div">
+              <label class="fa fa-calendar" for="date" style="margin-left: 3%"></label>
+              <input class="date" maxlength="2" size="2" placeholder="DD"/>
+              <b>/</b>
+              <input class="date" maxlength="2" size="2" placeholder="MM"/>
+              <b>/</b>
+              <input id="yy" placeholder="YYYY" maxlength="4" size="4"/>
+            </div>
+            <div class="container" id="date-div">
+              <label class="fa fa-clock-o" for="time" style="margin-left: 3%"></label>
+              <input class="date" maxlength="2" size="2" placeholder="HH"/>
+              <b>:</b>
+              <input class="date" maxlength="2" size="2" placeholder="MM"/>
+              <b>:</b>
+              <select name="meridian" style="margin-left: 1%">
+                <option value="AM" >AM</option>
+                <option value="PM">PM</option>
+              </select>
+            </div>
+            <div style="display: flex; justify-content: space-between;">
+              <button>Save TODO</button>
+              <button>Back  </button>
+            </div>
+          </form>
+        </div>
+      </main>
+      <footer style="justify-content: center; padding: 10px">
+        <div style="color: white">
+          <div>Designed By Andy</div>
+          <small class="center-txt"><div>Andela 2018&COPY;</div></small>
+        </div>
+      </footer>
+    </div>
+    <script>
+      const caret = document.getElementById('caret');
+      const btn = document.getElementById('entries-link');
+      function mousehover() {
+        caret.className = 'fa fa-caret-down'
+        btn.style.color = 'grey';
+      }
+      function mouseleave() {
+        caret.className = 'fa fa-caret-right';
+        btn.style.color = 'grey';
+      }
+      function toggler() {
+        let x = document.getElementById("Topnav");
+        if (x.className === "topnav") {
+          x.className += " responsive";
+        }
+        else {
+          x.className = "topnav";
+        }
+      }
+    </script>
+  </body>
+</html>

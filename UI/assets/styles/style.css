@@ -1,0 +1,133 @@
+#container {
+  min-height: 100vh;
+  overflow: hidden;
+  position: relative;
+  padding-bottom: 150px
+}
+nav, footer {
+  display: flex; 
+  flex-flow: row wrap; 
+  align-items: center; 
+  background-color: black;
+  overflow: hidden;
+  justify-content: space-between;
+}
+footer {
+  justify-content: center;
+  position: absolute;
+  bottom: 0;
+  width: 100vw;
+}
+#join-btn {
+  margin-left: 7%;
+  width: 85%;
+  background-color: dodgerblue;
+  color: #ddd;
+  margin-bottom: 5%;
+}
+button.icon {
+  display: none;
+}
+button {   
+  border-radius: 4px;
+  cursor: pointer;
+}
+.topnav a {
+  color: #f2f2f2;
+  padding: 14px 16px;
+  text-decoration: none;
+}
+.topnav h3, .footer-div {
+  color: #ddd;
+  padding: 14px 0;
+}
+.footer-div {
+  text-align: center
+}
+#login-link:hover, #faq-link:hover, #about-link:hover {
+  color: cornflowerblue;
+}
+#signup-link {
+  color: #3f3f3f;
+}
+.nav-brand {
+  margin-left: 1rem;
+  margin-top: 1rem;
+  margin-bottom: 1rem;
+}
+main {
+  display: flex;
+  margin-top: 5%;
+  align-items: center;
+  justify-content: center;
+  color: #3f3f3f;      
+}
+form {
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+}
+form div {
+  background-color: #fff;
+  display: flex;
+  margin-top: 27px;
+  margin-right: auto;
+  width: 100%;
+}
+input {
+  width: 70%;
+  color: rgba(1, 1, 1, 0.8);
+  letter-spacing: 0.025cm;
+  padding: 10px;
+  border-radius: 4px;
+  border: 1px solid grey;
+}
+.jumbotron .fa {
+  padding: 10px;
+  background-color: dodgerblue;
+  margin-left: 7%;
+  border-radius: 4px;
+  color: white;
+  width: 5%;
+}
+.jumbotron {
+  box-shadow: 0 0 50px rgba(0, 0, 0, 0.5);
+  border-radius: 6px;
+  width: 35vw;
+  text-align: center;
+}
+@media screen and (max-width: 803px) {
+  .jumbotron {
+    width: 85vw;
+  }
+  .topnav a {
+    display: none
+  }
+  .nav-btn {
+    display: block;
+    margin: 4% 0;
+  }
+  label {
+    display: block;
+  }
+  .topnav button.icon {
+    float: right;
+    padding: 10px;
+    display: block;
+    margin: 14px 16px;
+  }
+  .topnav.responsive {
+    position: relative;
+    display: block;
+  }
+  .topnav.responsive button.icon {
+    position: absolute;
+    right: 0;
+    top: 0;
+  }
+  .topnav.responsive a {
+    float: none;
+    text-align: right;
+    display: block;
+  }
+}

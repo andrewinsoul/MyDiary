@@ -5,79 +5,193 @@
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no"/>
     <title>MyDiary</title>
     <link rel="stylesheet" href="./assets/styles/main.css"/>
-    <link rel="stylesheet" href="./assets/styles/index.css"/> 
+    <link rel="stylesheet" href="./assets/styles/index.css"/>
+    <link href='https://fonts.googleapis.com/css?family=Aguafina Script' rel='stylesheet'>
+    <link rel="icon" href="../favicon.ico" type="image/x-icon"/>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel="stylesheet" href="./assets/styles/style2.css">
   </head>
   <body>
-    <nav>
-      <div class="container">
+    <nav class="topnav" id="Topnav">
+      <div id="brand-div">
         <img class="nav-brand" src="./assets/images/diary-icon.png"/>
-        <h3 class="brand">MyDiary</h3>
-        <div class="nav-links">
-          <ul>
-            <li>
-              <a href="login.html" class="nav-link">Login</a>
-            </li>
-            <li>
-              <a href="signup.html" class="nav-link">Sign up</a>
-            </li>
-            <li>
-              <a href="#" class="nav-link">About</a>
-            </li>
-            <li>
-              <a href="#" class="nav-link">FAQ</a>
-            </li>
-          </ul>
-        </div>
+        <h1 style="font-family: Aguafina Script; display: inline-block; color: white">MyDiary</h3>
       </div>
+      <div id="nav-links">
+        <a id="login-link" href="login.html">Login</a>
+        <a id="signup-link" href="signup.html">Sign Up</a>
+      </div>
+      <button id="nav-btn" class="icon" onclick="toggler()">
+        <i class="fa fa-bars"></i>
+      </button>
+      <form class="form-inline">
+        <label for="email">Email: </label>
+        <input type="email" id="email" placeholder="Enter email" name="email"/>
+        <label for="password">Password: </label>
+        <input type="password" id="password" placeholder="Enter password" name="password"/>
+        <button type="submit" class="nav-btn">Login</button>
+      </form>
     </nav>
-    <div class="container main-content">
-      <div id="content">
-        <div class="row">
-          <div class="col"><center><h4>Keep log of your memorable experiences</h4></center></div>
+    <div id="main-div">
+      <main>
+        <div class="sec-1">
+          <h3 class="cover-heading typo"></h3>
+          <span>_</span>
+          <button onclick="openLink('public-entries.html')" id="public-btn">View Public Entries</button>
         </div>
-        <div class="row">
-          <div class="col-1 section">
-            <center><h4>Welcome to MyDiary</h4></center>
-            <p>
-              Everyone has memorable experiences they wish to never forget and others still wish to share this experiences with the public. Whatever category you fall on, MyDiary got you covered. <a href="signup.html">Sign up </a>on MyDiary today and manage your own diary online the way you wish.
-            </p>
-          </div>
-          <div class="col section">
-            <center><h4>Public Diaries</h4></center>
-            <div class="row">
-              <div class="col" style="border: 1px solid cyan; margin: 15px; border-radius: 33px;">
-                <p>Name of Diary: <a href="#">My Holidays</a></p>
-                <p>Diary Owner: <a href="#">Andy</a></p>
-                <p>Number of Entries: 15</p> 
-              </div>
-              <div class="col" style="border: 1px solid cyan; margin: 15px; border-radius: 33px;">
-                <p>Name of Diary: <a href="#">My Holidays</a></p>
-                <p>Diary Owner: <a href="#">Andy</a></p>
-                <p>Number of Entries: 15</p>
-              </div>
+        <div class="jumbotron">
+          <h4>Register to MyDiary</h4>
+          <form>
+            <div class="reg-div">
+              <i class="fa fa-user icon"></i>
+              <input placeholder="Name"/>
             </div>
-            <div class="col">
-              <center><button style="padding: 15px; border-radius: 10%; background-color: #1d4a47; color: whitesmoke">Read public diaries </button></center>
+            <div class="reg-div">
+              <i class="fa fa-envelope icon"></i>
+              <input placeholder="Email"/>
             </div>
-          </div>
+            <div class="reg-div">
+              <i class="fa fa-at icon"></i>
+              <input placeholder="Username"/>
+            </div>
+            <div class="reg-div">
+              <i class="fa fa-key icon"></i>
+              <input placeholder="Password"/>
+            </div>
+            <div class="reg-div">
+              <i class="fa fa-key icon"></i>
+              <input placeholder="Confirm Password"/>
+            </div>
+            <div class="reg-div">
+              <input type="submit" value="Join MyDiary" id="join-btn"/>
+            </div>
+          </form>
         </div>
+      </main>
+    </div>
+    <div id="title">
+      <h3>Public Entries</h3>
+    </div>
+    <div id="public-div">
+      <div class="entry-div" id="card-1">
+        <div>
+          <h3 class="wrap" id="title-header">Title: </h3>
+          <span>My First Kiss</span>
+        </div>
+        <div>
+          <h3>Entry: </h3>
+          <p class="wrap">
+            Watching a couple of movies where the actors kissed made me see kissing as something very trivial. This was my beleif until I had my first kiss. I'm by no means a comedian, on the contrary I'm just a cool guy. You might find some part of this writeup funny but that's all good I'm going to be as candid as possible in this experience of mine
+          </p>
+        </div>
+        <div>
+          <h3>Owner: </h3>
+          <span>Andy</span>
+        </div>
+        <div>
+          <h3></h3>
+          <span>
+            <i class="fa fa-eye" style="color: black">
+              <b><i>4k</i></b>
+            </i>
+          </span>
+        </div>
+        <button onclick="openLink('public-entry.html')">View Entry</button>
+      </div>
+      <div class="entry-div" id="card-2">
+        <div>
+          <h3 class="wrap" id="title-header">Title: </h3>
+          <span>My First Kiss</span>
+        </div>
+        <div>
+          <h3>Entry: </h3>
+          <p class="wrap">
+            Watching a couple of movies where the actors kissed made me see kissing as something very trivial. This was my beleif until I had my first kiss. I'm by no means a comedian, on the contrary I'm just a cool guy. You might find some part of this writeup funny but that's all good I'm going to be as candid as possible in this experience of mine
+          </p>
+        </div>
+        <div>
+          <h3>Owner: </h3>
+          <span>Andy</span>
+        </div>
+        <div>
+          <h3></h3>
+          <span>
+            <i class="fa fa-eye" style="color: black">
+              <b><i>999</i></b>
+            </i>
+          </span>
+        </div>
+        <button onclick="openLink('public-entry.html')">View Entry</button>
+      </div>
+      <div class="entry-div" id="card-3">
+        <div>
+          <h3 class="wrap" id="title-header">Title: </h3>
+          <span>My First Kiss</span>
+        </div>
+        <div>
+          <h3>Entry: </h3>
+          <p class="wrap">
+            Watching a couple of movies where the actors kissed made me see kissing as something very trivial. This was my beleif until I had my first kiss. I'm by no means a comedian, on the contrary I'm just a cool guy. You might find some part of this writeup funny but that's all good I'm going to be as candid as possible in this experience of mine
+          </p>
+        </div>
+        <div>
+          <h3>Owner: </h3>
+          <span>Andy</span>
+        </div>
+        <div>
+          <h3></h3>
+          <span>
+            <i class="fa fa-eye" style="color: black">
+              <b><i>666</i></b>
+            </i>
+          </span>
+        </div>
+        <button onclick="openLink('public-entry.html')">View Entry</button>
       </div>
     </div>
     <footer>
-      <div style="margin-left: 9px">
+      <div class="footer-div" id="social-handles">
+        <h4>Reach us on our social handles</h4>
         <img class="footer-img" src="./assets/images/facebook-icon.png"/>
         <img class="footer-img" src="./assets/images/google-icon.png"/>
         <img class="footer-img" src="./assets/images/instagram-icon.png"/>
         <img class="footer-img" src="./assets/images/twitter-icon.png"/>
       </div>
-      <div>
-        Having any issues,reach out to us through any of our social handles
+      <div class="footer-div">
+        <h4 style="text-align: center">
+          Terms and Conditions
+        </h4>
+        <p>
+          Using MyDiary means you agree to the <a href="terms.html">Terms &AMP; Conditions</a> of the app 
+        </p>
       </div>
-      <div style="font-size: 15px;">
-        &copy; MyDiary Team 2018 All rights reserved
+      <div class="footer-div" id="subscribe">
+        <h4>Subscribe and get latest news on our updates</h4>
+        <form>
+          <input id="foot-entry" class="sub-form" type="email" placeholder="Enter Email..."/>
+          <button class="sub-form" id="foot-btn">
+            <i class="fa fa-send"></i>
+          </button>
+        </form>
       </div>
     </footer>
-    <center><small>MyDiary helping you keep log of your experiences</small></center>
-    <hr/>
+    <div id="end">
+      <small>&COPY; Andela Team 2018 All Rights Reserved. Designed by Andy</small>
+    </div>
+    <script>
+      function toggler() {
+        let x = document.getElementById("Topnav");
+        if (x.className === "topnav") {
+          x.className += " responsive";
+        }
+        else {
+          x.className = "topnav";
+        }
+      }
+    </script>
+    </script>
+    <script src="./assets/scripts/main.js"></script>
+    <script src="./assets/scripts/typed.min.js"></script>
+    <script src="./assets/scripts/typerScript.js"></script>
   </body>
 </html>

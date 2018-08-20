@@ -3,44 +3,203 @@
   <head>
     <meta charset="utf-8"/>
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no"/>
-    <title>MyDiary login</title>
+    <title>Login</title>
     <link rel="stylesheet" href="./assets/styles/main.css"/>
-    <link rel="stylesheet" href="./assets/styles/login.css"/>
+    <link href='https://fonts.googleapis.com/css?family=Aguafina Script' rel='stylesheet'>
+    <link rel="icon" href="../favicon.ico" type="image/x-icon"/>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css"/>
+    <style>
+      nav, footer {
+        display: flex; 
+        flex-flow: row wrap; 
+        align-items: center; 
+        background-color: black;
+        overflow: hidden;
+        justify-content: space-between;
+      }
+      #container {
+        min-height: 100vh;
+        overflow: hidden;
+        position: relative;
+        padding-bottom: 2%;
+      }
+      footer {
+        justify-content: center;
+        position: absolute;
+        bottom: 0;
+        width: 100vw
+      }
+      #join-btn {
+        margin-left: 7%;
+        width: 85%;
+        background-color: dodgerblue;
+        color: #ddd;
+        margin-bottom: 5%;
+      }
+      button.icon {
+        display: none;
+      }
+      button {
+        border-radius: 4px;
+        cursor: pointer;
+      }
+      .topnav a {
+        color: #f2f2f2;
+        padding: 14px 16px;
+        text-decoration: none;
+      }
+      .topnav h3, .footer-div {
+        color: #ddd;
+        padding: 14px 0;
+      }
+      .footer-div {
+        text-align: center
+      }
+      #signup-link:hover, #faq-link:hover, #about-link:hover {
+        color: cornflowerblue;
+      }
+      #login-link {
+        color: #3f3f3f;
+      }
+      .nav-brand {
+        margin-left: 1rem;
+        margin-top: 1rem;
+        margin-bottom: 1rem;
+      }
+      main {
+        display: flex;
+        margin-top: 10%;
+        align-items: center;
+        justify-content: center;
+        color: #3f3f3f;
+        
+      }
+      form {
+        display: flex;
+        justify-content: center;
+        flex-direction: column;
+      }
+      form div {
+        background-color: #fff;
+        display: flex;
+        margin-top: 27px;
+        margin-right: auto;
+        width: 100%;
+      }
+      input {
+        width: 70%;
+        color: rgba(1, 1, 1, 0.8);
+        letter-spacing: 0.025cm;
+        padding: 10px;
+        border-radius: 4px;
+        border: 1px solid grey;
+      }
+      .jumbotron .fa {
+        padding: 10px;
+        background-color: dodgerblue;
+        margin-left: 7%;
+        border-radius: 4px;
+        color: white;
+        width: 5%;
+      }
+      .jumbotron {
+        box-shadow: 0 0 50px rgba(0, 0, 0, 0.5);
+        border-radius: 6px;
+        width: 35vw;
+        text-align: center;
+      }
+      @media screen and (max-width: 803px) {
+        .jumbotron {
+          width: 85vw;
+        }
+        .topnav a {
+        display: none
+        }
+        .nav-btn {
+          display: block;
+          margin: 4% 0;
+        }
+        label {
+          display: block;
+        }
+        .topnav button.icon {
+          float: right;
+          padding: 10px;
+          display: block;
+          margin: 14px 16px;
+        }
+        .topnav.responsive {
+          position: relative;
+          display: block;
+        }
+        .topnav.responsive button.icon {
+          position: absolute;
+          right: 0;
+          top: 0;
+        }
+        .topnav.responsive a {
+          float: none;
+          text-align: right;
+          display: block;
+        }
+      }
+    </style>
   </head>
   <body>
-    <div class="container">
-      <div class="row">
-        <div class="col">
-          <figure>
-            <img src="./assets/images/diary-icon.png"/>
-            <figcaption>
-              <h3>MyDiary login</h3>
-              <hr/>
-            </figcaption>
-          </figure>
-          <div class="col-1">
-            <form action="dashboard.html">
-              <div class="row">
-                <div class="row">
-                  <input class="col form-group" style="margin-top: 35px;" placeholder=Email />
-                </div>
-                <div class="row">
-                  <input class="col form-group" style="margin-top: 15px; margin-bottom: 22px;" placeholder="Enter your password"/>
-                </div>
-                <div class="row">
-                  <center><button type="submit" class="col" style="margin-top: 15px; margin-left: 75px; padding: 10px; margin-bottom: 22px;">Login</button></center>
-                </div>
-                <div class="row">
-                  <div class="col">
-                    <a href="signup.html">I don't have an account? Create one</a>
-                    <div style="margin-bottom: 15%; display: block;"></div>  
-                  </div>
-                </div>
-              </div>
-            </form>
-          </div>
+    <div id="container">
+      <nav class="topnav" id="Topnav">
+        <div id="brand-div">
+          <img class="nav-brand" src="./assets/images/diary-icon.png"/>
+          <h1 style="display: inline-block; color: white; font-family: Aguafina Script">MyDiary</h1>
         </div>
-      </div>
+        <div id="nav-links">
+          <a id="login-link" href="#">Login</a>
+          <a id="signup-link" href="signup.html">Sign Up</a>
+          <a id="about-link" href="about.html">About</a>
+          <a id="faq-link" href="faq.html">FAQ</a>
+        </div>
+        <button href="javascript:void(0);" class="icon" onclick="toggler()">
+          <i class="fa fa-bars"></i>
+        </button>
+      </nav>
+      <main>
+        <div class="jumbotron">
+          <h2>MyDiary Login</h2>
+          <h4>Enter your login details</h4>
+          <form>
+            <div class="reg-div">
+              <i class="fa fa-at icon"></i>
+              <input placeholder="Email/Username"/>
+            </div>
+            <div class="reg-div">
+              <i class="fa fa-key icon"></i>
+              <input placeholder="Password"/>
+            </div>
+            <div class="reg-div">
+              <input type="submit" value="Login" id="join-btn"/>
+            </div>
+          </form>
+        </div>
+      </main>
+      <footer>
+        <div class="footer-div">
+          &COPY; Andela Team 2018 All Rights Reserved. 
+          <p>
+            Designed by Andy
+          </p>
+        </div>
+      </footer>
     </div>
+    <script>
+      function toggler() {
+        let x = document.getElementById("Topnav");
+        if (x.className === "topnav") {
+          x.className += " responsive";
+        }
+        else {
+          x.className = "topnav";
+        }
+      }
+    </script>
   </body>
 </html>

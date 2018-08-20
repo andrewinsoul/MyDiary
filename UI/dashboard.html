@@ -3,174 +3,232 @@
   <head>
     <meta charset="utf-8"/>
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no"/>
-    <title>MyDiary dashboard</title>
-    <link rel="stylesheet" href="./assets/styles/main.css"/>
-    <link rel="stylesheet" href="./assets/styles/dashboard.css"/>
+    <title>My Dashboard</title>
+    <link href='https://fonts.googleapis.com/css?family=Aguafina Script' rel='stylesheet'>
+    <link rel="icon" href="../favicon.ico" type="image/x-icon"/>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css"/>
+    <link rel="icon" href="../favicon.ico" type="image/x-icon"/>
+    <link rel="stylesheet" href="./assets/styles/style3.css">
   </head>
   <body>
-    <nav>
-      <div class="container">
-        <img class="nav-brand" src="./assets/images/diary-icon.png"/>
-        <h3 class="brand">MyDiary</h3>
-        <div class="nav-links">
-          <ul>
-            <li>
-              <a href="create-diary.html" class="nav-link">Create Diary</a>
-            </li>
-            <li>
-              <a href="signup.html" class="nav-link">Notifications</a>
-            </li>
-          </ul>
+    <div id="container">
+      <nav class="topnav" id="Topnav">
+        <div id="brand-div">
+          <img class="nav-brand" src="./assets/images/diary-icon.png"/>
+          <h1 style="font-family: Aguafina Script; color: white; display: inline-block">MyDiary</h1>
         </div>
-        <hr/>
-      </div>
-    </nav>
-    <div class="side-nav">
-      <div id="side-nav-head">
-        <img class="nav-brand" src="./assets/images/diary-icon.png"/>
-        MyDiary<br/>
-        <small>signed in as: username</small>
-      </div>
-      <div class="side-nav-links">
-        <a id="active" href="dashboard.html">
-          <img class="img-link" src="./assets/images/dashboard-icon.png"/>
-          Dashboard
-        </a>
-        <a href="public-diaries.html">
-          <img class="img-link" src="./assets/images/view-pub-diary.png"/>
-          Public Diaries
-        </a>
-        <a href="my-diaries.html">
-          <img class="img-link" src="./assets/images/private-diary.png"/>
-          My Diaries
-        </a>
-        <a href="#">
-          <img class="img-link" src="./assets/images/profile-settings.png"/>
-          Profile
-        </a>
-        <a href="index.html" id="logout">
-          <img class="img-link" src="./assets/images/logout-icon.jpg"/>
-          log out
-        </a>
-      </div>
-    </div>
-    <div class="container main-content">
-      <div class="row">
-        <div class="col jumbotron">
-          <div class="row">
-            <div class="col section-1">
-              <h3>My Diary</h3>
-              <div class="row div-diaries">
-                <div class="col div-diary">
-                  <div class="img-cover">
-                    <h4 class="diary-name">Name Of Diary: </h4>
-                    <div class="diary-detail">
-                      My Adventures
-                    </div>
-                    <h4 class="diary-desc">Description: </h4>
-                    <div class="diary-detail">
-                      Cool and weired places I have been to  
-                    </div>
-                    <div class="diary-entry">Number of Entries: 7</div>
-                    <div class="diary-open">
-                      <a href="diary.html" class="diary-btn">Open Diary</a>
-                    </div>
-                  </div>
-                </div>
-                <div class="col div-diary">
-                  <div class="img-cover">
-                    <h4 class="diary-name">Name Of Diary: </h4>
-                    <div style="max-width: 200px">
-                      My Adventures
-                    </div>
-                    <h4 class="diary-desc">Description: </h4>
-                    <div class="diary-detail">
-                      Cool and weired places I have been to  
-                    </div>
-                    <div class="diary-entry">Number of Entries: 7</div>
-                    <div class="diary-open">
-                      <a href="diary.html" class="diary-btn">Open Diary</a>
-                    </div>
-                  </div>
-                </div>
-              </div>
-              <div class="row">
-                <div class="col center diary-list">
-                  <a href="my-diaries.html" class="diary-btn">View My Diaries</a>
-                </div>
-              </div>
+        <div id="nav-links">
+          <a class="active" id="dashboard-link" href="dashboard.html">Dashboard</a>
+          <span onmouseover="mousehover()" onmouseout="mouseleave()" class="dropdown">  
+            <a class="dropbtn" id="entries-link">
+              Entries
+              <i id="caret" class="fa fa-caret-right"></i>
+            </a>
+            <div class="dropdown-content">
+              <a href="dd.html">Add Entry</a>
+              <a href="add-todo.html">Add TODO</a>
+              <a href="cc.html">View Entries</a>
             </div>
-            <div class="col">
-                <h3>Public Diaries</h3>
-                <div class="row div-diaries">
-                  <div class="col div-diary">
-                    <div class="img-cover">
-                      <h4 class="diary-name">Name Of Diary: </h4>
-                      <div class="diary-detail">
-                        My Adventures
-                      </div>
-                      <h4 class="diary-desc">Description: </h4>
-                      <div class="diary-detail">
-                        Cool and weired places I have been to  
-                      </div>
-                      <div class="diary-entry">Number of Entries: 7</div>
-                      <div class="diary-view">Number of Views: 107</div>
-                      <div class="diary-open">
-                        <a href="diary.html" class="diary-btn">
-                          Open Diary
-                        </a>
-                      </div>
-                    </div>
-                  </div>
-                  <div class="col div-diary">
-                    <div class="img-cover">
-                      <h4 class="diary-name">Name Of Diary: </h4>
-                      <div class="diary-detail">
-                        My Adventures
-                      </div>
-                      <h4 class="diary-desc">Description: </h4>
-                      <div class="diary-detail">
-                        Cool and weired places I have been to  
-                      </div>
-                      <div class="diary-entry">Number of Entries: 7</div>
-                      <div class="diary-view">Number of Views: 57</div>
-                      <div class="diary-open">
-                        <a href="diary.html" class="diary-btn">
-                          Open Diary
-                        </a>
-                      </div>
-                    </div>
-                  </div>
-                </div>
-                <div class="row">
-                  <div class="col diary-list center">
-                    <a href="public-diaries.html" class="diary-btn"> 
-                      View Public Diaries
-                    </a>
-                  </div>
-                </div>
+          </span>
+          <a id="profile-link" href="profile.html">Profile</a>
+          <a id="logout" href="index.html">Logout</a>
+        </div>
+        <button style="color: black;" class="icon" onclick="toggler()">
+          <i class="fa fa-bars"></i>
+        </button>
+      </nav>
+      <main style="color: #3f3f3f;">
+        <div class="center-txt">
+          <h3 style="display: inline-block">Welcome username</h3>
+          <span>Any Future Plans, pen them down <a href="add-todo.html">here</a></span>
+        </div>
+        <h3 class="center-txt">Recent Entries</h3>
+        <div class="container">
+          <div class="entry-div" id="card-1" style="width: 30%; box-shadow: 0 0 15px rgba(0, 0, 0, 0.5); border-radius: 6px; margin-left: 2%">
+            <div style="margin-left: 1rem">
+              <h3 id="title-header" class="card-h3">Title: </h3>
+              <span class="wrap">My First Kiss</span>
+            </div>
+            <div style="margin-left: 1rem">
+              <h3 class="card-h3">Entry: </h3>
+              <p class="wrap">
+                Lorem ipsum dolor, sit amet consectetur adipisicing elit. Nostrum dignissimos officiis corrupti, facilis similique explicabo vitae corporis architecto animi vero inventore voluptates? Asperiores tenetur deleniti sapiente distinctio exercitationem voluptates in. Lorem ipsum dolor sit amet consectetur adipisicing elit. Illo doloribus labore, enim quod maxime fugiat rerum nemo accusantium! Nemo quae aut est debitis fugiat, modi deserunt sunt magnam explicabo officia? Lorem ipsum dolor sit amet consectetur, adipisicing elit. Eligendi cumque distinctio neque dicta facere, asperiores dolores commodi suscipit voluptatum fugiat deserunt aliquid ad itaque odit iste ut maiores id reprehenderit.
+              </p>
+            </div>
+            <div style="display: flex; justify-content: space-between; margin-bottom: 5%">
+              <div style="display: flex; justify-content: flex-start">
+                <button id="edit">
+                  <i style="font-size: 20px" class="fa fa-pencil-square-o"></i>
+                </button>
+                <button id="delete">
+                  <i style="font-size: 20px" class="fa fa-trash-o"></i>
+                </button>
               </div>
+              <button id="read">
+                Read
+              </button>
+            </div>
+          </div>
+          <div class="entry-div" id="card-1" style="width: 30%; box-shadow: 0 0 15px rgba(0, 0, 0, 0.5); border-radius: 6px; margin-left: 2%">
+            <div style="margin-left: 1rem">
+              <h3 class="card-h3" id="title-header">Title: </h3>
+              <span class="wrap">My First Kiss</span>
+            </div>
+            <div style="margin-left: 1rem">
+              <h3 class="card-h3">Entry: </h3>
+              <p class="wrap">
+                Lorem ipsum dolor, sit amet consectetur adipisicing elit. Nostrum dignissimos officiis corrupti, facilis similique explicabo vitae corporis architecto animi vero inventore voluptates? Asperiores tenetur deleniti sapiente distinctio exercitationem voluptates in. Lorem ipsum dolor sit amet consectetur adipisicing elit. Illo doloribus labore, enim quod maxime fugiat rerum nemo accusantium! Nemo quae aut est debitis fugiat, modi deserunt sunt magnam explicabo officia? Lorem ipsum dolor sit amet consectetur, adipisicing elit. Eligendi cumque distinctio neque dicta facere, asperiores dolores commodi suscipit voluptatum fugiat deserunt aliquid ad itaque odit iste ut maiores id reprehenderit.
+              </p>
+            </div>
+            <div style="display: flex; justify-content: space-between; margin-bottom: 5%">
+              <div style="display: flex; justify-content: flex-start">
+                <button id="edit">
+                  <i style="font-size: 20px" class="fa fa-pencil-square-o"></i>
+                </button>
+                <button id="delete">
+                  <i style="font-size: 20px" class="fa fa-trash-o"></i>
+                </button>
+              </div>
+              <button id="read">
+                Read
+              </button>
+            </div>
+          </div>
+          <div class="entry-div" id="card-1" style="width: 30%; box-shadow: 0 0 15px rgba(0, 0, 0, 0.5); border-radius: 6px; margin-left: 2%">
+            <div style="margin-left: 1rem">
+              <h3 class="card-h3" id="title-header">Title: </h3>
+              <span class="wrap">My First Kiss</span>
+            </div>
+            <div style="margin-left: 1rem">
+              <h3 class="card-h3">Entry: </h3>
+              <p class="wrap">
+                Lorem ipsum dolor, sit amet consectetur adipisicing elit. Nostrum dignissimos officiis corrupti, facilis similique explicabo vitae corporis architecto animi vero inventore voluptates? Asperiores tenetur deleniti sapiente distinctio exercitationem voluptates in. Lorem ipsum dolor sit amet consectetur adipisicing elit. Illo doloribus labore, enim quod maxime fugiat rerum nemo accusantium! Nemo quae aut est debitis fugiat, modi deserunt sunt magnam explicabo officia? Lorem ipsum dolor sit amet consectetur, adipisicing elit. Eligendi cumque distinctio neque dicta facere, asperiores dolores commodi suscipit voluptatum fugiat deserunt aliquid ad itaque odit iste ut maiores id reprehenderit.
+              </p>
+            </div>
+            <div style="display: flex; justify-content: space-between; margin-bottom: 5%">
+              <div style="display: flex; justify-content: flex-start">
+                <button id="edit">
+                  <i style="font-size: 20px" class="fa fa-pencil-square-o"></i>
+                </button>
+                <button id="delete">
+                  <i style="font-size: 20px" class="fa fa-trash-o"></i>
+                </button>
+              </div>
+              <button id="read">
+                Read
+              </button>
+            </div>
           </div>
         </div>
-      </div>
+        <h3 class="center-txt">TODO Entries</h3>
+        <div class="container" style="margin-bottom: 4%">
+          <div class="entry-div" id="card-1" style="width: 30%; box-shadow: 0 0 15px rgba(0, 0, 0, 0.5); border-radius: 6px; margin-left: 2%">
+            <div style="margin-left: 1rem">
+              <h3 id="title-header" class="card-h3">Title: </h3>
+              <span class="wrap">TODO</span>
+            </div>
+            <div style="margin-left: 1rem">
+              <h3 class="card-h3">Entry: </h3>
+              <p class="wrap">
+                Lorem ipsum dolor, sit amet consectetur adipisicing elit. Nostrum dignissimos officiis corrupti, facilis similique explicabo vitae corporis architecto animi vero inventore voluptates? Asperiores tenetur deleniti sapiente distinctio exercitationem voluptates in. Lorem ipsum dolor sit amet consectetur adipisicing elit. Illo doloribus labore, enim quod maxime fugiat rerum nemo accusantium! Nemo quae aut est debitis fugiat, modi deserunt sunt magnam explicabo officia? Lorem ipsum dolor sit amet consectetur, adipisicing elit. Eligendi cumque distinctio neque dicta facere, asperiores dolores commodi suscipit voluptatum fugiat deserunt aliquid ad itaque odit iste ut maiores id reprehenderit.
+              </p>
+            </div>
+            <div style="display: flex; justify-content: space-between; margin-bottom: 5%">
+              <div style="display: flex; justify-content: flex-start">
+                <button id="edit">
+                  <i style="font-size: 20px" class="fa fa-pencil-square-o"></i>
+                </button>
+                <button id="delete">
+                  <i style="font-size: 20px" class="fa fa-trash-o"></i>
+                </button>
+              </div>
+              <button class="clock">
+                <i style="font-size: 20px" class="fa fa-clock-o"></i>
+                20 mins rem
+              </button>
+            </div>
+          </div>
+          <div class="entry-div" id="card-1" style="width: 30%; box-shadow: 0 0 15px rgba(0, 0, 0, 0.5); border-radius: 6px; margin-left: 2%">
+            <div style="margin-left: 1rem">
+              <h3 class="card-h3" id="title-header">Title: </h3>
+              <span class="wrap">TODO</span>
+            </div>
+            <div style="margin-left: 1rem">
+              <h3 class="card-h3">Entry: </h3>
+              <p class="wrap">
+                Lorem ipsum dolor, sit amet consectetur adipisicing elit. Nostrum dignissimos officiis corrupti, facilis similique explicabo vitae corporis architecto animi vero inventore voluptates? Asperiores tenetur deleniti sapiente distinctio exercitationem voluptates in. Lorem ipsum dolor sit amet consectetur adipisicing elit. Illo doloribus labore, enim quod maxime fugiat rerum nemo accusantium! Nemo quae aut est debitis fugiat, modi deserunt sunt magnam explicabo officia? Lorem ipsum dolor sit amet consectetur, adipisicing elit. Eligendi cumque distinctio neque dicta facere, asperiores dolores commodi suscipit voluptatum fugiat deserunt aliquid ad itaque odit iste ut maiores id reprehenderit.
+              </p>
+            </div>
+            <div style="display: flex; justify-content: space-between; margin-bottom: 5%">
+              <div style="display: flex; justify-content: flex-start">
+                <button id="edit">
+                  <i style="font-size: 20px" class="fa fa-pencil-square-o"></i>
+                </button>
+                <button id="delete">
+                  <i style="font-size: 20px" class="fa fa-trash-o"></i>
+                </button>
+              </div>
+              <button class="clock">
+                <i style="font-size: 20px" class="fa fa-clock-o"></i>
+                1 day rem
+              </button>
+            </div>
+          </div>
+          <div class="entry-div" id="card-1" style="width: 30%; box-shadow: 0 0 15px rgba(0, 0, 0, 0.5); border-radius: 6px; margin-left: 2%">
+            <div style="margin-left: 1rem">
+              <h3 class="card-h3" id="title-header">Title: </h3>
+              <span class="wrap">TODO</span>
+            </div>
+            <div style="margin-left: 1rem">
+              <h3 class="card-h3">Entry: </h3>
+              <p class="wrap">
+                Lorem ipsum dolor, sit amet consectetur adipisicing elit. Nostrum dignissimos officiis corrupti, facilis similique explicabo vitae corporis architecto animi vero inventore voluptates? Asperiores tenetur deleniti sapiente distinctio exercitationem voluptates in. Lorem ipsum dolor sit amet consectetur adipisicing elit. Illo doloribus labore, enim quod maxime fugiat rerum nemo accusantium! Nemo quae aut est debitis fugiat, modi deserunt sunt magnam explicabo officia? Lorem ipsum dolor sit amet consectetur, adipisicing elit. Eligendi cumque distinctio neque dicta facere, asperiores dolores commodi suscipit voluptatum fugiat deserunt aliquid ad itaque odit iste ut maiores id reprehenderit.
+              </p>
+            </div>
+            <div style="display: flex; justify-content: space-between; margin-bottom: 5%">
+              <div style="display: flex; justify-content: flex-start">
+                <button id="edit">
+                  <i style="font-size: 20px" class="fa fa-pencil-square-o"></i>
+                </button>
+                <button id="delete">
+                  <i style="font-size: 20px" class="fa fa-trash-o"></i>
+                </button>
+              </div>
+              <button class="clock">
+                <i style="font-size: 20px" class="fa fa-clock-o"></i>
+                2 days rem
+              </button>
+            </div>
+          </div>
+        </div>
+      </main>
+      <footer style="justify-content: center; padding: 10px">
+        <div style="color: white">
+          <div>Designed By Andy</div>
+          <small class="center-txt"><div>Andela 2018&COPY;</div></small>
+        </div>
+      </footer>
     </div>
-    <footer>
-      <div class="social-handles">
-        <img class="footer-img" src="./assets/images/facebook-icon.png"/>
-        <img class="footer-img" src="./assets/images/google-icon.png"/>
-        <img class="footer-img" src="./assets/images/instagram-icon.png"/>
-        <img class="footer-img" src="./assets/images/twitter-icon.png"/>
-      </div>
-      <div>
-        Having any issues,reach out to us through any of our social handles
-      </div>
-      <div class="credits">
-        &copy; MyDiary Team 2018 All rights reserved
-      </div>
-    </footer>
-    <div id="end">
-      <small>MyDiary helping you keep log your experiences</small>
-      <hr id="bottom-line"/>
-    </div>
+    <script>
+      var caret = document.getElementById('caret');
+      var btn = document.getElementById('entries-link');
+      function mousehover() {
+        caret.className = 'fa fa-caret-down'
+        btn.style.color = 'cornflowerblue';
+      }
+      function mouseleave() {
+        caret.className = 'fa fa-caret-right';
+        btn.style.color = 'white';
+      }
+      function toggler() {
+        let x = document.getElementById("Topnav");
+        if (x.className === "topnav") {
+          x.className += " responsive";
+        }
+        else {
+          x.className = "topnav";
+        }
+      }
+    </script>
   </body>
 </html>
