@@ -1,0 +1,140 @@
+@import 'style.css';
+@import 'style3.css';
+#dashboard-link:hover {
+  color: cornflowerblue;
+}
+main {
+  display: flex;
+  justify-content: center;
+}
+.form-items {
+  /* margin-left: 13%; */
+  margin-bottom: 5%
+}
+form div {
+  margin-top: 0;
+}
+.icon { 
+  text-align: center;
+  height: 17px;
+}
+label.form-items {
+  margin-bottom: 0;
+  margin-left: 7%;
+}
+#search-div {
+  display: flex;
+  justify-content: space-between;
+}
+textarea {
+  overflow: auto;
+  resize: vertical;
+  width: 80%;
+  border-radius: 4px;
+  border: 1px solid grey;
+  padding: 10px;
+  font: 400 13.3333px Arial;
+}
+div.container label {
+  width: 10px;
+  /* margin-top: 30px; */
+  margin-right: 5%;
+  margin-left: 3%;
+}
+select {
+  height: 30px;
+  margin-top: 15px;
+}
+.date {
+  width: 25px;
+  margin: 0 1%;
+}
+#yy {
+  width: 40px;
+  margin-left: 1%
+}
+form h3 {
+  color: dodgerblue;
+}
+.jumbotron {
+  width: 70%;
+}
+#nav-btn {
+  color: black;
+  height: 39px;
+}
+#nav-btn:hover {
+  background-color: whitesmoke;
+}
+div.container span {
+  margin-right: 1%
+}
+#todo {
+  margin-top: 30px;
+}
+button {
+  margin-bottom: 4%;
+  color: dodgerblue;
+  background-color: white;
+}
+button:hover {
+  background-color: dodgerblue;
+  color: white;
+}
+.date-div {
+  margin-top: 15px
+}
+.form-label {
+  margin-top: 30px
+}
+select {
+  border-radius: 4px;
+}
+@media screen and (max-width: 803px) {
+  .container {
+    flex-flow: column;
+    margin-left: 6%;
+  }
+  div.container {
+    width: 90%;
+  }
+  .jumbotron {
+    width: 90vw;
+    margin: 5vw 0;
+  }
+  select {
+    margin-left: 5%;
+  }
+  div.container label {
+    margin-left: 0;
+  }
+  #todo {
+    margin-top: 0;
+  }
+  .date-div {
+    flex-flow: row;
+    flex-wrap: wrap;
+  }
+  #entries-link, 
+  #add-todo,
+  #view-entries,
+  #dashboard-link,
+  #profile-link,
+  #logout {
+    padding-top: 0;
+    padding-bottom: 14px;
+  }
+  .dropdown-content {
+    display: none;
+    margin: .125rem 0 0;
+    left: 0;
+    padding: .5rem 0;
+    position: static;
+    background-color: #f5f5f5;
+    margin-left: 55vw;
+    /* width: 30vw; */
+    box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.5);
+    z-index: 1000;
+    top: 100%;
+  }
+}

@@ -3,133 +3,185 @@
   <head>
     <meta charset="utf-8"/>
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no"/>
-    <title>MyDiary Profile</title>
-    <link rel="stylesheet" href="./assets/styles/profile.css"/>
+    <title>Edit Profile</title>
+    <link href='https://fonts.googleapis.com/css?family=Aguafina Script' rel='stylesheet'>
+    <link rel="icon" href="../favicon.ico" type="image/x-icon"/>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css"/>
+    <link rel="icon" href="../favicon.ico" type="image/x-icon"/>
+    <link rel="stylesheet" href="./assets/styles/style4.css">
+    <style>
+      .settings {
+        display: flex; 
+        flex-direction: column;
+      }
+      .setting {
+        margin-top: 5px;
+        margin-bottom: 20px;
+      }
+      div.container label {
+        width: 10px;
+        margin-left: 3%;
+        margin-right: 5%;
+      }
+      div.container select {
+        padding: 5px;
+        margin-right: 2%;
+      }
+      hr {
+        width: 300px
+      }
+      .settings button {
+        width: 100%;
+        margin-left: 0;
+        margin-top: 5px;
+      }
+      .settings-section {
+        display: flex; 
+        justify-content: space-around;
+      }
+      #settings-jumbotron {
+        width: 50%;
+        text-align: left;
+      }
+      #setting-btn {
+        width: 16vw
+      }
+      @media screen and (max-width: 803px) {
+        .settings-section {
+          flex-direction: column;
+        }
+        #settings-jumbotron {
+          width: 80vw;
+          margin-left: 10vw;
+        }
+        .settings {
+          margin-left: 10vw;
+        }
+        select {
+          margin-left: 0;
+          margin-right: 30px
+        }
+        #setting-btn {
+          width: 36vw;
+        }
+      }
+    </style>
   </head>
   <body>
-    <nav>
-      <div class="container">
-        <img class="nav-brand" src="./assets/images/diary-icon.png"/>
-        <h3 class="brand">MyDiary</h3>
-        <div class="nav-links">
-          <ul>
-            <li>
-              <a href="create-diary.html" class="nav-link">Create Diary</a>
-            </li>
-            <li>
-              <a href="signup.html" class="nav-link">Notifications</a>
-            </li>
-          </ul>
+    <div id="container">
+      <nav class="topnav" id="Topnav">
+        <div id="brand-div">
+          <img class="nav-brand" src="./assets/images/diary-icon.png"/>
+          <h1 style="font-family: Aguafina Script; color: white; display: inline-block">MyDiary</h1>
         </div>
-        <hr/>
-      </div>
-    </nav>
-    <div class="side-nav">
-      <div id="side-nav-head">
-        <img class="nav-brand" src="./assets/images/diary-icon.png"/>
-        MyDiary<br/>
-        <small>signed in as: username</small>
-      </div>
-      <div class="side-nav-links">
-        <a id="active" href="dashboard.html">
-          <img class="img-link" src="./assets/images/dashboard-icon.png"/>
-          Dashboard
-        </a>
-        <a href="public-diaries.html">
-          <img class="img-link" src="./assets/images/view-pub-diary.png"/>
-          Public Diaries
-        </a>
-        <a href="my-diaries.html">
-          <img class="img-link" src="./assets/images/private-diary.png"/>
-          My Diaries
-        </a>
-        <a href="profile.html">
-          <img class="img-link" src="./assets/images/profile-settings.png"/>
-          Profile
-        </a>
-        <a href="index.html" id="logout">
-          <img class="img-link" src="./assets/images/logout-icon.jpg"/>
-          log out
-        </a>
-      </div>
-    </div>
-    <main>
-      <div class="row">
-        <div class="col jumbotron">
-          <div class="row">
-            <div class="col section-1">
-              <h3>Edit Credentials</h3>
-              <form>
-                <div id="password-div">
-                  <label for="password">Password</label>
-                  <input id="password" class="entry" type="password" value="andyjs+py"/>
-                </div>
-                <div id="username-div">
-                  <label for="username">Username</label>
-                  <input id="username" class="entry" type="text" value="andrewinsoul"/>
-                </div>
-                <div id="name-div">
-                  <label for="name">Name</label>
-                  <input id="name" class="entry" type="text" value="Okoye Andrew"/>
-                </div>
-              </form>
-              <button class="save">
-                Save Changes
-              </button>
+        <div id="nav-links">
+          <a id="dashboard-link" href="dashboard.html">Dashboard</a>
+          <span onmouseover="mousehover()" onmouseout="mouseleave()" class="dropdown">  
+            <a class="dropbtn" id="entries-link">
+              Entries
+              <i id="caret" class="fa fa-caret-right"></i>
+            </a>
+            <div class="dropdown-content" id="dropdown-div">
+              <a id="add-entry" href="add-entry.html">Add Entry</a>
+              <a id="add-todo" href="add-todo.html">Add TODO</a>
+              <a id="view-entries" href="entries.html">View Entries</a>
             </div>
-            <div class="col">
-              <h3>Reminder Settings</h3>
-              <div class="col">
-                <div class="diary-info">
-                  Number of Diaries: 12
-                </div>
-                <div class="diary-info">
-                  Number of Entries: 1,232
-                </div>
-                <div class="diary-info">
-                  Pending Actions: 121
-                </div>
+          </span>
+          <a class="active" id="profile-link" href="profile.html" style="color: grey">Profile</a>
+          <a id="logout" href="index.html">Logout</a>
+        </div>
+        <button id="nav-btn" class="icon" onclick="toggler()" style="height: 39px;">
+          <i class="fa fa-bars"></i>
+        </button>
+      </nav>
+      <!-- font-color: #3f3f3f -->
+      <div>
+        <h1 style="text-align: center">Edit Profile</h1>
+        <div class="settings-section">
+          <div class="jumbotron" id="settings-jumbotron">
+            <h3 style="margin-left: 7%">Update Personal Details</h3>
+            <form action="" style="display: flex; flex-direction: column;">
+              <label class="form-items" for="name">Name</label>
+              <div>
+                <i class="fa fa-user icon"></i>
+                <input class="form-items" id="name" value="Andrew Okoye" type="text"/>
               </div>
-              <div class="col config">
-                <p>
-                  Send me Reminder Notifications on:
-                </p>
-                <form>
-                  <span id="mail-platform">
-                    <input class="platform" id="mail" type="radio" name="platform" value="mail"/>
-                    <label class="radio-label" for="dashboard">Email</label>
-                  </span>
-                  <span id="dashboard-platform">
-                    <input class="platform" id="dashboard" type="radio" name="platform" value="dashboard"/>
-                    <label class="radio-label" for="mail">Dashboard</label>
-                  </span>
-                  <span id="dashboard-mail">
-                    <input class="platform" id="dashboardMail" type="radio" name="platform" value="dashboardMail"/>
-                    <label class="radio-label" for="mail">Dashboard & Mail</label>
-                  </span>
-                  <div id="save-config">
-                    <input type="submit" value="Save Settings"/>
-                  </div>
-                </form>
+              <label class="form-items" for="email">Email</label>
+              <div>
+                <i class="fa fa-envelope icon"></i>
+                <input class="form-items" id="email" type="email" value="andrewinsoul@gmail.com"/>
               </div>
+              <label class="form-items" for="username">Username</label>
+              <div>
+                <i class="fa fa-at icon"></i>
+                <input class="form-items" id="username" type="text" value="andyjs"/>
+              </div>
+              <label class="form-items" for="password">Password:</label>
+              <div>
+                <i class="fa fa-key icon"></i>
+                <input class="form-items" id="password" type="password" value="sweetmother1994"/>
+              </div>
+              <div>
+                <button>Update Profile</button>
+              </div>
+            </form>
+          </div>
+          <div class="settings">
+            <div>
+              <h3 style="letter-spacing: 5px">Number Of Entries: 666</h3>
             </div>
+            <div>
+              <h3 style="letter-spacing: 5px">Number Of Pending TODOs: 6</h3>
+            </div>
+            <hr/>
+            <h3>Reminder Settings</h3>
+            <span>Remind me to add entry </span>
+            <select class="setting" name="period" id="reminder-period">
+              <option value="month">Monthly</option>
+              <option value="year">Anually</option>
+              <option value="daily">Daily</option>
+            </select>
+            <span>Remind me of my Todos</span>
+            <select class="setting" name="todo-reminder" id="todo-remind">
+              <option value="00">Set Time</option>
+              <option value="45">45 mins earlier</option>
+              <option value="30">30 mins earlier</option>
+              <option value="15">15 mins earlier</option>
+            </select>
+            <button id="setting-btn">Save Settings</button>
           </div>
         </div>
       </div>
-    </main>
-    <footer>
-      <div class="social-handles">
-        <img class="footer-img" src="./assets/images/facebook-icon.png"/>
-        <img class="footer-img" src="./assets/images/google-icon.png"/>
-        <img class="footer-img" src="./assets/images/instagram-icon.png"/>
-        <img class="footer-img" src="./assets/images/twitter-icon.png"/>
-      </div>
-      <div>
-        Having any issues,reach out to us through any of our social handles
-      </div>
-      <div class="credits">
-        &copy; MyDiary Team 2018 All rights reserved
-      </div>
-    </footer>
+      <footer style="justify-content: center; padding: 10px">
+        <div style="color: white">
+          <div>Designed By Andy</div>
+          <small class="center-txt"><div>Andela 2018&COPY;</div></small>
+        </div>
+      </footer>
+    </div>
+    <script>
+      const caret = document.getElementById('caret');
+      const btn = document.getElementById('entries-link');
+      const divElement = document.getElementById('dropdown-div');
+      function mousehover() {
+        caret.className = 'fa fa-caret-down'
+        btn.style.color = 'cornflowerblue';
+        divElement.style.display = 'block';
+      }
+      function mouseleave() {
+        caret.className = 'fa fa-caret-right';
+        btn.style.color = 'white';
+        divElement.style.display = 'none';
+      }
+      function toggler() {
+        let x = document.getElementById("Topnav");
+        if (x.className === "topnav") {
+          x.className += " responsive";
+        }
+        else {
+          x.className = "topnav";
+        }
+      }
+    </script>
   </body>
 </html>

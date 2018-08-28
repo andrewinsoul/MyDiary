@@ -46,9 +46,9 @@ html, body {
   background-color: black;
   color: #fff;
 }
-.dropdown:hover .dropdown-content {
-  display: block;
-}
+/* .dropdown:hover .dropdown-content {
+   display: block; 
+} */
 footer {
   justify-content: space-between;
 }
@@ -98,4 +98,50 @@ button {
 #delete:hover {
   color: white;
   background-color: tomato
+}
+.entry-div {
+  width: 30%; 
+  box-shadow: 0 0 15px rgba(0, 0, 0, 0.5); 
+  border-radius: 6px; 
+  margin-left: 2%;
+}
+@media screen and (max-width: 803px) {
+  .container {
+    flex-direction: column;
+  }
+  .entry-div {
+    width: 90vw;
+    margin-left: 5vw;
+    margin-top: 5%;
+  }
+  #recent {
+    margin-bottom: 2px;
+  }
+  #todo {
+    margin-bottom: 1px;
+    margin-top: 40px;
+  }
+  .dropdown-content {
+    display: none;
+    margin: .125rem 0 0;
+    left: 0;
+    padding: .5rem 0;
+    margin-right: 0%;
+    margin-left: 55vw;
+    position: static;
+    background-color: whitesmoke;
+    text-align: center;
+    box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.5);
+    z-index: 1000;
+    top: 100%;
+  }
+  #entries-link, 
+  #add-todo,
+  #view-entries,
+  #dashboard-link,
+  #profile-link,
+  #logout  {
+    padding-top: 0;
+    padding-bottom: 14px;
+  }
 }

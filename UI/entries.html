@@ -3,7 +3,7 @@
   <head>
     <meta charset="utf-8"/>
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no"/>
-    <title>Add Entry</title>
+    <title>View Entries</title>
     <link href='https://fonts.googleapis.com/css?family=Aguafina Script' rel='stylesheet'>
     <link rel="icon" href="../favicon.ico" type="image/x-icon"/>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css"/>
@@ -25,9 +25,9 @@
               <i id="caret" class="fa fa-caret-right"></i>
             </a>
             <div class="dropdown-content" id="dropdown-div">
-              <a href="add-entry.html">Add Entry</a>
-              <a href="add-todo.html">Add TODO</a>
-              <a href="entries.html">View Entries</a>
+              <a id="add-entry" href="add-entry.html">Add Entry</a>
+              <a id="add-todo" href="add-todo.html">Add TODO</a>
+              <a id="view-entries" href="entries.html">View Entries</a>
             </div>
           </span>
           <a id="profile-link" href="profile.html">Profile</a>
@@ -37,52 +37,48 @@
           <i class="fa fa-bars"></i>
         </button>
       </nav>
-      <main>
-        <div class="jumbotron" style="margin-top: 6%">
-          <form action="">
-            <h3>Add Entry</h3>
-            <div class="container">
-              <label for="title">Title</label>
-              <input style="width: 80%" type="text" id="title" placeholder="Title of Entry"/>
-            </div>
-            <div class="container">
-              <label class="form-label" for="todo">Entry</label>
-              <textarea name="todo-entry" id="todo" cols="30" rows="10" placeholder="Enter Entry..."></textarea>
-            </div>
-            <div class="" id="entry-type" style="">
-              <p style="margin-left: 3%; width: 10px; margin-right: 5%">Type</p>
-              <select name="type" id="">
-                <option value="private">Private</option>
-                <option value="public">Public</option>
-              </select>
-            </div>
-            <div style="display: flex; justify-content: space-between; margin-top: 15px">
-              <button>Save Entry</button>
-              <button>Back</button>
-            </div>
-          </form>
+      <div>
+        <div id="search-div">
+          <div>
+            <input type="text" placeholder="Search By Entry Title" style="color: black; width: 30vw">
+          </div>
+          <div>
+            <p>Hello username, you have 666 entries</p>   
+          </div>
         </div>
-      </main>
-      <footer style="justify-content: center; padding: 10px">
-        <div style="color: white">
+        <div style="justify-content: space-around; display: flex;">
+          <div>Lorem ipsum dolor sit amet consectetur adipisicing elit. Incidunt  earum Lorem ipsum dolor sit, amet consectetur adipisicing elit. Sit vero doloremque incidunt. Minima harum magni tenetur hic, illum corrupti soluta at? Nobis consectetur adipisci optio facilis maxime labore, accusamus itaque.</div>
+          <div>I love coding, I see myself impacting</div>
+        </div>
+        <div style="justify-content: space-around; display: flex;">
+          <div>Lorem ipsum dolor sit amet consectetur adipisicing elit. Incidunt  earum.</div>
+          <div>I love coding, I see myself impacting</div>
+        </div>
+        <div style="justify-content: space-around; display: flex;">
+          <div>Lorem ipsum dolor sit amet consectetur adipisicing elit. Incidunt  earum.</div>
+          <div>I love coding, I see myself impacting</div>
+        </div>
+        <footer style="justify-content: center; padding: 10px">
+          <div style="color: white">
           <div>Designed By Andy</div>
           <small class="center-txt"><div>Andela 2018&COPY;</div></small>
-        </div>
-      </footer>
+          </div>
+        </footer>
+      </div>
     </div>
     <script>
       const caret = document.getElementById('caret');
       const btn = document.getElementById('entries-link');
-      const Dropdowndiv = document.getElementById('dropdown-div');
+      const divElement = document.getElementById('dropdown-div');
       function mousehover() {
         caret.className = 'fa fa-caret-down'
         btn.style.color = 'grey';
-        Dropdowndiv.style.display = 'block';
+        divElement.style.display = 'block';
       }
       function mouseleave() {
         caret.className = 'fa fa-caret-right';
         btn.style.color = 'grey';
-        Dropdowndiv.style.display = 'none';
+        divElement.style.display = 'none';
       }
       function toggler() {
         let x = document.getElementById("Topnav");
