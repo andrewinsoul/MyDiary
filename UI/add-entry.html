@@ -39,8 +39,8 @@
       </nav>
       <main>
         <div class="jumbotron" style="margin-top: 6%">
-          <form action="">
-            <h3>Add Entry</h3>
+          <form action="" style="text-align: start">
+            <h3 style="text-align: center;">Add Entry</h3>
             <div class="container">
               <label for="title">Title</label>
               <input style="width: 80%" type="text" id="title" placeholder="Title of Entry"/>
@@ -49,12 +49,21 @@
               <label class="form-label" for="todo">Entry</label>
               <textarea name="todo-entry" id="todo" cols="30" rows="10" placeholder="Enter Entry..."></textarea>
             </div>
-            <div class="" id="entry-type" style="">
-              <p style="margin-left: 3%; width: 10px; margin-right: 5%">Type</p>
+            <div class="" id="entry-type" style="display: block">
+              <p id="p-type">
+                Type:
+              </p>
+              <label>
+                <input style="width: 13px;" type="radio" name="type" checked="checked" value="private">Private
+              </label>
+              <label>
+                <input style="width: 13px; margin-left: 3%" type="radio" name="type" value="public"/>Public
+              </label>
+              <!-- <p style="margin-left: 3%; width: 10px; margin-right: 5%">Type</p>
               <select name="type" id="">
                 <option value="private">Private</option>
                 <option value="public">Public</option>
-              </select>
+              </select> -->
             </div>
             <div style="display: flex; justify-content: space-between; margin-top: 15px">
               <button>Save Entry</button>

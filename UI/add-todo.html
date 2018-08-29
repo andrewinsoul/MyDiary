@@ -47,26 +47,17 @@
             </div>
             <div class="container">
               <label class="form-label" for="todo">TODO</label>
-              <textarea style="width: 80%; border-radius: 4px; border: 1px solid grey; font: 400 13.3333px Arial" name="todo-entry" id="todo" cols="30" rows="10" placeholder="Enter TODO plans..."></textarea>
+              <textarea style="width: 80%; border-radius: 4px; border: 1px solid grey; font: 400 13.3333px Arial" name="todo-entry" id="todo" cols="30" rows="10" placeholder="Enter TODO plans..." required></textarea>
             </div>
-            <div class="container date-div" id="">
-              <label class="fa fa-calendar" for="date" style="margin-left: 3%"></label>
-              <input class="date" maxlength="2" size="2" placeholder="DD"/>
-              <b>/</b>
-              <input class="date" maxlength="2" size="2" placeholder="MM"/>
-              <b>/</b>
-              <input id="yy" placeholder="YYYY" maxlength="4" size="4"/>
-            </div>
-            <div class="container date-div" id="">
-              <label class="fa fa-clock-o" for="time" style="margin-left: 3%"></label>
-              <input class="date" maxlength="2" size="2" placeholder="HH"/>
-              <b>:</b>
-              <input class="date" maxlength="2" size="2" placeholder="MM"/>
-              <b>:</b>
-              <select name="meridian" style="margin-left: 1%">
-                <option value="AM" >AM</option>
-                <option value="PM">PM</option>
-              </select>
+            <div class="container date-div" id="" style="display: flex;">
+              <div class="date-time">
+                <label class="fa fa-calendar fa-todo" for="date" ></label>
+                <input name="date" required class="date" type="date"/>
+              </div>
+              <div class="date-time">
+                <label class="fa fa-clock-o fa-todo" for="date" ></label>
+                <input name="time" required class="date" type="time"/>
+              </div>
             </div>
             <div style="display: flex; justify-content: space-between; margin-top: 20px;">
               <button>Save TODO</button>

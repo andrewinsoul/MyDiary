@@ -14,6 +14,16 @@
         display: flex; 
         flex-direction: column;
       }
+      #password-btn {
+        margin-left: 0; 
+        margin-top: 5px;  
+        margin-bottom: 6%; 
+        width: 4%;
+        cursor: pointer; 
+        background-color: whitesmoke; 
+        color: black; 
+        box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.5);
+      }
       .setting {
         margin-top: 5px;
         margin-bottom: 20px;
@@ -117,12 +127,15 @@
                 <input class="form-items" id="username" type="text" value="andyjs"/>
               </div>
               <label class="form-items" for="password">Password:</label>
-              <div>
+              <div id="parent-div">
                 <i class="fa fa-key icon"></i>
-                <input class="form-items" id="password" type="password" value="sweetmother1994"/>
+                <div style="display: flex; flex-direction: column" id="child-div">
+                  <input style="margin-bottom: 2px; width: 82.815557%;" class="form-items" id="password" type="password" value="sweetmother1994"/>
+                  <span><i id="password-btn" onclick="passwordToggler()" class="fa fa-eye"></i></span>
+                </div>
               </div>
               <div>
-                <button>Update Profile</button>
+                <button style="margin-left: 7%">Update Profile</button>
               </div>
             </form>
           </div>
@@ -141,7 +154,7 @@
               <option value="year">Anually</option>
               <option value="daily">Daily</option>
             </select>
-            <span>Remind me of my Todos</span>
+            <span>Remind me of my TODOS on </span>
             <select class="setting" name="todo-reminder" id="todo-remind">
               <option value="00">Set Time</option>
               <option value="45">45 mins earlier</option>
@@ -162,6 +175,8 @@
     <script>
       const caret = document.getElementById('caret');
       const btn = document.getElementById('entries-link');
+      const childDiv = document.getElementById('child-div');
+      const parentDiv = document.getElementById('parent-div')
       const divElement = document.getElementById('dropdown-div');
       function mousehover() {
         caret.className = 'fa fa-caret-down'
@@ -182,6 +197,19 @@
           x.className = "topnav";
         }
       }
+      function passwordToggler() {
+        const passwordInput = document.getElementById('password');
+        const passwordBtn = document.getElementById('password-btn');
+        if (passwordInput.type === "password") {
+          passwordInput.type = "text";
+          passwordBtn.className = "fa fa-eye-slash";
+          console.log(passwordBtn.className)
+        }
+        else {
+          passwordInput.type = "password";
+          passwordBtn.className = "fa fa-eye";
+        }
+      } 
     </script>
   </body>
 </html>

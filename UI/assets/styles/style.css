@@ -67,6 +67,12 @@ form {
   justify-content: center;
   flex-direction: column;
 }
+#p-type {
+  margin-left: 3%;
+  width: 0; 
+  margin-right: 5%; 
+  display: inline-block;
+}
 form div {
   background-color: #fff;
   display: flex;
@@ -107,9 +113,13 @@ input {
     display: block;
     margin: 4% 0;
   }
-  label {
-    display: block;
+  #p-type {
+    margin-left: 6%;
+    width: 37px;
   }
+  /* label {
+    display: block;
+  } */
   .topnav button.icon {
     float: right;
     padding: 10px;
