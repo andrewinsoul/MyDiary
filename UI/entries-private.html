@@ -8,6 +8,7 @@
     <link rel="icon" href="../favicon.ico" type="image/x-icon"/>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css"/>
     <link rel="icon" href="../favicon.ico" type="image/x-icon"/>
+    <link rel="stylesheet" href="./assets/styles/style4.css">
     <style>
       html, body {
         height: 100%;
@@ -395,15 +396,15 @@
           </div>
           <div id="entry-category">
             <div class="entry-category">
-              <a href="entries-private.html">Private</a>
+              <a style="color: cornflowerblue; border-bottom: 3px solid cornflowerblue;" href="#">Private</a>
               <a href="entries-todo.html">TODO</a>
               <a href="entries-public.html">Public</a>
-              <a style="color: cornflowerblue; border-bottom: 3px solid cornflowerblue;" href="#">All</a>
+              <a href="entries.html">All</a>
             </div>   
           </div>
         </div>
         <div id="title">
-          <h3>My Entries - All</h3>
+          <h3>My Entries - Private</h3>
         </div>
         <div id="public-div">
           <div class="entry-div" class="column-1">
@@ -429,7 +430,7 @@
                 </i>
               </span> -->
             </div>
-            <button onclick="openLink('entry.html')">View Entry</button>
+            <button onclick="openLink('public-entry.html')">View Entry</button>
           </div>
           <div class="entry-div" class="column-2">
             <div>
@@ -454,7 +455,7 @@
                 </i>
               </span> -->
             </div>
-            <button onclick="openLink('entry.html')">View Entry</button>
+            <button onclick="openLink('public-entry.html')">View Entry</button>
           </div>
           <div class="entry-div" class="column-3">
             <div>
@@ -479,7 +480,7 @@
                 </i>
               </span> -->
             </div>
-            <button onclick="openLink('entry.html')">View Entry</button>
+            <button onclick="openLink('public-entry.html')">View Entry</button>
           </div>
           <div class="entry-div" class="column-1">
             <div>
@@ -504,7 +505,7 @@
                 </i>
               </span> -->
             </div>
-            <button onclick="openLink('entry.html')">View Entry</button>
+            <button onclick="openLink('public-entry.html')">View Entry</button>
           </div>
         </div>
         <div class="pagination">
@@ -523,7 +524,6 @@
         </footer>
       </div>
     </div>
-    <script src="./assets/scripts/main.js"></script>
     <script>
       const caret = document.getElementById('caret');
       const btn = document.getElementById('entries-link');

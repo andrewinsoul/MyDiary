@@ -8,6 +8,7 @@
     <link rel="icon" href="../favicon.ico" type="image/x-icon"/>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css"/>
     <link rel="icon" href="../favicon.ico" type="image/x-icon"/>
+    <link rel="stylesheet" href="./assets/styles/style4.css">
     <style>
       html, body {
         height: 100%;
@@ -390,26 +391,26 @@
       <div>
         <div id="search-div">
           <div style="position: relative; padding: 0 0 0 20px; margin: 0 20px; background: #ffffff; direction: ltr; ">
-            <input type="text" placeholder="Search By Entry Title" style="color: black; width: 30vw; height: 20px; padding-left: 45px;">
+            <input id="search-entry" type="text" placeholder="Search By Entry Title">
             <img id="search-img" src="./assets/images/search.png" alt="search-icon">
           </div>
           <div id="entry-category">
             <div class="entry-category">
               <a href="entries-private.html">Private</a>
-              <a href="entries-todo.html">TODO</a>
+              <a style="color: cornflowerblue; border-bottom: 3px solid cornflowerblue;" href="#">TODO</a>
               <a href="entries-public.html">Public</a>
-              <a style="color: cornflowerblue; border-bottom: 3px solid cornflowerblue;" href="#">All</a>
+              <a href="entries.html">All</a>
             </div>   
           </div>
         </div>
         <div id="title">
-          <h3>My Entries - All</h3>
+          <h3>My Entries - TODO</h3>
         </div>
         <div id="public-div">
           <div class="entry-div" class="column-1">
             <div>
               <h3 class="wrap" id="title-header">Title: </h3>
-              <span>My First Kiss</span>
+              <span>TODO</span>
             </div>
             <div>
               <h3>Entry: </h3>
@@ -418,8 +419,8 @@
               </p>
             </div>
             <div>
-              <h3>Created: </h3>
-              <span>5-Aug-1995</span>
+              <h3 class="fa fa-bell"></h3>
+              <span>5-Aug-1995, 10:30 PM</span>
             </div>
             <div>
               <h3></h3>
@@ -429,12 +430,12 @@
                 </i>
               </span> -->
             </div>
-            <button onclick="openLink('entry.html')">View Entry</button>
+            <button onclick="openLink('public-entry.html')">View Entry</button>
           </div>
           <div class="entry-div" class="column-2">
             <div>
               <h3 class="wrap" id="title-header">Title: </h3>
-              <span>My First Kiss</span>
+              <span>TODO</span>
             </div>
             <div>
               <h3>Entry: </h3>
@@ -443,8 +444,8 @@
               </p>
             </div>
             <div>
-              <h3>Created: </h3>
-              <span>17-Nov-1994</span>
+              <h3 class="fa fa-bell"></h3>
+              <span>17-Nov-1994, 12:30 PM</span>
             </div>
             <div>
               <h3></h3>
@@ -454,12 +455,12 @@
                 </i>
               </span> -->
             </div>
-            <button onclick="openLink('entry.html')">View Entry</button>
+            <button onclick="openLink('public-entry.html')">View Entry</button>
           </div>
           <div class="entry-div" class="column-3">
             <div>
               <h3 class="wrap" id="title-header">Title: </h3>
-              <span>My First Kiss</span>
+              <span>TODO</span>
             </div>
             <div>
               <h3>Entry: </h3>
@@ -468,8 +469,8 @@
               </p>
             </div>
             <div>
-              <h3>Created: </h3>
-              <span>7-Nov-2000</span>
+              <h3 class="fa fa-bell"></h3>
+              <span>11-Nov-1993, 01:30 PM</span>
             </div>
             <div>
               <h3></h3>
@@ -479,12 +480,12 @@
                 </i>
               </span> -->
             </div>
-            <button onclick="openLink('entry.html')">View Entry</button>
+            <button onclick="openLink('public-entry.html')">View Entry</button>
           </div>
           <div class="entry-div" class="column-1">
             <div>
               <h3 class="wrap" id="title-header">Title: </h3>
-              <span>My First Kiss</span>
+              <span>TODO</span>
             </div>
             <div>
               <h3>Entry: </h3>
@@ -493,8 +494,8 @@
               </p>
             </div>
             <div>
-              <h3>Created: </h3>
-              <span>7-Dec-2000</span>
+              <h3 class="fa fa-bell"></h3>
+              <span>25-Aug-1995, 12:30 PM</span>
             </div>
             <div>
               <h3></h3>
@@ -504,7 +505,7 @@
                 </i>
               </span> -->
             </div>
-            <button onclick="openLink('entry.html')">View Entry</button>
+            <button onclick="openLink('public-entry.html')">View Entry</button>
           </div>
         </div>
         <div class="pagination">
@@ -523,7 +524,6 @@
         </footer>
       </div>
     </div>
-    <script src="./assets/scripts/main.js"></script>
     <script>
       const caret = document.getElementById('caret');
       const btn = document.getElementById('entries-link');

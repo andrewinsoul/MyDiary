@@ -3,15 +3,70 @@
   <head>
     <meta charset="utf-8"/>
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no"/>
-    <title>View Entries</title>
+    <title>Entry</title>
     <link href='https://fonts.googleapis.com/css?family=Aguafina Script' rel='stylesheet'>
     <link rel="icon" href="../favicon.ico" type="image/x-icon"/>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css"/>
     <link rel="icon" href="../favicon.ico" type="image/x-icon"/>
     <style>
       html, body {
-        height: 100%;
+        height: 100vw;
         position: relative;
+      }
+      #delete:hover {
+        background-color: tomato;
+        color: #fff;
+      }
+      .edit-del {
+        padding: 1px 6px; 
+        width: 50px; 
+        height: 50px;
+        background-color: whitesmoke;
+      }
+      .info {
+        display: flex;
+        justify-content: space-between;
+        margin-left: 3%;
+        margin-right: 3%;
+      }
+      #title, textarea {
+        width: 80%;
+        font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+      }
+      #title {
+        margin-bottom: 5%;
+      }
+      #modal {
+        background: white; 
+        position: fixed; 
+        width: 50%; 
+        top: 50%; 
+        height: 80%;
+        left: 50%;
+        margin: -25% 0 0 -25%;
+        transform: scale(0); 
+        opacity: 0;
+        overflow-y: scroll; 
+      }
+      #modal-wrapper {
+        margin-left: 16%;
+        /* margin-right: 10%; */
+      }
+
+      #modal-wrapper h3 {
+        text-align: center;
+      }
+      .dialogIsOPen #container {
+        filter: blur(1px) grayscale(50%);
+        transform: scale(1);
+      }
+      .dialogIsOPen #modal {
+        transform: scale(1);
+        opacity: 1;
+        pointer-events: none;
+      }
+      #container, #modal {
+        transition: all 0.4s ease;
       }
       #spacer {
         margin-bottom: 4vw;
@@ -124,21 +179,13 @@
         background-color: dodgerblue;
       }
       #title {
-        background-color: white;
+        background-color: inherit;
       }
       #entries-div {
-        background-color: white;
+        background-color: inherit;
         margin-left: 2%;
         margin-bottom: 5%;
       }
-      /* .icon {
-        padding: 10px;
-        background-color: dodgerblue;
-        color: white;
-        width: 5%;
-        margin-left: 10%;
-        text-align: center
-      } */
       #email {
         margin-right: 45px;
       }
@@ -281,6 +328,9 @@
       .fa-eye {
         color: #3f3f3f;
       }
+      #cancel:hover {
+        background-color: tomato;
+      }
       @media screen and (max-width: 803px) {
         .topnav a {
           display: none
@@ -304,6 +354,12 @@
         footer {
           text-align: center;
           flex-flow: column;
+        }
+        #modal {
+          width: 86%;
+          top: 49vw;
+          /* left: 86%; */
+          margin: -43% 0 0 -43%;
         }
         #public-div {
           flex-direction: column;
@@ -360,7 +416,7 @@
     </style>
     <link rel="stylesheet" href="./assets/styles/style4.css">
   </head>
-  <body>
+  <body id="body">
     <div id="container">
       <nav class="topnav" id="Topnav">
         <div id="brand-div">
@@ -387,151 +443,79 @@
           <i class="fa fa-bars"></i>
         </button>
       </nav>
-      <div>
-        <div id="search-div">
-          <div style="position: relative; padding: 0 0 0 20px; margin: 0 20px; background: #ffffff; direction: ltr; ">
-            <input type="text" placeholder="Search By Entry Title" style="color: black; width: 30vw; height: 20px; padding-left: 45px;">
-            <img id="search-img" src="./assets/images/search.png" alt="search-icon">
-          </div>
-          <div id="entry-category">
-            <div class="entry-category">
-              <a href="entries-private.html">Private</a>
-              <a href="entries-todo.html">TODO</a>
-              <a href="entries-public.html">Public</a>
-              <a style="color: cornflowerblue; border-bottom: 3px solid cornflowerblue;" href="#">All</a>
-            </div>   
-          </div>
+      <div id="main">
+        <div class="info">
+          <h3 id="entry-title">My First Kiss</h3>
+          <h3 id="create-time">02-Aug-2018</h3>
         </div>
-        <div id="title">
-          <h3>My Entries - All</h3>
+        <div class="entry" style="margin-left: 3%; margin-right: 3%; padding: 30px; border-bottom: 1px solid grey">
+          Lorem ipsum, dolor sit amet consectetur adipisicing elit. A, quaerat hic recusandae, nisi nemo sunt autem aperiam ad qui maxime, labore aspernatur aliquam? Neque, saepe porro eos error beatae maxime. Lorem ipsum dolor sit amet, consectetur adipisicing elit. Sequi labore rerum, nesciunt facilis iure quasi? Sequi, et, magnam libero voluptatem, provident explicabo cupiditate doloribus quidem exercitationem reprehenderit iusto voluptas iste. Lorem ipsum dolor sit amet consectetur adipisicing elit. Nostrum dolores quis qui possimus perferendis similique beatae, mollitia blanditiis placeat totam aspernatur ut. Illo totam nesciunt incidunt praesentium ex, non error! Lorem ipsum dolor, sit amet consectetur adipisicing elit. Quasi praesentium accusamus libero quo nam soluta modi maiores explicabo sapiente facere sequi quibusdam alias cum, fugit consectetur corporis dolorem sint expedita. Lorem ipsum dolor sit amet consectetur adipisicing elit. Est odio commodi molestias consequatur necessitatibus eveniet corrupti autem corporis, dicta sint ipsam velit, laboriosam modi voluptatibus magnam eligendi officiis, error dolores? Lorem ipsum dolor, sit amet consectetur adipisicing elit. Veritatis dignissimos minus quis saepe, molestias nam dolore est in numquam explicabo similique debitis quibusdam quam laudantium enim. Modi porro aspernatur suscipit! Lorem ipsum dolor sit amet, consectetur adipisicing elit. Necessitatibus doloremque nostrum molestias suscipit quam laborum, nihil maiores adipisci sequi possimus a et maxime quos quod id laudantium dolorum consectetur molestiae. Lorem, ipsum dolor sit amet consectetur adipisicing elit. Voluptatem, modi esse. Earum est ullam veritatis cumque, maiores quibusdam sed dolorem optio eum repellendus illo quo obcaecati doloribus eius cum hic? Lorem ipsum dolor sit amet consectetur adipisicing elit. Cupiditate hic unde sed eos dolore. Doloribus dolorem facere quibusdam quod at ipsa ex praesentium maiores quae dolore exercitationem, iusto molestias expedita. Lorem, ipsum dolor sit amet consectetur adipisicing elit. Assumenda placeat tempora error dolor quidem, neque sequi architecto distinctio maiores commodi amet ea id hic natus. Eveniet cumque corporis atque unde. Lorem ipsum dolor, sit amet consectetur adipisicing elit. Commodi error dicta beatae autem mollitia! Tempora illo provident rem modi voluptatibus quisquam necessitatibus excepturi. Dicta adipisci saepe natus omnis, dolore eaque?
         </div>
-        <div id="public-div">
-          <div class="entry-div" class="column-1">
-            <div>
-              <h3 class="wrap" id="title-header">Title: </h3>
-              <span>My First Kiss</span>
-            </div>
-            <div>
-              <h3>Entry: </h3>
-              <p class="wrap">
-                Lorem ipsum dolor, sit amet consectetur adipisicing elit. Nostrum dignissimos officiis corrupti, facilis similique explicabo vitae corporis architecto animi vero inventore voluptates? Asperiores tenetur deleniti sapiente distinctio exercitationem voluptates in. Lorem ipsum dolor sit amet consectetur adipisicing elit. Illo doloribus labore, enim quod maxime fugiat rerum nemo accusantium! Nemo quae aut est debitis fugiat, modi deserunt sunt magnam explicabo officia? Lorem ipsum dolor sit amet consectetur, adipisicing elit. Eligendi cumque distinctio neque dicta facere, asperiores dolores commodi suscipit voluptatum fugiat deserunt aliquid ad itaque odit iste ut maiores id reprehenderit.
-              </p>
-            </div>
-            <div>
-              <h3>Created: </h3>
-              <span>5-Aug-1995</span>
-            </div>
-            <div>
-              <h3></h3>
-              <!-- <span>
-                <i class="fa fa-eye">
-                  <b><i>4k</i></b>
-                </i>
-              </span> -->
-            </div>
-            <button onclick="openLink('entry.html')">View Entry</button>
-          </div>
-          <div class="entry-div" class="column-2">
-            <div>
-              <h3 class="wrap" id="title-header">Title: </h3>
-              <span>My First Kiss</span>
-            </div>
-            <div>
-              <h3>Entry: </h3>
-              <p class="wrap">
-                Lorem ipsum dolor, sit amet consectetur adipisicing elit. Nostrum dignissimos officiis corrupti, facilis similique explicabo vitae corporis architecto animi vero inventore voluptates? Asperiores tenetur deleniti sapiente distinctio exercitationem voluptates in. Lorem ipsum dolor sit amet consectetur adipisicing elit. Illo doloribus labore, enim quod maxime fugiat rerum nemo accusantium! Nemo quae aut est debitis fugiat, modi deserunt sunt magnam explicabo officia? Lorem ipsum dolor sit amet consectetur, adipisicing elit. Eligendi cumque distinctio neque dicta facere, asperiores dolores commodi suscipit voluptatum fugiat deserunt aliquid ad itaque odit iste ut maiores id reprehenderit.
-              </p>
-            </div>
-            <div>
-              <h3>Created: </h3>
-              <span>17-Nov-1994</span>
-            </div>
-            <div>
-              <h3></h3>
-              <!-- <span>
-                <i class="fa fa-eye">
-                  <b><i>999</i></b>
-                </i>
-              </span> -->
-            </div>
-            <button onclick="openLink('entry.html')">View Entry</button>
-          </div>
-          <div class="entry-div" class="column-3">
-            <div>
-              <h3 class="wrap" id="title-header">Title: </h3>
-              <span>My First Kiss</span>
-            </div>
-            <div>
-              <h3>Entry: </h3>
-              <p class="wrap">
-                Lorem ipsum dolor, sit amet consectetur adipisicing elit. Nostrum dignissimos officiis corrupti, facilis similique explicabo vitae corporis architecto animi vero inventore voluptates? Asperiores tenetur deleniti sapiente distinctio exercitationem voluptates in. Lorem ipsum dolor sit amet consectetur adipisicing elit. Illo doloribus labore, enim quod maxime fugiat rerum nemo accusantium! Nemo quae aut est debitis fugiat, modi deserunt sunt magnam explicabo officia? Lorem ipsum dolor sit amet consectetur, adipisicing elit. Eligendi cumque distinctio neque dicta facere, asperiores dolores commodi suscipit voluptatum fugiat deserunt aliquid ad itaque odit iste ut maiores id reprehenderit.
-              </p>
-            </div>
-            <div>
-              <h3>Created: </h3>
-              <span>7-Nov-2000</span>
-            </div>
-            <div>
-              <h3></h3>
-              <!-- <span>
-                <i class="fa fa-eye">
-                  <b><i>666</i></b>
-                </i>
-              </span> -->
-            </div>
-            <button onclick="openLink('entry.html')">View Entry</button>
-          </div>
-          <div class="entry-div" class="column-1">
-            <div>
-              <h3 class="wrap" id="title-header">Title: </h3>
-              <span>My First Kiss</span>
-            </div>
-            <div>
-              <h3>Entry: </h3>
-              <p class="wrap">
-                Lorem ipsum dolor, sit amet consectetur adipisicing elit. Nostrum dignissimos officiis corrupti, facilis similique explicabo vitae corporis architecto animi vero inventore voluptates? Asperiores tenetur deleniti sapiente distinctio exercitationem voluptates in. Lorem ipsum dolor sit amet consectetur adipisicing elit. Illo doloribus labore, enim quod maxime fugiat rerum nemo accusantium! Nemo quae aut est debitis fugiat, modi deserunt sunt magnam explicabo officia? Lorem ipsum dolor sit amet consectetur, adipisicing elit. Eligendi cumque distinctio neque dicta facere, asperiores dolores commodi suscipit voluptatum fugiat deserunt aliquid ad itaque odit iste ut maiores id reprehenderit.
-              </p>
-            </div>
-            <div>
-              <h3>Created: </h3>
-              <span>7-Dec-2000</span>
-            </div>
-            <div>
-              <h3></h3>
-              <!-- <span>
-                <i class="fa fa-eye">
-                  <b><i>4k</i></b>
-                </i>
-              </span> -->
-            </div>
-            <button onclick="openLink('entry.html')">View Entry</button>
-          </div>
+        <div style="display: flex; justify-content: flex-end; margin-top: 2%">
+          <button class="edit-del" onclick="openModal()">
+            <i style="font-size: 20px;" class="fa fa-edit icon"></i>
+          </button>
+          <button class="edit-del" id="delete">
+            <i style="font-size: 20px;" class="fa fa-trash icon"></i>
+          </button>
         </div>
-        <div class="pagination">
-          <a href="#">&laquo;</a>
-          <a href="#" class="active">1</a>
-          <a href="#">2</a>
-          <a href="#">3</a>
-          <a href="#">4</a>
-          <a href="#">5</a>
-          <a href="#">&raquo;</a>
+      </div>
+      <footer style="display: flex; align-items: center; justify-content: center; position: absolute; bottom: 0; width: 100vw; color: #fff; padding: 10px; flex-direction: column">
+        <p>&copy; Andela Team 2018 All Rights Reserved.</p>
+        <p>Designed By Andy</p>
+      </footer>
+    </div>
+    <div id="modal">
+      <div id="modal-wrapper">
+        <h3>Update Entry</h3>
+        <form action="">
+          <label for="title">
+            <b>Title</b>
+          </label>
+          <input id="title" type="text" value="My First Kiss" style="width: 80%;"/>
+          <label for="entry" style="margin-top: 5%;">
+            <b>Entry</b>
+          </label>
+          <textarea name="" id="entry" cols="30" rows="10">Lorem ipsum, dolor sit amet consectetur adipisicing elit. Aliquam aspernatur ratione doloribus ullam! Blanditiis excepturi modi omnis libero maxime hic inventore, dolores molestias, porro sed illum ducimus. Pariatur, exercitationem voluptates. Lorem ipsum dolor sit, amet consectetur adipisicing elit. Soluta amet quos, ratione fugiat consectetur asperiores, optio deserunt sunt architecto cum commodi vel odit deleniti expedita. Labore beatae harum recusandae delectus!logout Lorem ipsum dolor sit amet consectetur, adipisicing elit. Iste magnam sit voluptatibus ex quasi nihil eius. Veritatis esse, minus aliquid officiis minima omnis reiciendis ab, repudiandae nisi tempore aperiam eaque! Lorem ipsum dolor sit amet consectetur adipisicing elit. Eligendi, sunt illo repellendus veritatis numquam consectetur mollitia maiores consequuntur ex quia perspiciatis iusto ad nemo commodi veniam, architecto natus obcaecati. Accusamus?Lorem ipsum dolor sit amet consectetur adipisicing elit. Dolore ipsam, id velit dolorem expedita reiciendis similique, molestias atque recusandae ipsum iusto perferendis sapiente quis cupiditate laborum minus impedit a magni. Lorem ipsum dolor sit amet consectetur, adipisicing elit. Officia unde placeat quisquam minima saepe eligendi fugiat esse. Laborum, accusantium. Aliquid adipisci perferendis pariatur reiciendis ducimus ipsum voluptatum amet, molestias incidunt?</textarea>
+        </form>
+        <div style="display: flex; margin-top: 13%;">
+          <button style="margin: 3% 0;">
+            <i class="fa fa-save"></i>
+            Save Changes
+          </button>
+          <button id="cancel" style="margin: 3% 9%;" onclick="closeModal()">
+            <i class="fa fa-close"></i>
+            Cancel
+          </button>
         </div>
-        <div id="spacer">&nbsp;</div>
-        <footer style="display: flex; align-items: center; justify-content: center; position: absolute; bottom: 0; width: 100vw; color: #fff; padding: 10px; flex-direction: column">
-          <p>&copy; Andela Team 2018 All Rights Reserved.</p>
-          <p>Designed By Andy</p>
-        </footer>
       </div>
     </div>
-    <script src="./assets/scripts/main.js"></script>
     <script>
       const caret = document.getElementById('caret');
       const btn = document.getElementById('entries-link');
       const divElement = document.getElementById('dropdown-div');
+      const body = document.getElementById('body');
+      const divContainer = document.getElementById('container');
+      const modalDiv = document.getElementById('modal');
+      const mainDiv = document.getElementById('main'); 
       function mousehover() {
         caret.className = 'fa fa-caret-down'
         btn.style.color = 'grey';
         divElement.style.display = 'block';
+      }
+      function openModal() {
+        body.className = "dialogIsOPen";
+        body.style.background = 'rgba(0,0,0,0.9)';
+        body.style.overflowY = 'hidden';
+        divContainer.style.pointerEvents = 'none';
+        modalDiv.style.pointerEvents = 'auto';
+
+      }
+      function closeModal() {
+        body.className = "";
+        body.style.background ='white';
+        divContainer.style.pointerEvents = 'auto';
+        body.style.overflowY = 'scroll';
       }
       function mouseleave() {
         caret.className = 'fa fa-caret-right';

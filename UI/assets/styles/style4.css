@@ -84,6 +84,12 @@ form h3 {
 #nav-btn:hover {
   background-color: whitesmoke;
 }
+#search-entry {
+  color: black;
+  width: 30vw;
+  height: 20px;
+  padding-left: 45px;
+}
 div.container span {
   margin-right: 1%
 }
@@ -124,6 +130,9 @@ select {
     flex-flow: column;
     margin-left: 6%;
   }
+  #search-entry {
+    width: 70vw;
+  }
   div.container {
     width: 90%;
   }
@@ -134,6 +143,9 @@ select {
   .jumbotron {
     width: 90vw;
     margin: 5vw 0;
+  }
+  #search-div {
+    flex-direction: column;
   }
   select {
     margin-left: 5%;
@@ -179,5 +191,8 @@ select {
     box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.5);
     z-index: 1000;
     top: 100%;
+  }
+  .entry-category {
+    text-align: center;
   }
 }
