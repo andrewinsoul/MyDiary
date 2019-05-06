@@ -1,0 +1,363 @@
+nav, footer {
+    display: flex; 
+    flex-flow: row nowrap; 
+    align-items: center; 
+    background-color: black;
+    overflow: hidden;
+    justify-content: space-between;
+  }
+  #nav-links, #nav-btn {
+    display: none;
+  }
+  #public-div {
+    display: flex;
+    flex-flow: row nowrap;
+  }
+  .wrap {
+    text-overflow: ellipsis; 
+    overflow: hidden; 
+    white-space: nowrap;
+  }
+  .sub-form {
+    padding: 8px;
+  }
+  .entry-div h3 {
+    color: dodgerblue;
+    display: block;
+    margin: 5px;
+    margin-top: 5%;
+  }
+  .entry-div span {
+    margin: 5px;
+  }
+  #card-1 {
+    margin-left: 2%;
+  }
+  p {
+    margin: 5px;
+  }
+  .footer-div p {
+    color: white;
+  }
+  #title-header {
+    margin-top: 3%;
+  }
+  #foot-entry {
+    width: 80%;
+  }
+  #foot-btn {
+    background-color: dodgerblue;
+    color: white;
+  }
+  small {
+    color: white;
+    margin-bottom: 15px;
+  }
+  #end, #title {
+    background-color: black; 
+    display: flex; 
+    justify-content: center;
+  }
+  .entry-div {
+    margin-bottom: 6%;
+    width: 30%; 
+    box-shadow: 0 0 15px rgba(0, 0, 0, 0.5);
+    border-radius: 6px;
+  }
+  .entry-div button {
+    color: dodgerblue;
+    border: 1px solid dodgerblue;
+    background-color: white;
+    padding: 10px 20px;
+    margin: 6% 2%;  
+  }
+  .entry-div button:hover {
+    color: white;
+    cursor: pointer;
+    background-color: dodgerblue;
+  }
+  #title {
+    background-color: white;
+  }
+  #entries-div {
+    background-color: white;
+    margin-left: 2%;
+    margin-bottom: 5%;
+  }
+  .icon {
+    padding: 10px;
+    background-color: dodgerblue;
+    color: white;
+    border-radius: 4px;
+    width: 5%;
+    margin-left: 10%;
+    text-align: center
+  }
+  #email {
+    margin-right: 45px;
+  }
+  .topnav a {
+    color: #f2f2f2;
+    padding: 14px 16px;
+    text-decoration: none
+  }
+  .form-inline {
+    margin-right: 1%;
+  }
+  .form-inline input {
+    vertical-align: middle;
+    margin: 5px 10px 5px 0;
+    padding: 10px;
+    background-color: #fff;
+    border: 1px solid #ddd;
+  }
+  .form-inline button {
+    padding: 10px 20px;
+    background-color: dodgerblue;
+    border: 1px solid grey;
+    color: white;
+  }
+  .form-inline button:hover {
+    background-color: royalblue;
+  }
+  .topnav h3 {
+    color: #ddd;
+    padding: 14px 0;
+  }
+  .form-inline label {
+    color: #fff;
+  }
+  .typo {
+    display: inline;
+  }
+  .sec-1 {
+    margin: 57px 0;
+    text-align: center;
+  }
+  .nav-brand {
+    margin-left: 1rem;
+    margin-top: 1rem;
+    margin-bottom: 1rem;
+  }
+  h1 {
+    text-align: center;
+  }
+  #main-div {
+    background: url(../images/diary.jpg) no-repeat fixed;
+    background-size: cover;
+  }
+  main {
+    background-color: rgba(1, 1, 1, 0.8); 
+    color: white;
+    display: flex;
+    flex-direction: row-reverse;
+    align-items: center;
+    justify-content: space-evenly;
+  }
+
+  .jumbotron {
+    background-color: #fff; 
+    margin: 57px 0; 
+    width: 35vw;
+  }
+  .jumbotron h4 {
+    color: black;
+    text-align: center;
+  }
+  .jumbotron form {
+    display: flex;
+    flex-direction: column;
+  }
+  #join-btn {
+    margin-left: 10%;
+    color: #fff;
+    width: 84%;
+    margin-bottom: 44px;
+    background-color: dodgerblue
+  }
+  #social-handles, #subscribe {
+    margin-left: 1rem;
+    margin-right: 1rem;
+  }
+  .footer-div a {
+    color: beige;
+  }
+  .footer-div a:hover {
+    color: cornflowerblue;
+    text-decoration: none;
+  }
+  input, button {
+    border-radius: 4px;
+    border: 1px solid grey
+  }
+  .reg-div {
+    background-color: #fff; 
+    display: flex;
+    margin-top: 27px;
+    margin-right: auto; 
+    width: 35vw;
+  }
+  .sec-1 {
+    width: 45vw;
+  }
+  .reg-div input {
+    width: 70%;
+    color: rgba(1, 1, 1, 0.8);
+    letter-spacing: 0.025cm;
+    padding: 10px
+  }
+  #public-btn {
+    display: block;
+    cursor: pointer;
+    color: #fff;
+    margin: auto;
+    margin-top: 7%;
+    padding: 20px;
+    background-color: dodgerblue; 
+  }
+  .footer-div {
+    color: white;
+  }
+  #card-1 {
+    margin-left: 2%;
+  }
+  #card-2 {
+    margin-left: 2%;
+    margin-right: 2%;
+  }
+  #card-3 {
+    margin-right: 2%;
+  }
+  #nav-btn {
+    cursor: pointer;
+  }
+  @media screen and (max-width: 803px) {
+    .topnav a {
+      display: none
+    }
+    .nav-btn {
+      display: block;
+      margin: 4% 0;
+    }
+    .topnav button.icon {
+      float: right;
+      padding: 10px;
+      display: block;
+      margin: 14px 16px;
+    }
+    .topnav.responsive {
+      position: relative;
+      display: block;
+    }
+    #nav-links {
+      display: block;
+      float: right;
+      margin-top: 9%
+    }
+    .topnav.responsive button.icon {
+      position: absolute;
+      right: 0;
+      top: 0;
+    }
+    .topnav.responsive a {
+      float: none;
+      text-align: center;
+      display: block;
+    }
+    #social-handles, #subscribe {
+    margin-left: auto;
+    margin-right: auto;
+  }
+    #subscribe {
+      margin-bottom: 5%
+    }
+    #card-3, #card-1, #card-2 {
+      margin-left: 5vw;
+    }
+    small {
+      margin-top: 3%
+    }
+    footer {
+      text-align: center;
+      flex-flow: column;
+    }
+    main {
+      flex-direction: column-reverse;
+    }
+    #public-div {
+      flex-direction: column;
+    }
+    .typo {
+      height: 100rem;
+    }
+    .entry-div {
+      margin-bottom: 6%;
+      width: 90vw;
+      margin-left: 5vw; 
+      box-shadow: 0 0 50px rgba(0, 0, 0, 0.5);
+      border-radius: 6px;
+    }
+    .nav-btn {
+      display: block;
+      margin: 4% 0;
+    }
+    nav, label{
+      display: block;
+    }
+    .form-inline {
+      margin-left: 1rem
+    }
+    .reg-div label {
+      width: 22%
+    }
+    #email {
+      margin-bottom: 35px
+    }
+    .form-inline {
+      display: none
+    }
+    .jumbotron, .sec-1 {
+      margin-top: 1%;
+      width: 75vw;
+      margin-left: auto;
+      margin-right: auto
+    }
+    .reg-div {
+      width: 70vw;
+    }
+    .typo {
+      height: 100px;
+      margin-top: 2%;
+    }
+    #main-div {
+      background-size: 1200px;
+    }
+    #nav-btn {
+      float: right;
+      display: block;
+      width: 42px;
+      margin: 14px 16px;
+      padding: 10px;
+      color: black;
+      background-color: #dddddd;
+    }
+    #brand-div {
+      display: inline-block;
+    }
+    .topnav.responsive {
+      position: relative;
+    }
+    .topnav.responsive button.icon {
+      position: absolute;
+      right: 0;
+      top: 0;
+    }
+    .topnav.responsive a {
+      float: none;
+      text-align: center;
+      display: block;
+    }
+    .jumbotron form, .jumbotron h4 {
+      display: none
+    }
+  }
